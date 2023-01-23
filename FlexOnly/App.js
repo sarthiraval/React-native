@@ -33,6 +33,7 @@ marginBottom:10}}>Fixed dimensions with layout :-</Text>
   <View style ={{width:50,height:50,backgroundColor:"green"}} />
 </View>
 
+
 <View style ={{flexDirection:"row-reverse" ,marginTop:-50,marginLeft:20}}>
   <View style ={{width:50,height:50,backgroundColor:"red"}} />
   <View style ={{width:50,height:50,backgroundColor:"blue"}} />
