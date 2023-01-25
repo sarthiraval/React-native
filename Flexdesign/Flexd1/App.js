@@ -15,7 +15,8 @@ let FlexDesign =() =>{
       marginStart : 10,
       marginBottom: 10}}>
 
-    <ScrollView>
+    <ScrollView
+    showsVerticalScrollIndicator={false}>
   <View>
   <Text style={{color:"black",alignSelf:'center',fontWeight:'bold',fontSize:20,marginBottom:10,marginTop:5,textDecorationColor:"black",textDecorationLine:"underline"}}>Image :-</Text>
         <Image 
