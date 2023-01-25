@@ -3,6 +3,7 @@ import {
  Text,View,TextInput,Image, Button, StyleSheet,ScrollView
 } from 'react-native';
 
+
 const fullname = (fs ,mn,ls) =>{
   return fs + " " + mn +" "+ls
 }
