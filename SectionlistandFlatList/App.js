@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-View,FlatList,Text,StyleSheet, SafeAreaView, SectionList, ScrollView
+View,FlatList,Text, SafeAreaView, SectionList, ScrollView
 } from 'react-native';
 
 let FlatListcode = () =>{
@@ -10,6 +10,8 @@ let FlatListcode = () =>{
     <ScrollView 
     showsVerticalScrollIndicator="false">
     <View style={{alignSelf:"stretch",marginBottom:10,marginRight:10,marginLeft:10}}>
+    <Text style={{fontSize:30}}>Flat-List:-</Text>
+
    <FlatList  data ={[
       {id:1,title : 'Sarthi'},
       {id:2,title : 'Janik'},
@@ -42,35 +44,45 @@ let FlatListcode = () =>{
     <Text style= {{padding:10,fontSize:20,height:50,color:"red"}}>{item.id}. {item.title}</Text>}
     keyExtractor ={item => item.id}
     />
+<Text style={{fontSize:30}}>Section-List:-</Text>
+<SectionList
+        style={{marginLeft:20,marginRight:20}}
+        sections={CAR}
+        renderItem={({ item }) => <Item title={item} />}
+        keyExtractor={(title, data) => title + data}
+        renderSectionHeader={({ section: { title } }) => (
+          <Text style={{fontSize: 30,color:"#82E0AA"}}>{title}</Text>
+        )}
+      />
 
-   
-    {/* <SectionList 
-      sections={CAR}
-      keyExtractor ={(item,model)=>item+model}
-      renderItem ={({title})=> <Item title={{title}}/>}
-      renderSectionHeader={({ section: { title } }) => (
-          <Text>{title}</Text>
-        )} /> */}
+
     </View>
     </ScrollView>
     </SafeAreaView>
   )
 
 }
+function Item({ title }) {
+  return (
+    <View style={{backgroundColor: '#F8C471',padding: 20,marginVertical:10}}>
+      <Text style={{fontSize: 24,color:"#E74C3C"}}>{title}</Text>
+    </View>
+  );
+}
 
 const CAR = [
-{title :"Maruti Suzuki",
-data:["Maruti Suzuki Brezza","Maruti Suzuki Swift","Maruti Suzuki Grand Vitara"]},
-{title :"Hyundai",
-data:["Hyundai Aura","Hyundai Grand i10 Nios"]},
-{title :"Toyota",
-data:["Toyota Innova Hycross","Toyota Fortuner"]},
-{title :"KIA",
-data:["Kia Sonet","Kia Carens","Kia EV6","Kia Seltos"]},
-{title :"Tesla",
-data:["Tesla Model S","Tesla Model 3"]},
-{title :"Volvo",
-data:["Volvo XC90","Volvo S90","Volvo S60"]},
-]
+  {title :"Maruti Suzuki",
+  data:["Maruti Suzuki Brezza","Maruti Suzuki Swift","Maruti Suzuki Grand Vitara"]},
+  {title :"Hyundai",
+  data:["Hyundai Aura","Hyundai Grand i10 Nios"]},
+  {title :"Toyota",
+  data:["Toyota Innova Hycross","Toyota Fortuner"]},
+  {title :"KIA",
+  data:["Kia Sonet","Kia Carens","Kia EV6","Kia Seltos"]},
+  {title :"Tesla",
+  data:["Tesla Model S","Tesla Model 3"]},
+  {title :"Volvo",
+  data:["Volvo XC90","Volvo S90","Volvo S60"]},
+  ]
 
 export default FlatListcode;
