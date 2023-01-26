@@ -3,6 +3,7 @@ import {
 View,FlatList,Text, SafeAreaView, SectionList, ScrollView
 } from 'react-native';
 
+
 let FlatListcode = () =>{
 
   return(
@@ -43,6 +44,16 @@ let FlatListcode = () =>{
     renderItem={({item}) => 
     <Text style= {{padding:10,fontSize:20,height:50,color:"red"}}>{item.id}. {item.title}</Text>}
     keyExtractor ={item => item.id}
+    ListEmptyComponent={<Text>No Data Found</Text>}
+    />
+
+<Text style={{fontSize:30}}>Flat-List Empty:-</Text>
+
+    <FlatList  data ={[ ]}
+    renderItem={({item}) => 
+    <Text style= {{padding:10,fontSize:20,height:50,color:"red"}}>{item.id}. {item.title}</Text>}
+    keyExtractor ={item => item.id}
+    ListEmptyComponent={<Text>No Data Found</Text>}
     />
 <Text style={{fontSize:30}}>Section-List:-</Text>
 <SectionList
