@@ -6,6 +6,7 @@ let App = ()=>{
   return(
    //<Login />
    <Reg/>
+   
   )
 }
 
