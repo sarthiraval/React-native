@@ -7,7 +7,7 @@ import { Dropdown } from 'react-native-element-dropdown';
 let Reg =()=>{
    const data1 =[
     {id:1,title : 'Sarthi',surnamne:"Raval"},
-    {id:2,title : 'Janik',surnamne:"Kanariya"},
+    {id:2,title : 'Jainik',surnamne:"Kanariya"},
     {id:3,title : 'Sid',surnamne:"Soni"},
     {id:4,title : 'Harshit',surnamne:"Vataliya"},
     {id:5,title : 'Kevin',surnamne:"Patel"},
@@ -44,7 +44,7 @@ let Reg =()=>{
              style ={{flex:1}}
          > */}
 
-         
+
         <SafeAreaView style={{alignSelf:"center"}}>
             <ScrollView
             showsVerticalScrollIndicator={false}>
