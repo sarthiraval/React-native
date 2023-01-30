@@ -124,7 +124,9 @@ let Reg =()=>{
                 setValue(item.values);
                 }}
                 />
-          </View>
+      
+        </View>
+    
           <View style={box.rectangl} >
              <Dropdown
               placeholderStyle={{marginRight:10,marginLeft:10,fontSize:16,color:"#999966"}}
