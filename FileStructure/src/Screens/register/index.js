@@ -37,7 +37,7 @@ let Reg =()=>{
     const [values, setValues] = useState();
     const [chekdone, setnotdone] = useState (true)
     return(
-        <View style={{flex:1,backgroundColor:""}}>
+        <View style={{flex:1,backgroundColor:"#e6e6e6"}}>
             {/* <ImageBackground 
             source={{
                 uri: 'https://images.pling.com/img/00/00/62/67/35/1584405/577c4dc30402a8dfa3915867a59e64a89b7b3498e9f327bcfb0bcc7dfcbf99908e32.jpg'    }}
@@ -78,7 +78,7 @@ let Reg =()=>{
                 placeholder="Password"
                 textContentType= "password"
                 secureTextEntry= {true}
-                placeholderTextColor={"#808080"}
+                placeholderTextColor={"#808081"}
                 style={{marginTop:5,color:"black",fontSize:15,marginLeft:10,marginTop:10}}/>
              </View> 
 
@@ -159,12 +159,13 @@ let Reg =()=>{
                 {/* setState = Storing and Reading the checkbox state */}
            
             
-    <View  style ={{flexDirection:"row",marginTop:15}}>
+    <View  style ={{flexDirection:"row",marginTop:20,marginBottom:10}}>
 
              
 
    
         <CheckBox
+        style={{marginRight:7}}
          onClick={()=>{
                    setnotdone(!chekdone);
                    
@@ -175,17 +176,17 @@ let Reg =()=>{
                {chekdone ?(
                 <View style={{marginTop:1}}/>
                 ):(
-                <Image source = {require('../../img/check.png')} style={{marginLeft:-16,marginTop:6,height:10,width:10}}/>
+                    <><Image source={require('../../img/check.png')} style={{ marginLeft: -24, marginTop: 6, height: 10, width: 10 }} /></>
                  )}
 
 
                 <View>
-                 <Text style={{color:"#808080",fontSize:10,fontWeight:"bold",left:2}}>I agree to abide by Company's </Text>
-                <Text style={{color:"#808080",fontSize:10,fontWeight:"bold",left:2,top:3}}>and</Text>
+                 <Text style={{color:"#808080",fontSize:11,fontWeight:"bold",left:2}}>I agree to abide by Company's </Text>
+                <Text style={{color:"#808080",fontSize:11,fontWeight:"bold",left:2,top:1.5}}>and</Text>
                 </View>
                 <View style={{top:-1}}>
-                <Text style={{color:"blue",fontSize:12,fontWeight:"bold",left:5}}>Terms of Service</Text>
-                <Text style={{color:"blue",fontSize:12,fontWeight:"bold",left:-130}}>Its Privacy Policy</Text>
+                <Text style={{color:"blue",fontSize:12,fontWeight:"bold",left:4}}>Terms of Service</Text>
+                <Text style={{color:"blue",fontSize:12,fontWeight:"bold",left:-145}}>Its Privacy Policy</Text>
                 </View>
      </View>
 
@@ -197,7 +198,7 @@ let Reg =()=>{
               <Text style={{fontSize:20,color:"white",textAlign:"center",fontWeight:"bold"}}> Sign up</Text>
            </View>
              
-           <View style={{flexDirection:"row",alignSelf:"center",marginTop:10}}>
+           <View style={{flexDirection:"row",alignSelf:"center",marginTop:20}}>
                 <Text style={{color:"#808080",fontSize:12}}>Already have an account?</Text>
                 <Text style={{color:"#00bfff",fontSize:12,fontWeight:"bold",left:2}}>Click here</Text>
                 <Text style={{color:"#808080",fontSize:12,left:5}}>to login</Text>
@@ -232,12 +233,14 @@ let box = StyleSheet.create({
         height: 40,
         marginTop : 20,
         borderRadius: 10,
+        borderWidth:1,
+        borderColor:"white",
         backgroundColor: "white",
         shadowColor: "#999999",
         shadowOpacity: 0.6,
         shadowRadius: 1,
         shadowOffset: {
-        height: 2,
+        height: 1.5,
         }
     }}
 )
