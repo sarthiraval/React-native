@@ -1,5 +1,5 @@
 import React , { useState } from "react";
-import {ImageBackground, SafeAreaView, Image,ScrollView, StyleSheet, Text,TextInput,TouchableOpacity,View } from "react-native";
+import {ImageBackground, SafeAreaView,FlatList, Image,ScrollView, StyleSheet, Text,TextInput,TouchableOpacity,View } from "react-native";
 import CheckBox from 'react-native-check-box'
 // import { CheckBox } from 'react-native-elements-checkbox'
 import { Dropdown } from 'react-native-element-dropdown';
@@ -7,7 +7,18 @@ import { Dropdown } from 'react-native-element-dropdown';
 
 
 let Reg =()=>{
-      
+   const data1 =[
+    {id:1,title : 'Sarthi',surnamne:"Raval"},
+    {id:2,title : 'Janik',surnamne:"Kanariya"},
+    {id:3,title : 'Sid',surnamne:"Soni"},
+    {id:4,title : 'Harshit',surnamne:"Vataliya"},
+    {id:5,title : 'Kevin',surnamne:"Patel"},
+    {id:6,title : 'Moin',surnamne:"Rangrej"},
+    {id:7,title : 'Keval',surnamne:"Raval"},
+    {id:9,title : 'Krunal',surnamne:"Raval"},
+    {id:10,title : 'Yash',surnamne:"Desai"},
+    {id:11,title : 'Akshat',surnamne:"Solanki"}
+   ]
   const data = [
     { label: 'Item 1', value: '1' },
     { label: 'Item 2', value: '2' },
@@ -18,9 +29,14 @@ let Reg =()=>{
     { label: 'Item 7', value: '7' },
     { label: 'Item 8', value: '8' },
   ];
-    const [selectCountry, setSelcteCountry] = useState("Select Country");
+    const [selctmame, setselctmame] = useState("Select Name");
+    const [selctsur, setselctsur] = useState("Select Surname");
+
     const [isclick,setclick] = useState(false)
-    const [value, setValue] = useState("Select Country");
+    const [sclick,etclick] = useState(false)
+
+    const [alue, setValue] = useState();
+    const [values, setValues] = useState();
     const [chekdone, setnotdone] = useState (true)
     return(
         <View style={{flex:1}}>
@@ -87,33 +103,10 @@ let Reg =()=>{
                 style={{color:"black",fontSize:15,marginLeft:10,marginTop:10}}/>
              </View>    
    
-             {/* <TouchableOpacity style={{
-                    width: 330,
-                    height: 40,
-                    marginTop : 20,
-                    borderRadius: 10,
-                    backgroundColor: "white",
-             }}
              
-             onPress={()=>{
-                setclick(!isclick);
-             }}>
-                <View style={{flexDirection:"row"}} >
-                <Text style={{color:"#999966",marginLeft:10,marginTop:10}}>{selectCountry == '' ? 'Select Country' : selectCountry}</Text>
-                {isclick ?(
-                <Image source = {require('../../img/check.png')} style={{marginLeft:190,marginTop:10,height:20,width:20}}/>
-                ):(
-                <Image source = {require('../../img/down.png')} style={{marginLeft:190,marginTop:10,height:20,width:20}}/>
-                 )}
-                 </View>
-             </TouchableOpacity>
-             {isclick ?(
-                  <View 
-                  style={{width : 330,height:300,borderRadius:10,marginTop:10,backgroundColor:"white"}}>
-                      data = {require=('./s.json')}
-                  </View>
-             ) : null } */}
-                 <View style={box.rectangl} >
+             
+        
+        <View style={box.rectangl} >
              <Dropdown
                
                 placeholderStyle={{marginRight:10,marginLeft:10,fontSize:16,color:"#999966"}}
@@ -126,16 +119,15 @@ let Reg =()=>{
                 valueField="value"
                 placeholder="Select item"
                 searchPlaceholder="Search..."
-                value={value}
+                value={values}
                 onChange={item => {
-                setValue(item.value);
+                setValue(item.values);
                 }}
                 />
           </View>
           <View style={box.rectangl} >
              <Dropdown
-               
-                placeholderStyle={{marginRight:10,marginLeft:10,fontSize:16,color:"#999966"}}
+              placeholderStyle={{marginRight:10,marginLeft:10,fontSize:16,color:"#999966"}}
                 selectedTextStyle={{marginLeft:10,fontSize:16,color:"#999966"}}
                 inputSearchStyle={{marginLeft:10,fontSize:16,color:"#999966"}}
                 data={data}
@@ -145,9 +137,9 @@ let Reg =()=>{
                 valueField="value"
                 placeholder="Select item"
                 searchPlaceholder="Search..."
-                value={value}
+                value={alue}
                 onChange={item => {
-                setValue(item.value);
+                setValues(item.alue);
                 }}
                 />
           </View>
@@ -163,24 +155,13 @@ let Reg =()=>{
                 {/* setState = Storing and Reading the checkbox state */}
            
             
-    <View  style ={{flexDirection:"row",marginTop:10}}>
-{/* 
-      onClick={()=>{
-                 this.setState({
-                    isChecked:!this.state
-                     })
-            }}
-                isChecked={this.state} */}
+    <View  style ={{flexDirection:"row",marginTop:15}}>
+
              
 
    
         <CheckBox
-        //   checkedIcon={ <Image source = {require('../../img/check.png')} style={{marginLeft:-16,marginTop:6,height:10,width:10}}/>
-        //   }
-        //   uncheckedIcon={<Image source={require('../../img/check.png')} />}
-        //   checked={this.state.checked}
-        //   onPress={() => this.setState({checked: !this.state.checked})}
-          onClick={()=>{
+         onClick={()=>{
                    setnotdone(!chekdone);
                    
                }}
