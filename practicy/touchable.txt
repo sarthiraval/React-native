@@ -6,6 +6,7 @@
                     backgroundColor: "white",
              }}
              
+             
              onPress={()=>{
                 setclick(!isclick);
              }}>
