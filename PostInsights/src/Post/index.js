@@ -50,6 +50,7 @@ let Post =() =>{
     <View>
           <View style={{
         borderWidth:12,
+        
         borderColor:"white",
         borderRadius:20,
         width:300,
