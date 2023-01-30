@@ -4,8 +4,6 @@ import CheckBox from 'react-native-check-box'
 // import { CheckBox } from 'react-native-elements-checkbox'
 import { Dropdown } from 'react-native-element-dropdown';
 
-
-
 let Reg =()=>{
    const data1 =[
     {id:1,title : 'Sarthi',surnamne:"Raval"},
