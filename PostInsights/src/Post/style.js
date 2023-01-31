@@ -63,7 +63,7 @@ const box = StyleSheet.create({
          paddingTop:10,
          paddingRight:10,
          marginBottom:80,
-         marginEnd:20
+         marginEnd:15
          
 
     },
@@ -73,8 +73,9 @@ const box = StyleSheet.create({
         marginBottom:5,left:-7,
     },
     flattextdesgin:{
-        fontSize: 15, height: 50, color: "red",marginVertical:10,marginHorizontal:10,fontWeight:"400"},
-    flalike:{fontSize: 15, height: 50, color: "red",marginVertical:10,marginHorizontal:10,left:-15,fontWeight:"400"},
+        fontSize: 15, height: 50, color: "red",marginVertical:10,
+        marginHorizontal:10,fontWeight:"500",fontSize:14,},
+    flalike:{fontWeight:"500",fontSize:14, height: 50, color: "red",marginVertical:10,marginHorizontal:10,left:-15,fontWeight:"400"},
     normalnumber:{ top: 45, fontSize: 20, height: 50, color: "red" ,alignSelf:"center",fontWeight:"400"},
     heading :{ top:28, fontSize: 20, height: 50, color: "black" ,alignSelf:"center",
     fontWeight:"400"},
