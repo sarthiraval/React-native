@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
     },
 
     topage:{
-        width: 350,
+        width: 360,
         alignSelf: "center"
     },
 
