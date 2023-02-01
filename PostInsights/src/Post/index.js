@@ -21,6 +21,8 @@ const  data =
   },
     {id:"50,000",title : 'Likes',
     image:{url:"https://images.unsplash.com/photo-1652509373706-32b65f415e33?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fHZvbHZvJTIwc3BvcnQlMjBjYXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60"}},
+    {id:"50,000",title : 'Likes',
+  image:{url:"https://images.unsplash.com/photo-1652509373706-32b65f415e33?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fHZvbHZvJTIwc3BvcnQlMjBjYXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60"}},
 
  ]
 
@@ -90,12 +92,14 @@ let Post =() =>{
 
    <FlatList 
     horizontal
+    style={{margin:2}}
     showsHorizontalScrollIndicator ={false}
     data={data}
-    style={{marginTop:-10}}
+    pagingEnabled={true}
+
+    
     renderItem={({item}) => 
-   
-   
+    
     <View style={box.flatlistview}>
       <Image 
       source={item.image}
@@ -126,9 +130,10 @@ let Post =() =>{
       showsHorizontalScrollIndicator ={false}
       data={details}
       renderItem={({item}) => 
+
        <View style={box.flatlistview2}>
          
-          <View style={box.flatviewdesign2} >
+      
             <Text style={box.flattextdesgin2}>{item.title}</Text>
             <Text style={box.flatfirst2}>{item.first}</Text>
             <View style={box.instyle}>
@@ -163,8 +168,7 @@ let Post =() =>{
             </View>
 
             </View>
-      
-      </View>
+         
       
     }
       />

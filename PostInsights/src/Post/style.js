@@ -15,79 +15,131 @@ const box = StyleSheet.create({
         },
         imagedesign:
             {height: 20, width: 20},
-        textdesign:{color:"#FF0000",fontSize:16,alignSelf:"flex-start",marginLeft:5,fontWeight:"500"},
+        textdesign:{
+            color:"#FF0000",
+            fontSize:16,
+            alignSelf:"flex-start",
+            marginLeft:5,
+            fontWeight:"400"},
         designview :{
             flexDirection:"row",
             alignSelf:"flex-start",
-            marginTop:10,
             marginBottom:10,
             marginLeft:20},
 
-        flatstyle:{ top:30,marginStart:10},
+    flatstyle:{top:20,width:350,alignSelf:"center"},
        
     flatlistview:{
-        height:280,
-        width:175,
+        height:298,
+        alignItems:"center",
+        width:170,
         borderColor:10,
+        flex:0.5,
+        marginBottom: 5,
         borderWidth:0.5,
-        marginEnd:-5,
-        marginStart:14,
-        borderRadius:10
+        borderRadius:10,
+        
+        marginStart:5,
     },
-    flatlistview2:{
-        height:340,
-        width:180,
-        backgroundColor:"white"
-
  
-    },
     flatimage:{
-        height:200,
+        height:215,
         top:10,
         alignSelf:"center",
-        width:160,
+        width:148,
         borderRadius:10,   
     } ,
-    flatviewdesign:{alignSelf:"center",
-    top:26,bottom:1,flexDirection:"row",borderColor:"red",borderWidth:0.2,borderRadius:11,height:40
-    ,width:160
+    flatviewdesign:{
+        alignSelf:"center",
+        top:31,
+        bottom:1,
+        flexDirection:"row",
+        borderColor:"#ffcccc",
+        borderWidth:1,
+        borderRadius:11,
+        height:40,
+        backgroundColor:"rgb(250,239,232)",
+        width:140
     },
     flatlistview2:{
-         marginTop:35,
-         height:190,
-         width:250,
+         marginTop:30,
+         height:205,
+         width:260,
          marginStart:10,
          backgroundColor:"white",
          borderRadius: 10,
          paddingStart:20,
-         paddingTop:10,
+         paddingTop:15,
+         borderColor:"grey",
+         borderWidth:0.2,
          paddingRight:10,
          marginBottom:80,
-         marginEnd:15
+         marginEnd:15,
          
+        
 
     },
    
-    flattextdesgin2 :{
-        fontSize: 15, color: "black",fontWeight:"500",fontSize:14,
-        marginBottom:5,left:-7,
-    },
+   
     flattextdesgin:{
         fontSize: 15, height: 50, color: "red",marginVertical:10,
-        marginHorizontal:10,fontWeight:"500",fontSize:14,},
+        marginHorizontal:10,fontWeight:"500",fontSize:14,
+    shadowColor:"red"},
     flalike:{fontWeight:"500",fontSize:14, height: 50, color: "red",marginVertical:10,marginHorizontal:10,left:-15,fontWeight:"400"},
-    normalnumber:{ top: 45, fontSize: 20, height: 50, color: "red" ,alignSelf:"center",fontWeight:"400"},
-    heading :{ top:28, fontSize: 20, height: 50, color: "black" ,alignSelf:"center",
-    fontWeight:"400"},
-    headingnew :{ top:45, fontSize: 20, height: 50, color: "black" ,alignSelf:"center",
-    fontWeight:"400"},
- 
-    flatfirst2:{fontWeight:"500",fontSize:12, color: "black",marginTop:7
-    ,marginBottom:5,},
+    normalnumber:{ 
+        top: 35, 
+        fontSize: 20,
+         height: 50, 
+         color: "red" 
+         ,alignSelf:"center"
+         ,fontWeight:"400"
+        },
+        
     boredercolors :{
-        borderColor: '#ff9966',borderWidth:0.7,width:360,alignSelf:"center"
-        ,top:20
+        borderColor: '#ff9966',
+        borderWidth:0.7,
+        width:360,
+        alignSelf:"center"
+        ,top:13
     },
+    heading :{ 
+        top:16, 
+        fontSize: 20, 
+        height: 50, 
+        color: "black"
+         ,alignSelf:"center",
+    fontWeight:"400"},
+    headingnew :{
+         top:45, 
+         fontSize: 20, 
+         height: 50,
+          color: "black" ,
+          alignSelf:"center",
+        fontWeight:"400",
+        marginBottom:10},
+ 
+    flatfirst2:{
+        fontWeight:"500",
+        fontSize:11, 
+        color: "black"
+        ,marginTop:11
+        ,marginBottom:5,},
+     
+ flatfirst3:{
+            marginLeft:20,
+            marginTop:-5,
+            color:"black",
+            fontWeight:"400",
+            fontSize:12,
+            end:3},
+
+    flattextdesgin2 :{
+                 color: "black"
+                 ,fontWeight:"400",
+                 fontSize:14,
+                 marginTop:-1,
+                marginBottom:3,left:-7,
+            },
     instyle:{
        flexDirection:"row"
     },
@@ -116,8 +168,7 @@ const box = StyleSheet.create({
             },
 
         
-    flatfirst3:{marginLeft:8,marginTop:-5,color:"black",fontWeight:"500",fontSize:12,end:3},
-},
+        },
     )
 
     export default box
