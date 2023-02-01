@@ -1,20 +1,15 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-    scroll: { flex: 1 },
-    linearGradient: {
-        paddingLeft: 15,
-        paddingRight: 15,
-        borderRadius: 5,
-        marginTop: 16,
-        width: 350,
-    },
+
     safedesign: {
         backgroundColor: "rgb(248,236,230)",
         flex: 1
     },
+
     imagedesign:
         { height: 20, width: 20 },
+
     textdesign: {
         color: "#FF0000",
         fontSize: 16,
@@ -22,12 +17,16 @@ const styles = StyleSheet.create({
         marginLeft: 5,
         fontWeight: "400"
     },
+
     designview: {
         flexDirection: "row",
         alignSelf: "flex-start",
         marginBottom: 10,
         marginLeft: 20
     },
+
+    scroll: { flex: 1 },
+
 
     flatstyle: {
         top: 20,
@@ -44,7 +43,6 @@ const styles = StyleSheet.create({
         marginBottom: 5,
         borderWidth: 0.5,
         borderRadius: 10,
-
         marginStart: 5,
     },
 
@@ -55,6 +53,7 @@ const styles = StyleSheet.create({
         width: 148,
         borderRadius: 10,
     },
+
     flatviewdesign: {
         alignSelf: "center",
         top: 31,
@@ -67,6 +66,65 @@ const styles = StyleSheet.create({
         backgroundColor: "rgb(250,239,232)",
         width: 140
     },
+
+    flattextdesgin: {
+        fontSize: 15,
+        height: 50,
+        color: "red",
+        marginVertical: 10,
+        marginHorizontal: 10,
+        fontWeight: "500",
+        fontSize: 14,
+        shadowColor: "red"
+    },
+
+    flalike: {
+        fontWeight: "500",
+        fontSize: 14,
+        height: 50,
+        color: "red",
+        marginVertical: 10,
+        marginHorizontal: 10,
+        left: -15,
+        fontWeight: "400"
+    },
+
+    normalnumber: {
+        top: 35,
+        fontSize: 20,
+        height: 50,
+        color: "red"
+        , alignSelf: "center"
+        , fontWeight: "400"
+    },
+
+    heading: {
+        top: 16,
+        fontSize: 20,
+        height: 50,
+        color: "black"
+        , alignSelf: "center",
+        fontWeight: "400"
+    },
+
+    boredercolors: {
+        borderColor: '#ff9966',
+        borderWidth: 0.7,
+        width: 360,
+        alignSelf: "center"
+        , top: 13
+    },
+
+    headingnew: {
+        top: 45,
+        fontSize: 20,
+        height: 50,
+        color: "black",
+        alignSelf: "center",
+        fontWeight: "400",
+        marginBottom: 10
+    },
+
     flatlistview2: {
         marginTop: 30,
         height: 205,
@@ -81,64 +139,14 @@ const styles = StyleSheet.create({
         paddingRight: 10,
         marginBottom: 80,
         marginEnd: 15,
-
-
-
     },
 
-
-    flattextdesgin: {
-        fontSize: 15,
-        height: 50,
-        color: "red",
-        marginVertical: 10,
-        marginHorizontal: 10,
-        fontWeight: "500",
-        fontSize: 14,
-        shadowColor: "red"
-    },
-    flalike: {
-        fontWeight: "500",
-        fontSize: 14,
-        height: 50,
-        color: "red",
-        marginVertical: 10,
-        marginHorizontal: 10,
-        left: -15,
-        fontWeight: "400"
-    },
-    normalnumber: {
-        top: 35,
-        fontSize: 20,
-        height: 50,
-        color: "red"
-        , alignSelf: "center"
-        , fontWeight: "400"
-    },
-
-    boredercolors: {
-        borderColor: '#ff9966',
-        borderWidth: 0.7,
-        width: 360,
-        alignSelf: "center"
-        , top: 13
-    },
-    heading: {
-        top: 16,
-        fontSize: 20,
-        height: 50,
+    flattextdesgin2: {
         color: "black"
-        , alignSelf: "center",
-        fontWeight: "400"
-    },
-    headingnew: {
-        top: 45,
-        fontSize: 20,
-        height: 50,
-        color: "black",
-        alignSelf: "center",
-        fontWeight: "400",
-        marginBottom: 10
+        , fontWeight: "400",
+        fontSize: 14,
+        marginTop: -1,
+        marginBottom: 3, left: -7,
     },
 
     flatfirst2: {
@@ -157,17 +165,10 @@ const styles = StyleSheet.create({
         fontSize: 12,
         end: 3
     },
-
-    flattextdesgin2: {
-        color: "black"
-        , fontWeight: "400",
-        fontSize: 14,
-        marginTop: -1,
-        marginBottom: 3, left: -7,
-    },
     instyle: {
         flexDirection: "row"
     },
+
 
     linegrow1: {
         height: 5,
@@ -206,6 +207,7 @@ const styles = StyleSheet.create({
         borderTopStartRadius: 10,
         borderBottomStartRadius: 10
     },
+
     linegrow6: {
         height: 5,
         flexGrow: 77,
@@ -213,6 +215,7 @@ const styles = StyleSheet.create({
         borderTopEndRadius: 10,
         borderBottomEndRadius: 10
     },
+
     linegrow7: {
         height: 5,
         flexGrow: 7,
@@ -227,7 +230,6 @@ const styles = StyleSheet.create({
         borderTopEndRadius: 10,
         borderBottomEndRadius: 10
     },
-
 
 },
 )

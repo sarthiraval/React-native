@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './style'
 import { View, Text, SafeAreaView, ScrollView, Image, FlatList } from 'react-native'
-import LinearGradient from 'react-native-linear-gradient'
 
 const data =
   [
@@ -29,7 +28,7 @@ const data =
     },
     {
       id: "50,000", title: 'Likes',
-      image: { url: "https://images.unsplash.com/photo-1652509373706-32b65f415e33?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fHZvbHZvJTIwc3BvcnQlMjBjYXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60" }
+      image: { url: "https://images.unsplash.com/photo-1653417580711-b43c9deb0d64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjV8fG1hc2VyYXRpJTIwY2FyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60" }
     },
 
   ]
@@ -46,7 +45,6 @@ const details = [
     thiredpart: "23%",
     fourth: "13-17",
     fourthpart: "07%"
-
   },
 
   {
@@ -59,7 +57,6 @@ const details = [
     thiredpart: "23%",
     fourth: "13-17",
     fourthpart: "07%"
-
   },
   {
     title: 'Top Age Ranges',
@@ -71,7 +68,6 @@ const details = [
     thiredpart: "23%",
     fourth: "13-17",
     fourthpart: "07%"
-
   }
 ]
 
@@ -80,6 +76,7 @@ let Post = () => {
   return (
 
     <SafeAreaView style={styles.safedesign}>
+
 
       <View style={styles.designview}>
         <Image source={
@@ -90,6 +87,7 @@ let Post = () => {
         <Text style={styles.textdesign}>Post Insights</Text>
       </View>
 
+
       <ScrollView
         style={styles.scroll}
         showsVerticalScrollIndicator={false}>
@@ -97,6 +95,7 @@ let Post = () => {
 
         <View style={styles.flatstyle}>
 
+          {/* start FlatList (Like View)*/}
           <FlatList
             horizontal
             style={{ margin: 2 }}
@@ -120,9 +119,9 @@ let Post = () => {
 
               </View>
 
-            }
+            } />
+          {/* end FlatList */}
 
-          />
         </View>
 
         <Text style={styles.normalnumber}>28,895</Text>
@@ -131,13 +130,14 @@ let Post = () => {
         <View style={styles.boredercolors} />
 
         <Text style={styles.headingnew}>Audience Response</Text>
-
+        {/* start FlatList (Audience Response view)*/}
         <FlatList
           horizontal
           showsHorizontalScrollIndicator={false}
           data={details}
           renderItem={({ item }) =>
 
+            // start top age Ranges view 
             <View style={styles.flatlistview2}>
 
 
@@ -175,13 +175,13 @@ let Post = () => {
               </View>
 
             </View>
-
+            // end top age Ranges view 
 
           }
         />
-
+        {/* end FlatList */}
       </ScrollView>
-      {/* </LinearGradient> */}
+
     </SafeAreaView>
 
   )
