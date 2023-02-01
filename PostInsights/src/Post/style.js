@@ -125,6 +125,11 @@ const styles = StyleSheet.create({
         marginBottom: 10
     },
 
+    topage:{
+        width: 350,
+        alignSelf: "center"
+    },
+
     flatlistview2: {
         marginTop: 30,
         height: 205,
@@ -139,6 +144,7 @@ const styles = StyleSheet.create({
         paddingRight: 10,
         marginBottom: 80,
         marginEnd: 15,
+       
     },
 
     flattextdesgin2: {

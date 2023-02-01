@@ -46,7 +46,6 @@ const details = [
     fourth: "13-17",
     fourthpart: "07%"
   },
-
   {
     title: 'Top Age Ranges',
     first: "18-24",
@@ -130,56 +129,60 @@ let Post = () => {
         <View style={styles.boredercolors} />
 
         <Text style={styles.headingnew}>Audience Response</Text>
-        {/* start FlatList (Audience Response view)*/}
-        <FlatList
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          data={details}
-          renderItem={({ item }) =>
+        <View style={styles.topage}>
+          {/* start FlatList (Audience Response view)*/}
+          <FlatList
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            data={details}
+            renderItem={({ item }) =>
 
-            // start top age Ranges view 
-            <View style={styles.flatlistview2}>
+              // start top age Ranges view 
+
+              <View style={styles.flatlistview2} >
 
 
-              <Text style={styles.flattextdesgin2}>{item.title}</Text>
-              <Text style={styles.flatfirst2}>{item.first}</Text>
-              <View style={styles.instyle}>
-                <View style={styles.linegrow1} />
-                <View style={styles.linegrow2} />
-                <Text style={styles.flatfirst3}>{item.firstpart}</Text>
+                <Text style={styles.flattextdesgin2}>{item.title}</Text>
+                <Text style={styles.flatfirst2}>{item.first}</Text>
+                <View style={styles.instyle}>
+                  <View style={styles.linegrow1} />
+                  <View style={styles.linegrow2} />
+                  <Text style={styles.flatfirst3}>{item.firstpart}</Text>
+                </View>
+
+
+                <Text style={styles.flatfirst2}>{item.second}</Text>
+                <View style={styles.instyle}>
+                  <View style={styles.linegrow3} />
+                  <View style={styles.linegrow4} />
+                  <Text style={styles.flatfirst3}>{item.secondpart}</Text>
+                </View>
+
+
+                <Text style={styles.flatfirst2}>{item.thired}</Text>
+                <View style={styles.instyle}>
+                  <View style={styles.linegrow5} />
+                  <View style={styles.linegrow6} />
+                  <Text style={styles.flatfirst3}>{item.thiredpart}</Text>
+                </View>
+
+
+                <Text style={styles.flatfirst2}>{item.fourth}</Text>
+                <View style={styles.instyle}>
+                  <View style={styles.linegrow7} />
+                  <View style={styles.linegrow8} />
+                  <Text style={styles.flatfirst3}>{item.fourthpart}</Text>
+
+                </View>
+
               </View>
 
+              // end top age Ranges view 
 
-              <Text style={styles.flatfirst2}>{item.second}</Text>
-              <View style={styles.instyle}>
-                <View style={styles.linegrow3} />
-                <View style={styles.linegrow4} />
-                <Text style={styles.flatfirst3}>{item.secondpart}</Text>
-              </View>
-
-
-              <Text style={styles.flatfirst2}>{item.thired}</Text>
-              <View style={styles.instyle}>
-                <View style={styles.linegrow5} />
-                <View style={styles.linegrow6} />
-                <Text style={styles.flatfirst3}>{item.thiredpart}</Text>
-              </View>
-
-
-              <Text style={styles.flatfirst2}>{item.fourth}</Text>
-              <View style={styles.instyle}>
-                <View style={styles.linegrow7} />
-                <View style={styles.linegrow8} />
-                <Text style={styles.flatfirst3}>{item.fourthpart}</Text>
-
-              </View>
-
-            </View>
-            // end top age Ranges view 
-
-          }
-        />
-        {/* end FlatList */}
+            }
+          />
+          {/* end FlatList */}
+        </View>
       </ScrollView>
 
     </SafeAreaView>
