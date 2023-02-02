@@ -4,7 +4,6 @@ import styles from './style';
 import { SafeAreaView, View, Text, TextInput, ImageBackground, Button } from 'react-native';
 // import LinearGradient from 'react-native-linear-gradient';
 
-
 let Login = () => {
   return (
     // <LinearGradient colors={["red","green","blue"]} style={styles.LinearGradient} >
