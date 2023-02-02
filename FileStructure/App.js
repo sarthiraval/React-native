@@ -1,18 +1,17 @@
 import React from 'react';
-//import Login from './src/Screens/login'
+import Login from './src/Screens/login'
 // import Reg from './src/Screens/register'
-// import Another from './src/Screens/Another'
- import YourApp from './src/Screens/Another/flex1'
+// import YourApp from './src/Screens/Another/index'
+//  import YourApp from './src/Screens/Another/flex1'
 //  import YourApp from './src/Screens/Another/flatandsection'
 
 
 
 let App = ()=>{
   return(
-   //<Login />
+   <Login />
   //  <Reg/>
-  //  <Another/>
-    <YourApp />
+    // <YourApp />
   )
 }
 

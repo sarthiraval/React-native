@@ -28,7 +28,7 @@ let Login = ()=>{
 
          <TextInput placeholder="Enter a name" placeholderTextColor= "white" style={{marginTop:5,
           marginBottom:20,color:"white",fontSize:15,
-          borderBottomColor:"#999966",borderBottomWidth:1,marginHorizontal:40}}/>
+          borderBottomColor:"#999966",borderBottomWidth:1,marginRight:40,marginLeft:50}}/>
        
          <Text style={{color:"#999966",marginLeft:50,fontSize:10,marginTop:10}}>PASSWORD</Text>
          <TextInput placeholder="Enter a Password" placeholderTextColor="white"

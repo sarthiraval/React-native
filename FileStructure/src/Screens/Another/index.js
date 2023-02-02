@@ -1,7 +1,7 @@
 import React from 'react'
 import { View,Text, SafeAreaView,ScrollView,ImageBackground, Image, FlatList ,SectionList, StyleSheet} from 'react-native'
 
-let Another =() =>{
+let YourApp =() =>{
 
     return(
         // <View style={{flex:1,backgroundColor:"#e6e6e6"}}>
@@ -144,4 +144,4 @@ let Another =() =>{
        
         
 
-export default Another
+export default YourApp
