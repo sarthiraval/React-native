@@ -1,0 +1,1 @@
+export const images = {BackGround:require('./gradient.png')}

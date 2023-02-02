@@ -176,7 +176,7 @@ let Reg =()=>{
                {chekdone ?(
                 <View style={{marginTop:1}}/>
                 ):(
-                    <><Image source={require('../../img/check.png')} style={{ marginLeft: -24, marginTop: 6, height: 10, width: 10 }} /></>
+                    <><Image source={('../../img/check.png')} style={{ marginLeft: -24, marginTop: 6, height: 10, width: 10 }} /></>
                  )}
 
 

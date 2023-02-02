@@ -1,11 +1,19 @@
 import React from 'react';
 import styles from './style';
-import {  Image, Text, View } from 'react-native';
+import {  Image, ImageBackground, SafeAreaView, Text, View } from 'react-native';
 
 
 let Splash = () => {
     return (
-        <View style={styles.Content} >
+        // <ImageBackground 
+        // source={
+        //     {
+        //      uri:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRywakCNMzEB_T8CjxTevr2dPgjVWQurwzRuuht3ZTDavV6XD-G5GiVnhd2mWZzj1BtxaA&usqp=CAU"
+        //     }
+        //    } 
+        //    style={styles.AllContent}>
+        <View style={styles.AllContent}>
+        <SafeAreaView style={styles.Content} >
       
                 <Image style={styles.ShadowImage}
                     source={
@@ -14,7 +22,9 @@ let Splash = () => {
 
                     <Text style={styles.Title}>Welcome to My World</Text>
 
+        </SafeAreaView>
         </View>
+        //  </ImageBackground> 
     )
 }
 export default Splash
