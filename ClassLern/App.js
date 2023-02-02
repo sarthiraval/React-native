@@ -8,5 +8,6 @@ export default class fs extends Component {
         <Text>Hello, world!</Text>
       </View>
     );
+    
   }
 }
