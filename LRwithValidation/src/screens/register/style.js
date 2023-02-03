@@ -115,7 +115,25 @@ const styles = StyleSheet.create({
         shadowColor: "black",
         shadowOpacity: 0.6,
         marginHorizontal: 5
-    }
+    },
+    wrapperIcon: {
+        position: 'absolute',
+        right: 0,
+        padding: 10,
+    },
+    icon: {
+        marginTop: 330,
+        width: 20,
+        marginRight: 30,
+        height: 15,
+    },
+    wrongEmail: {
+        color: "red",
+        fontSize: 13,
+        marginTop: -15,
+        marginBottom: 10,
+        marginLeft: 50
+    },
 })
 
 export default styles

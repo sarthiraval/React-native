@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
         flex: 1,
 
     },
-    Direction: { flexDirection: "row",marginTop:-80 },
+    Direction: { flexDirection: "row", marginTop: -80 },
     SignText: {
         color: "white",
         marginLeft: 50,
@@ -23,8 +23,8 @@ const styles = StyleSheet.create({
         fontSize: 40,
 
     },
-    Designs:{
-     marginTop:-30
+    Designs: {
+        marginTop: -30
     },
     UpText: {
         color: "white",
@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
         fontSize: 13,
         marginRight: 45
     },
+
     ViewMange: {
         alignSelf: "center",
         marginTop: 50,
@@ -107,8 +108,25 @@ const styles = StyleSheet.create({
         shadowColor: "white",
         shadowOpacity: 0.6,
         marginHorizontal: 5
-    }
-
+    },
+    wrapperIcon: {
+        position: 'absolute',
+        right: 0,
+        padding: 10,
+    },
+    icon: {
+        marginTop: -22,
+        width: 20,
+        marginRight: 30,
+        height: 15,
+    },
+    wrongEmail: {
+        color: "red",
+        fontSize: 13,
+        marginTop: -15,
+        marginBottom: 10,
+        marginLeft: 50
+    },
 
 })
 
