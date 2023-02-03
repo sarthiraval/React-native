@@ -74,8 +74,9 @@ let Register = () => {
 
               // /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$
               // /^(?=.*\d)(?=.*[@$!%*?&])(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}
+              // (\+?( |-|\.)?\d{1,2}( |-|\.)?)?(\(?\d{3}\)?|\d{3})( |-|\.)?(\d{3}( |-|\.))
               (text => {
-                let re = /(\+?( |-|\.)?\d{1,2}( |-|\.)?)?(\(?\d{3}\)?|\d{3})( |-|\.)?(\d{3}( |-|\.)?\d{4})/;
+                let re = /^(?=.*\d)?[0-9]?\d{10}/;
                 setPhone(text)
                 if (re.test(text)) {
                   setcheckaPhone(false)
@@ -132,7 +133,6 @@ let Register = () => {
           </TouchableOpacity>
 
 
-          {email == '' || password == '' || checkEmail == true ? (
 
             <TouchableOpacity style={styles.ViewMange}>
               <Text style={styles.TextLogin}>Register</Text>
@@ -140,10 +140,7 @@ let Register = () => {
             </TouchableOpacity>
 
 
-          ) :
-            <Text style={styles.validationData}>Please enter all Field</Text>
-          }
-
+        
           <TouchableOpacity style={styles.ViewDesign}>
             <Text style={styles.TextFirst}>Already have a account?</Text>
             <Text style={styles.TextSecond}>SignIn</Text>
