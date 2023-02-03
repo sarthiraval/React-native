@@ -41,8 +41,9 @@ let Login = () => {
             onChangeText={
 
               (text => {
-               let re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])\S+@\S+\.\S+/;
-
+               
+               let re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]r)\S+@\S+\.\S+/;
+        
                 setEmail(text);
                 if (re.test(text)) {
                   setcheckEmail(false);
@@ -107,7 +108,8 @@ let Login = () => {
         <Text style={styles.ForgetPass}>Forgot your Password?</Text>
 
 
-        <TouchableOpacity style={styles.ViewMange}>
+        <TouchableOpacity style={styles.ViewMange}
+         onp>
           <Text style={styles.TextLogin}>Login</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.ViewDesign}>
