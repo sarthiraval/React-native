@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { SafeAreaView, View, TouchableOpacity, Image, Text, TextInput, ImageBackground, Alert } from 'react-native';
 import styles from './style';
 
+import { hide, mini, see }  from '/Users/sarthi/Desktop/ReactNativeProject/react5/LRwithValidation/src/assets/image';
+
 
 let Register = () => {
 
@@ -16,7 +18,7 @@ let Register = () => {
   return (
     // <LinearGradient colors={["red","green","blue"]} style={styles.LinearGradient} >
     <ImageBackground
-      source={require('/Users/sarthi/Desktop/ReactNativeProject/react5/LRwithValidation/src/assets/image/mini.jpeg')}
+      source={mini}
       style={styles.AllContent}>
 
 
@@ -74,11 +76,8 @@ let Register = () => {
             value={phone}
             onChangeText={
 
-              // /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$
-              // /^(?=.*\d)(?=.*[@$!%*?&])(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}
-              // (\+?( |-|\.)?\d{1,2}( |-|\.)?)?(\(?\d{3}\)?|\d{3})( |-|\.)?(\d{3}( |-|\.)?\d{4})
               (text => {
-                let re = /^(?=.*\d)?[0-9]{10}/;
+                let re = /(?<!\d)\d{10}(?!\d)/;
                 setPhone(text)
                 if (re.test(text)) {
                   setcheckaPhone(false)
@@ -126,12 +125,15 @@ let Register = () => {
 
           <TouchableOpacity style={styles.wrapperIcon}
             onPress={() => setSeepassword(!seePassword)}>
-            <Image source={
+            {
               seePassword
-                ? require("/Users/sarthi/Desktop/ReactNativeProject/react5/LRwithValidation/src/assets/image/view.png")
-                : require("/Users/sarthi/Desktop/ReactNativeProject/react5/LRwithValidation/src/assets/image/hide.png")
+                ? <Image
+                source={hide}
+                style={styles.icon} />
+                : <Image
+                source={see}
+                style={styles.icon} />
             }
-              style={styles.icon} />
           </TouchableOpacity>
 
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './style';
-
-import { SafeAreaView, View, Text, TextInput, ImageBackground, Button, TouchableOpacity, Image } from 'react-native';
+import { hide, mini, see }  from '/Users/sarthi/Desktop/ReactNativeProject/react5/LRwithValidation/src/assets/image';
+import { SafeAreaView, View, Text, TextInput, ImageBackground, TouchableOpacity, Image } from 'react-native';
 // import LinearGradient from 'react-native-linear-gradient';
 
 
@@ -17,7 +17,7 @@ let Login = () => {
   return (
     // <LinearGradient colors={["red","green","blue"]} style={styles.LinearGradient} >
     <ImageBackground
-      source={require('/Users/sarthi/Desktop/ReactNativeProject/react5/LRwithValidation/src/assets/image/mini.jpeg')}
+      source={mini}
       style={styles.AllContent}>
 
 
@@ -92,25 +92,28 @@ let Login = () => {
 
         <TouchableOpacity style={styles.wrapperIcon}
           onPress={() => setSeepassword(!seePassword)}>
-          <Image source={
-            seePassword
-              ? require("/Users/sarthi/Desktop/ReactNativeProject/react5/LRwithValidation/src/assets/image/view.png")
-              : require("/Users/sarthi/Desktop/ReactNativeProject/react5/LRwithValidation/src/assets/image/hide.png")
-          }
-            style={styles.icon} />
+          {
+              seePassword
+                ? <Image
+                source={hide}
+                style={styles.icon} />
+                : <Image
+                source={see}
+                style={styles.icon} />
+            }
         </TouchableOpacity>
 
 
         <Text style={styles.ForgetPass}>Forgot your Password?</Text>
 
 
-        <View style={styles.ViewMange}>
+        <TouchableOpacity style={styles.ViewMange}>
           <Text style={styles.TextLogin}>Login</Text>
-        </View>
-        <View style={styles.ViewDesign}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.ViewDesign}>
           <Text style={styles.TextFirst}>Don't have an account?</Text>
           <Text style={styles.TextSecond}>Signup</Text>
-        </View>
+        </TouchableOpacity>
 
 
       </SafeAreaView>
