@@ -3,9 +3,10 @@ import { SafeAreaView, View, TouchableOpacity, Image, Text, TextInput, ImageBack
 import styles from './style';
 
 import { hide, mini, see }  from '/Users/sarthi/Desktop/ReactNativeProject/react5/LRwithValidation/src/assets/image';
+import Login from '../login/index';
 
 
-let Register = () => {
+let Register = (navigation) => {
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -145,7 +146,8 @@ let Register = () => {
 
 
         
-          <TouchableOpacity style={styles.ViewDesign}>
+          <TouchableOpacity style={styles.ViewDesign}
+           onPress={()=> navigation.navigate(Login)}  >
             <Text style={styles.TextFirst}>Already have a account?</Text>
             <Text style={styles.TextSecond}>SignIn</Text>
           </TouchableOpacity>
