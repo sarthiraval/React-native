@@ -45,11 +45,13 @@ let Register = () => {
             onChangeText={
 
               (text => {
-                let re = /\S+@\S+\.\S+/;
-                let regex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]$/;
+                // let re = /\S+@\S+\.\S+/;
+                let result= /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])\S+@\S+\.\S+/;
+                // let result = /(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])(?=.[0-9])/
+                // let regex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]$/;
 
                 setEmail(text);
-                if (re.test(text) || regex.test(text)) {
+                if (result.test(text)) {
                   setcheckEmail(false);
                 } else {
                   setcheckEmail(true);

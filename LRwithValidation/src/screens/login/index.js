@@ -41,11 +41,10 @@ let Login = () => {
             onChangeText={
 
               (text => {
-                let re = /\S+@\S+\.\S+/;
-                let regex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+               let re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])\S+@\S+\.\S+/;
 
                 setEmail(text);
-                if (re.test(text) || regex.test(text)) {
+                if (re.test(text)) {
                   setcheckEmail(false);
                 } else {
                   setcheckEmail(true);
