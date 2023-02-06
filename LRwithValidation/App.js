@@ -5,28 +5,19 @@ import React from 'react';
 
 // import Login from './src/screens/login'
 // import Home from './src/screens/home'
-import Register from './src/screens/register'
+// import Register from './src/screens/register'
 // import Splash from './src/screens/splash'
-
-// const Stack = createStackNavigator();
+import Navigation from './src/navigation/index';
 
 const App = () => {
   return (
-    // <NavigationContainer>
-
+     
+   <Navigation />
     // <Login />
     // <Splash />
-    <Register />
+    // <Register />
     //  <Home />  
 
-    //   <Stack.Navigator>
-    //     <Stack.Screen
-    //       name="Login"
-    //       component={Login}
-    //     />
-    //     <Stack.Screen name="Home" component={Home} />
-    //   </Stack.Navigator>
-    // </NavigationContainer>
   )
 }
 

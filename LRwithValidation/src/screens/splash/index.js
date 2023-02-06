@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './style';
-import {  Image, ImageBackground, SafeAreaView, Text, View } from 'react-native';
+import {  Image,SafeAreaView, Text, View } from 'react-native';
 
 
 let Splash = () => {

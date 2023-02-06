@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import { SafeAreaView, View, TouchableOpacity, Image, Text, TextInput, ImageBackground, Alert } from 'react-native';
 import styles from './style';
 
-import { hide, mini, see }  from '/Users/sarthi/Desktop/ReactNativeProject/react5/LRwithValidation/src/assets/image';
-import Login from '../login/index';
+import { hide, mini, see }  from '../../assets/image/index';
 
 
-let Register = (navigation) => {
+let Register = ({navigation}) => {
 
   const [usrename, setUsrename] = useState("")
   const [email, setEmail] = useState("")
@@ -130,7 +129,7 @@ let Register = (navigation) => {
             onChangeText={
 
               (text => {
-                let re = /^(?=.*\d)(?=.*[@$!%*?&])(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}/;
+                let re = /^(?=.*\d)(?=.*[@$!%*?&])(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,15}/;
 
                 setPassword(text)
                 if (re.test(text)) {
@@ -164,18 +163,17 @@ let Register = (navigation) => {
 
 
 
-            <TouchableOpacity style={styles.ViewMange}>
+            <TouchableOpacity style={styles.ViewMange} onPress={() => navigation.navigate('Login')}>
               <Text style={styles.TextLogin}>Register</Text>
 
             </TouchableOpacity>
 
 
         
-          <TouchableOpacity style={styles.ViewDesign}
-           onPress={()=> navigation.navigate(Login)}  >
+          <View style={styles.ViewDesign}>
             <Text style={styles.TextFirst}>Already have a account?</Text>
-            <Text style={styles.TextSecond}>SignIn</Text>
-          </TouchableOpacity>
+            <Text style={styles.TextSecond} onPress={() => navigation.navigate('Login')}>SignIn</Text>
+          </View>
         </View>
       </SafeAreaView>
 

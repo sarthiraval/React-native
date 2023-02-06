@@ -1,15 +1,20 @@
 import React from 'react';
 import styles from './style';
-import { SafeAreaView, Text ,View} from 'react-native';
+import { mini } from '../../assets/image';
+import { ImageBackground, SafeAreaView, Text, View } from 'react-native';
 
-let Home  =() =>{
-   return(
-     
-      <SafeAreaView >
-         <View>
-          <Text style={styles.Texts} >Sarthi</Text>
-         </View>
-      </SafeAreaView>
+let Home = () => {
+   return (
+      <ImageBackground
+         source={mini}
+         style={styles.AllContent}>
+
+         <SafeAreaView style={styles.SafeDesign} >
+            <View>
+               <Text style={styles.Texts} >Sarthi</Text>
+            </View>
+         </SafeAreaView>
+      </ImageBackground>
    )
 }
 export default Home

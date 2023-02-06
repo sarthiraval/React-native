@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import styles from './style';
-import { hide, mini, see }  from '/Users/sarthi/Desktop/ReactNativeProject/react5/LRwithValidation/src/assets/image';
+import { hide, mini, see }  from '../../assets/image';
 import { SafeAreaView, View, Text, TextInput, ImageBackground, TouchableOpacity, Image } from 'react-native';
 // import LinearGradient from 'react-native-linear-gradient';
 
-
-let Login = () => {
+let Login = ({navigation}) => {
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -42,7 +41,7 @@ let Login = () => {
 
               (text => {
                
-               let re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]r)\S+@\S+\.\S+/;
+                let result= /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])+@\S([a-z])+\.\S([a-z])+/;
         
                 setEmail(text);
                 if (re.test(text)) {
@@ -72,7 +71,7 @@ let Login = () => {
           onChangeText={
 
             (text => {
-              let re = /^(?=.*\d)(?=.*[@$!%*?&])(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}/;
+              let re = /^(?=.*\d)(?=.*[@$!%*?&])(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,15}/;
 
               setPassword(text)
               if (re.test(text)) {
@@ -108,14 +107,13 @@ let Login = () => {
         <Text style={styles.ForgetPass}>Forgot your Password?</Text>
 
 
-        <TouchableOpacity style={styles.ViewMange}
-         onp>
+        <TouchableOpacity style={styles.ViewMange} onPress={()=>navigation.navigate("Home")}>
           <Text style={styles.TextLogin}>Login</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.ViewDesign}>
+        <View style={styles.ViewDesign}>
           <Text style={styles.TextFirst}>Don't have an account?</Text>
-          <Text style={styles.TextSecond}>Signup</Text>
-        </TouchableOpacity>
+          <Text style={styles.TextSecond} onPress={()=>navigation.navigate("Register")}>Signup</Text>
+        </View>
 
 
       </SafeAreaView>

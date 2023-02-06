@@ -14,15 +14,14 @@ const styles = StyleSheet.create({
     Direction: {
         flexDirection: "row",
         marginTop: -20,
-
-        justifyContent: "center"
+        marginStart:40,
+        justifyContent: "flex-start"
     },
     Design: {
-        marginTop: 30
+        marginTop:-30
     },
     SignText: {
         color: "white",
-
         shadowColor: "black",
         shadowOpacity: 0.6,
         marginHorizontal: 10,
@@ -122,7 +121,7 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     icon: {
-        marginTop: 340,
+        marginTop: 352,
         width: 20,
         marginRight: 30,
         height: 15,
