@@ -14,14 +14,18 @@ let Login = ({ navigation }) => {
 
   const checkTextInput = () => {
 
-    if (!email.trim() && !password.trim() ) {
+    if (!email.trim() && !password.trim()) {
       alert('Please Enter Details');
+      return checkEmail.length & checkPass.length;
     }
     else if (!password.trim()) {
       alert('Please Enter password');
+      return 
+
     }
     else if (!email.trim()) {
       alert('Please Enter Email');
+      return checkEmail.length 
     }
 
     else {
@@ -89,6 +93,14 @@ let Login = ({ navigation }) => {
           onChangeText={
 
             (text => {
+              let re = /^(?=.*\d)(?=.*[@$!%*?&])(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,15}/;
+
+              setPassword(text)
+              if (re.test(text)) {
+                setcheckaPass(false);
+              } else {
+                setcheckaPass(true);
+              }
             })
           }
         />
@@ -96,6 +108,7 @@ let Login = ({ navigation }) => {
           checkPass
             ?
             <Text style={styles.wrongEmail}>Wrong format Password</Text>
+            
             :
             <Text style={styles.wrongEmail}> </Text>
         }

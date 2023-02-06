@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './style';
 import { Image, SafeAreaView, Text, View } from 'react-native';
-
+import { uptake } from '../../assets/image';
 
 
 let Splash = ({navigation}) => {
@@ -24,8 +24,8 @@ let Splash = ({navigation}) => {
             <SafeAreaView style={styles.Content} >
 
                 <Image style={styles.ShadowImage}
-                    source={
-                        { url: "https://media.licdn.com/dms/image/C4D0BAQGBdPEr2MpF9g/company-logo_200_200/0/1663171718721?e=2147483647&v=beta&t=y76fploBxKpDuSo5LqXj_HbmpcPJzpq81s2oGwe0cFA" }
+                    source={uptake
+                        // { url: "https://media.licdn.com/dms/image/C4D0BAQGBdPEr2MpF9g/company-logo_200_200/0/1663171718721?e=2147483647&v=beta&t=y76fploBxKpDuSo5LqXj_HbmpcPJzpq81s2oGwe0cFA" }
                     } />
 
                 <Text style={styles.Title}>Welcome to My World</Text>
