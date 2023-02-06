@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './style';
-import {  Image,SafeAreaView, Text, View } from 'react-native';
+import { Image, SafeAreaView, Text, View } from 'react-native';
 
 
-let Splash = () => {
-    return (
+
+let Splash = ({navigation}) => {
+    const [splash, setsplash] = useState(true)
+    useEffect(() => {
+        setTimeout(() => {
+            setsplash(false)
+        }, 3000);
+    });
+  
+    return splash ? (
         // <ImageBackground 
         // source={
         //     {
@@ -13,18 +21,23 @@ let Splash = () => {
         //    } 
         //    style={styles.AllContent}>
         <View style={styles.AllContent}>
-        <SafeAreaView style={styles.Content} >
-      
+            <SafeAreaView style={styles.Content} >
+
                 <Image style={styles.ShadowImage}
                     source={
-                       { url : "https://media.licdn.com/dms/image/C4D0BAQGBdPEr2MpF9g/company-logo_200_200/0/1663171718721?e=2147483647&v=beta&t=y76fploBxKpDuSo5LqXj_HbmpcPJzpq81s2oGwe0cFA"}
-                    } /> 
+                        { url: "https://media.licdn.com/dms/image/C4D0BAQGBdPEr2MpF9g/company-logo_200_200/0/1663171718721?e=2147483647&v=beta&t=y76fploBxKpDuSo5LqXj_HbmpcPJzpq81s2oGwe0cFA" }
+                    } />
 
-                    <Text style={styles.Title}>Welcome to My World</Text>
+                <Text style={styles.Title}>Welcome to My World</Text>
 
-        </SafeAreaView>
+            </SafeAreaView>
         </View>
         //  </ImageBackground> 
+    ) : (
+        navigation.navigate("Login")
+
     )
 }
+
+
 export default Splash

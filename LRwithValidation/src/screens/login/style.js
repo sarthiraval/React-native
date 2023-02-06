@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     icon: {
-        marginTop: 15,
+        marginTop: -21,
         width: 20,
         marginRight: 30,
         height: 15,

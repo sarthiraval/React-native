@@ -12,17 +12,25 @@ const Navigation = () => {
     const Stack = createNativeStackNavigator()
     return (
         <NavigationContainer>
-            <Stack.Navigator>
+            <Stack.Navigator >
+                <Stack.Screen
+                    name="Splash"
+                    component={Splash}
+                    // options={{
+                    //     title: "Splash",
+                    //     headerTintColor: "white",
+                    //     // headerStyle:{
+                    //     //     backgroundColor:"red"
+                    //     // },
+                    //     headerTransparent: true
+
+                    // }}
+                    options={{ headerShown: false }} />
                 <Stack.Screen
                     name="Login"
                     component={Login}
                     options={{
-                        title: "Login",
-                        headerTintColor: "white",
-                       
-                        // headerStyle:{
-                        //     backgroundColor:"white"
-                        // },
+                        headerShown: false,
                         headerTransparent: true
                     }} />
                 <Stack.Screen
@@ -30,6 +38,7 @@ const Navigation = () => {
                     component={Register}
                     options={{
                         title: "Register",
+                      
                         headerTintColor: "white",
                         // headerStyle:{
                         //     backgroundColor:"red"
@@ -38,18 +47,7 @@ const Navigation = () => {
                         headerTransparent: true
 
                     }} />
-                <Stack.Screen
-                    name="Splash"
-                    component={Splash}
-                    options={{
-                        title: "Splash",
-                        headerTintColor: "white",
-                        // headerStyle:{
-                        //     backgroundColor:"red"
-                        // },
-                        headerTransparent: true
 
-                    }}/>
                 <Stack.Screen
                     name="Home"
                     component={Home}

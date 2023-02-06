@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import styles from './style';
-import { hide, mini, see }  from '../../assets/image';
+import { hide, mini, see } from '../../assets/image';
 import { SafeAreaView, View, Text, TextInput, ImageBackground, TouchableOpacity, Image } from 'react-native';
 // import LinearGradient from 'react-native-linear-gradient';
 
-let Login = ({navigation}) => {
+let Login = ({ navigation }) => {
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -12,6 +12,23 @@ let Login = ({navigation}) => {
   const [checkEmail, setcheckEmail] = useState(false)
   const [checkPass, setcheckaPass] = useState(false)
 
+  const checkTextInput = () => {
+
+    if (!email.trim() && !password.trim() ) {
+      alert('Please Enter Details');
+    }
+    else if (!password.trim()) {
+      alert('Please Enter password');
+    }
+    else if (!email.trim()) {
+      alert('Please Enter Email');
+    }
+
+    else {
+      navigation.navigate("Home")
+    }
+
+  };
 
   return (
     // <LinearGradient colors={["red","green","blue"]} style={styles.LinearGradient} >
@@ -40,11 +57,12 @@ let Login = ({navigation}) => {
             onChangeText={
 
               (text => {
-               
-                let result= /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])+@\S([a-z])+\.\S([a-z])+/;
-        
+
+                let re = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])/
+                let result = /\S+@([A-Z|a-z])+\S+\.([A-Z|a-z]){2,3}$/;
+
                 setEmail(text);
-                if (re.test(text)) {
+                if (re.test(text) && result.test(text)) {
                   setcheckEmail(false);
                 } else {
                   setcheckEmail(true);
@@ -67,21 +85,13 @@ let Login = ({navigation}) => {
           placeholderTextColor="#7575a3"
           value={password}
           secureTextEntry={seePassword}
-          style={styles.InputBase} 
+          style={styles.InputBase}
           onChangeText={
 
             (text => {
-              let re = /^(?=.*\d)(?=.*[@$!%*?&])(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,15}/;
-
-              setPassword(text)
-              if (re.test(text)) {
-                setcheckaPass(false);
-              } else {
-                setcheckaPass(true);
-              }
             })
-          } 
-          />
+          }
+        />
         {
           checkPass
             ?
@@ -93,26 +103,29 @@ let Login = ({navigation}) => {
         <TouchableOpacity style={styles.wrapperIcon}
           onPress={() => setSeepassword(!seePassword)}>
           {
-              seePassword
-                ? <Image
+            seePassword
+              ? <Image
                 source={hide}
                 style={styles.icon} />
-                : <Image
+              : <Image
                 source={see}
                 style={styles.icon} />
-            }
+          }
         </TouchableOpacity>
 
 
         <Text style={styles.ForgetPass}>Forgot your Password?</Text>
 
 
-        <TouchableOpacity style={styles.ViewMange} onPress={()=>navigation.navigate("Home")}>
+        <TouchableOpacity style={styles.ViewMange}
+          onPress={
+            checkTextInput
+          }>
           <Text style={styles.TextLogin}>Login</Text>
         </TouchableOpacity>
         <View style={styles.ViewDesign}>
           <Text style={styles.TextFirst}>Don't have an account?</Text>
-          <Text style={styles.TextSecond} onPress={()=>navigation.navigate("Register")}>Signup</Text>
+          <Text style={styles.TextSecond} onPress={() => navigation.navigate("Register")}>Signup</Text>
         </View>
 
 

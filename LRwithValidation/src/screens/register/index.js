@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { SafeAreaView, View, TouchableOpacity, Image, Text, TextInput, ImageBackground, Alert } from 'react-native';
 import styles from './style';
 
-import { hide, mini, see }  from '../../assets/image/index';
+import { hide, mini, see } from '../../assets/image/index';
 
 
-let Register = ({navigation}) => {
+let Register = ({ navigation }) => {
 
   const [usrename, setUsrename] = useState("")
   const [email, setEmail] = useState("")
@@ -38,7 +38,7 @@ let Register = ({navigation}) => {
             placeholder="Enter a name"
             value={usrename}
             placeholderTextColor="#7575a3"
-            style={styles.InputBase} 
+            style={styles.InputBase}
             onChangeText={
 
               (text => {
@@ -71,14 +71,16 @@ let Register = ({navigation}) => {
             onChangeText={
 
               (text => {
-                // let result /(?!.*[\.\-\_]{2,})^[a-zA-Z0-9\.\-\_]{3,24}$/
-                // let re = /\S+@\S+\.\S+/;
-                let result= /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])+@\S([a-z])+\.\S([a-z])+/;
+                // let re /(?!.*[\.\-\_]{2,})^[a-zA-Z0-9\.\-\_]{3,4}$/
+                // let result = /\S+@\S+\.\S+/;
+                let re = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])/
+                let result = /\S+@([A-Z|a-z])+\S+\.([A-Z|a-z]){2,3}$/;
+                // let res = /^([A-Z|a-z|0-9](\.|_){0,1})+[A-Z|a-z|0-9]\@([A-Z|a-z])+((\.){0,1}[A-Z|a-z]){2}\.[a-z]{2,3}$/
                 // let result = /(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])(?=.[0-9])/
                 // let regex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]$/;
 
                 setEmail(text);
-                if (result.test(text)) {
+                if (result.test(text) && re.test(text)) {
                   setcheckEmail(false);
                 } else {
                   setcheckEmail(true);
@@ -153,23 +155,23 @@ let Register = ({navigation}) => {
             {
               seePassword
                 ? <Image
-                source={hide}
-                style={styles.icon} />
+                  source={hide}
+                  style={styles.icon} />
                 : <Image
-                source={see}
-                style={styles.icon} />
+                  source={see}
+                  style={styles.icon} />
             }
           </TouchableOpacity>
 
 
 
-            <TouchableOpacity style={styles.ViewMange} onPress={() => navigation.navigate('Login')}>
-              <Text style={styles.TextLogin}>Register</Text>
+          <TouchableOpacity style={styles.ViewMange} onPress={() => navigation.navigate('Login')}>
+            <Text style={styles.TextLogin}>Register</Text>
 
-            </TouchableOpacity>
+          </TouchableOpacity>
 
 
-        
+
           <View style={styles.ViewDesign}>
             <Text style={styles.TextFirst}>Already have a account?</Text>
             <Text style={styles.TextSecond} onPress={() => navigation.navigate('Login')}>SignIn</Text>
