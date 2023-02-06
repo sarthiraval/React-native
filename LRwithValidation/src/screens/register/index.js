@@ -8,11 +8,13 @@ import Login from '../login/index';
 
 let Register = (navigation) => {
 
+  const [usrename, setUsrename] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [phone, setPhone] = useState("")
   const [seePassword, setSeepassword] = useState(true)
   const [checkEmail, setcheckEmail] = useState(false)
+  const [checkUsername, setcheckUsrename] = useState(false)
   const [checkPass, setcheckaPass] = useState(false)
   const [checkPhone, setcheckaPhone] = useState(false)
 
@@ -35,9 +37,31 @@ let Register = (navigation) => {
           <Text style={styles.TextField}>USERNAME</Text>
           <TextInput
             placeholder="Enter a name"
-
+            value={usrename}
             placeholderTextColor="#7575a3"
-            style={styles.InputBase} />
+            style={styles.InputBase} 
+            onChangeText={
+
+              (text => {
+                // let result = /[A-Za-z]{3}[a-zA-Z0-9.\-_]{3,20}/;
+                // let result = /\b([A-Za-z]){1}(\w){7,29}\b/
+                let result = /^(?=.*[A-Z]){1}(?=.*[a-z])(?=.*[a-zA-Z0-9]){3,20}/;
+
+                setUsrename(text);
+                if (result.test(text)) {
+                  setcheckUsrename(false);
+                } else {
+                  setcheckUsrename(true);
+                }
+              })
+            } />
+          {
+            checkUsername
+              ?
+              <Text style={styles.wrongEmail}>Wrong format Username</Text>
+              :
+              <Text style={styles.wrongEmail}> </Text>
+          }
 
           <Text style={styles.AnotherFiled}>Email</Text>
           <TextInput
@@ -48,8 +72,9 @@ let Register = (navigation) => {
             onChangeText={
 
               (text => {
+                // let result /(?!.*[\.\-\_]{2,})^[a-zA-Z0-9\.\-\_]{3,24}$/
                 // let re = /\S+@\S+\.\S+/;
-                let result= /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])\S+@\S+\.\S+/;
+                let result= /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])+@\S([a-z])+\.\S([a-z])+/;
                 // let result = /(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])(?=.[0-9])/
                 // let regex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]$/;
 
