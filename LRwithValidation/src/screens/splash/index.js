@@ -34,7 +34,7 @@ let Splash = ({navigation}) => {
         </View>
         //  </ImageBackground> 
     ) : (
-        navigation.navigate("Login")
+        navigation.navigate("Register")
 
     )
 }

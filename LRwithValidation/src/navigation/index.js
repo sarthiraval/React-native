@@ -29,22 +29,30 @@ const Navigation = () => {
                 <Stack.Screen
                     name="Login"
                     component={Login}
+                    
                     options={{
-                        headerShown: false,
+                        headerTintColor:"white",
                         headerTransparent: true
-                    }} />
+            
+                    // headerStyle:{
+                    //     backgroundColor:"red"
+                    // },
+
+
+                }}
+                     />
                 <Stack.Screen
                     name="Register"
                     component={Register}
-                    options={{
-                        title: "Register",
-                      
-                        headerTintColor: "white",
+                
+                        options={{
+                            headerShown: false,
+                            headerTransparent: true
+                
                         // headerStyle:{
                         //     backgroundColor:"red"
                         // },
 
-                        headerTransparent: true
 
                     }} />
 

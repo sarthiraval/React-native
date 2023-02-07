@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './style';
 import { mini } from '../../assets/image';
 import { ImageBackground, SafeAreaView, Text, View } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 let Home = () => {
    return (
