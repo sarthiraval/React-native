@@ -90,7 +90,7 @@ let Register = ({ navigation }) => {
 
       storedata(email, usrename, phone, password)
 
-      // navigation.navigate("Login")
+       navigation.navigate("Login")
     }
   };
 
@@ -106,31 +106,31 @@ let Register = ({ navigation }) => {
     }
   }
 
-  const gestStorage = async () => {
-    try {
-      const value = await AsyncStorage.getItem("email")
-      const users = await AsyncStorage.getItem("usrename")
-      const phones = await AsyncStorage.getItem("phone")
-      const passwords = await AsyncStorage.getItem("password")
-      if (value !== null && users !== null && phones !== null && passwords !== null) {
+  // const gestStorage = async () => {
+  //   try {
+  //     const value = await AsyncStorage.getItem("email")
+  //     const users = await AsyncStorage.getItem("usrename")
+  //     const phones = await AsyncStorage.getItem("phone")
+  //     const passwords = await AsyncStorage.getItem("password")
+  //     if (value !== null && users !== null && phones !== null && passwords !== null) {
 
-        alert(`welcome  
-        My Email is ${value}  
-    My Name is ${users}  
-        My PhoneNumber is ${phones} 
-        My Password is ${passwords}`)
-       BackHandler
+  //       alert(`welcome  
+  //       My Email is ${value}  
+  //   My Name is ${users}  
+  //       My PhoneNumber is ${phones} 
+  //       My Password is ${passwords}`)
+  //      BackHandler
         
-      }
-      else{
+  //     }
+  //     else{
         
-      }
+  //     }
 
-    }
-    catch (error) {
-      console.log("error :", error);
-    }
-  }
+  //   }
+  //   catch (error) {
+  //     console.log("error :", error);
+  //   }
+  // }
 
 
   return (
@@ -240,7 +240,7 @@ let Register = ({ navigation }) => {
             }>
             <Text style={styles.TextLogin}>Register</Text>
           </TouchableOpacity>
-
+{/* 
           <TouchableOpacity
 
             style={styles.ViewMange}
@@ -248,7 +248,7 @@ let Register = ({ navigation }) => {
               text => gestStorage(text)
             }>
             <Text style={styles.TextLogin}>Show Details</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
           {/* :
           <TouchableOpacity
             style={styles.ViewMange}
