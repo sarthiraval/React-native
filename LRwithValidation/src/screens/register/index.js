@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { SafeAreaView, View, TouchableOpacity, Image, Text, TextInput, ImageBackground } from 'react-native';
+import { SafeAreaView, View, TouchableOpacity, Image, Text, TextInput, ImageBackground, BackHandler } from 'react-native';
 import styles from './style';
 import { hide, mini, see } from '../../assets/image/index';
-import { log } from 'react-native-reanimated';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 let Register = ({ navigation }) => {
@@ -78,17 +78,60 @@ let Register = ({ navigation }) => {
 
   const checkTextInput = () => {
 
-    if (usrename == '' || phone == '' || email == '' || password == '' 
-    || checkPass == true || checkEmail == true
-    || checkUsername == true || checkPhone == true ) {
+    if (usrename == '' || phone == '' || email == '' || password == ''
+      || checkPass == true || checkEmail == true
+      || checkUsername == true || checkPhone == true) {
       alert('Please Enter Details Correctly');
+
     }
 
     else {
       alert("Success Register")
-      navigation.navigate("Login")
+
+      storedata(email, usrename, phone, password)
+
+      // navigation.navigate("Login")
     }
   };
+
+  const storedata = async (value,users,phones,passwords)=> {
+    try {
+      await AsyncStorage.setItem('email', value);
+      await AsyncStorage.setItem('usrename', users);
+      await AsyncStorage.setItem('phone', phones);
+      await AsyncStorage.setItem('password', passwords);
+    }
+    catch (error) {
+      console.log('error :', error);
+    }
+  }
+
+  const gestStorage = async () => {
+    try {
+      const value = await AsyncStorage.getItem("email")
+      const users = await AsyncStorage.getItem("usrename")
+      const phones = await AsyncStorage.getItem("phone")
+      const passwords = await AsyncStorage.getItem("password")
+      if (value !== null && users !== null && phones !== null && passwords !== null) {
+
+        alert(`welcome  
+        My Email is ${value}  
+    My Name is ${users}  
+        My PhoneNumber is ${phones} 
+        My Password is ${passwords}`)
+       BackHandler
+        
+      }
+      else{
+        
+      }
+
+    }
+    catch (error) {
+      console.log("error :", error);
+    }
+  }
+
 
   return (
     // <LinearGradient colors={["red","green","blue"]} style={styles.LinearGradient} >
@@ -188,14 +231,23 @@ let Register = ({ navigation }) => {
             }
           </TouchableOpacity>
 
-       
+
           <TouchableOpacity
-            
+
             style={styles.ViewMange}
             onPress={
               text => checkTextInput(text)
             }>
             <Text style={styles.TextLogin}>Register</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+
+            style={styles.ViewMange}
+            onPress={
+              text => gestStorage(text)
+            }>
+            <Text style={styles.TextLogin}>Show Details</Text>
           </TouchableOpacity>
           {/* :
           <TouchableOpacity
@@ -208,11 +260,12 @@ let Register = ({ navigation }) => {
 
           } */}
 
-              <View style={styles.ViewDesign}>
-                <Text style={styles.TextFirst}>Already have a account?</Text>
-                <Text style={styles.TextSecond} onPress={() => navigation.navigate('Login')}>SignIn</Text>
-              </View>
-            </View>
+
+          <View style={styles.ViewDesign}>
+            <Text style={styles.TextFirst}>Already have a account?</Text>
+            <Text style={styles.TextSecond} onPress={() => navigation.navigate('Login')}>SignIn</Text>
+          </View>
+        </View>
       </SafeAreaView>
 
 

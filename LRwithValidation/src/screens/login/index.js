@@ -19,18 +19,13 @@ let Login = ({ navigation }) => {
   const checkTextInput = () => {
 
     if (email == '' || password == '' || checkPass == true || checkEmail == true ) {
-      alert('Please Enter Details');
+      alert('Please Enter Correct Details');
     }
     else {
       alert("Success Login")
       navigation.navigate("Home")
     }
-
-
-
   };
-
-
 
   const emailvalida = (text) => {
     // let re /(?!.*[\.\-\_]{2,})^[a-zA-Z0-9\.\-\_]{3,4}$/
