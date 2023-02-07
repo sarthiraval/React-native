@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { SafeAreaView, View, TouchableOpacity, Image, Text, TextInput, ImageBackground, Alert } from 'react-native';
 import styles from './style';
-
 import { hide, mini, see } from '../../assets/image/index';
 
 

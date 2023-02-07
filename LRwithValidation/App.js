@@ -9,10 +9,13 @@ import React from 'react';
 // import Splash from './src/screens/splash'
 import Navigation from './src/navigation/index';
 
+
+ 
 const App = () => {
   return (
      
    <Navigation />
+   
     // <Login />
     // <Splash />
     // <Register />

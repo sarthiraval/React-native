@@ -63,7 +63,7 @@ let Login = ({ navigation }) => {
               (text => {
 
                 let re = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])/
-                let result = /\S+@([A-Z|a-z])+\S+\.([A-Z|a-z]){2,3}$/;
+                let result = /\S+@([A-Z|a-z]{4,4})+\S+\.([A-Z|a-z]){2,3}$/;
 
                 setEmail(text);
                 if (re.test(text) && result.test(text)) {
