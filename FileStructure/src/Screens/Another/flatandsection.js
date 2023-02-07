@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-View,FlatList,Text, SafeAreaView, SectionList, ScrollView
+View,FlatList,Text, SafeAreaView, SectionList, ScrollView,Image
 } from 'react-native';
 
 
@@ -101,28 +101,61 @@ let YourApp = () =>{
     <View style={{alignSelf:"stretch",marginBottom:10,marginRight:10,marginLeft:10}}>
     <Text style={{fontSize:30}}>Flat-List:-</Text>
 
-   <FlatList  data ={[
-      {id:1,title : 'Sarthi'},
-      {id:2,title : 'Janik'},
-      {id:3,title : 'Sid'},
-      {id:4,title : 'Harshit'},
-      {id:5,title : 'Kevin'},
-      {id:6,title : 'Moin'},
-      {id:7,title : 'Keval'},
-      {id:9,title : 'Krunal'},
-      {id:10,title : 'Yash'},
-      {id:11,title : 'Akshat'},
-      {id:12,title : 'Deep'},
-      {id:13,title : 'Jigar'},
-      {id:14,title : 'Komit'},
-      {id:15,title : 'Ali'},
-      {id:16,title : 'Pratik'},
-      {id:17,title : 'Parshav'},
-      {id:18,title : 'Asim'},
-      {id:19,title : 'Shivang'},
-      {id:20,title : 'Haider'},
-      {id:21,title : 'Sunny'},
-   ]}
+   <FlatList 
+   style={{height:100}}
+      data = {[
+            {
+                id:1,
+                image:
+        { url: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bWVyY2VkZXMlMjBjYXJ8ZW58MHx8MHx8&w=1000&q=80' },
+                title: 'Ronald Richards',
+                subtitle: 'Gurgaon,india'
+            },
+            {   id:2,
+              image:
+              { url: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bWVyY2VkZXMlMjBjYXJ8ZW58MHx8MHx8&w=1000&q=80' },
+                title: 'Floyd Miles',
+                subtitle: 'san Fransisco,CA'
+            },
+            {   id:3,
+              image:
+              { url: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bWVyY2VkZXMlMjBjYXJ8ZW58MHx8MHx8&w=1000&q=80' },
+                title: 'Marvin Mckinney',
+                subtitle: 'Dhaka,Bangladesh'
+            },
+            {   id:4,
+              image:
+              { url: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bWVyY2VkZXMlMjBjYXJ8ZW58MHx8MHx8&w=1000&q=80' },
+                title: 'Dianne Russell',
+                subtitle: 'Suiropl,Nepal'
+            },
+            {
+              id:5,
+              image:
+      { url: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bWVyY2VkZXMlMjBjYXJ8ZW58MHx8MHx8&w=1000&q=80' },
+              title: 'Ronald Richards',
+              subtitle: 'Gurgaon,india'
+          },
+          {   id:6,
+            image:
+            { url: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bWVyY2VkZXMlMjBjYXJ8ZW58MHx8MHx8&w=1000&q=80' },
+              title: 'Floyd Miles',
+              subtitle: 'san Fransisco,CA'
+          },
+          {   id:7,
+            image:
+            { url: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bWVyY2VkZXMlMjBjYXJ8ZW58MHx8MHx8&w=1000&q=80' },
+              title: 'Marvin Mckinney',
+              subtitle: 'Dhaka,Bangladesh'
+          },
+          {   id:8,
+            image:
+            { url: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bWVyY2VkZXMlMjBjYXJ8ZW58MHx8MHx8&w=1000&q=80' },
+              title: 'Dianne Russell',
+              subtitle: 'Suiropl,Nepal'
+          },
+           
+    ]}
    //render
    //The renderItem is a callback function
    // that will accept the individual item from the data prop and render a component for it.
@@ -130,9 +163,19 @@ let YourApp = () =>{
    //KeyExtractor
    //The default extractor checks item.key,then item.id,and then falls back to using the index, like React does.
     renderItem={({item}) => 
-    <Text style= {{padding:10,fontSize:20,height:50,color:"red"}}>{item.id}. {item.title}</Text>}
+    
+     <View style={{ flexDirection:"row"}}>
+      <Image style={{
+        height:20,width:50}} source={item.image}/>
+           <View style={{ flexDirection:"column"}}>
+
+    <Text style= {{fontSize:20,color:"red"}}>{item.title}</Text>
+    <Text style= {{fontSize:15,color:"red"}}>{item.subtitle}</Text>
+    </View>
+    </View>
+    }
     keyExtractor ={item => item.id}
-    ListEmptyComponent={<Text>No Data Found</Text>}
+  
     />
 
 <FlatList  data ={[
@@ -168,8 +211,7 @@ let YourApp = () =>{
    renderItem={({item}) => 
     <Text style= {{padding:10,fontSize:20,height:50,color:"red"}}>{item.id}. {item.title}</Text>}
     keyExtractor ={item => item.id}
-    ListEmptyComponent={<Text>No Data Found</Text>}
-    />
+  />
 
 <Text style={{fontSize:30}}>Flat-List Empty:-</Text>
 
