@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { SafeAreaView, View, TouchableOpacity, Image, Text, TextInput, ImageBackground, BackHandler } from 'react-native';
+import { SafeAreaView, View, TouchableOpacity, Image, Text, TextInput, ImageBackground, Alert } from 'react-native';
 import styles from './style';
-import { hide, mini, see } from '../../assets/image/index';
+import { emails, hide, mini, see, user, phones, passwords } from '../../assets/image/index';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 let Register = ({ navigation }) => {
+
 
 
   const [usrename, setUsrename] = useState("")
@@ -18,88 +19,107 @@ let Register = ({ navigation }) => {
   const [checkPass, setcheckaPass] = useState(false)
   const [checkPhone, setcheckaPhone] = useState(false)
 
-  const username = (text) => {
 
-    // let result = /[A-Za-z]{3}[a-zA-Z0-9.\-_]{3,20}/;
-    // let result = /\b([A-Za-z]){1}(\w){7,29}\b/
-    let result = /^(?=.*[A-Z]){1}(?=.*[a-z])(?=.*[a-zA-Z0-9]){3,20}/;
+  onChange: {
+    username = (text) => {
 
-    setUsrename(text);
-    if (result.test(text)) {
-      setcheckUsrename(false);
-    } else {
-      setcheckUsrename(true);
+      // let result = /[A-Za-z]{3}[a-zA-Z0-9.\-_]{3,20}/;
+      // let result = /\b([A-Za-z]){1}(\w){7,29}\b/
+      let result = /^(?=.*[A-Z]){1}(?=.*[a-z])(?=.*[a-zA-Z0-9]){3,20}/;
 
-    }
+      setUsrename(text);
+      if (result.test(text)) {
+        setcheckUsrename(false);
+      } else {
+        setcheckUsrename(true);
+
+      }
+    },
+      emailvalida = (text) => {
+        // let re /(?!.*[\.\-\_]{2,})^[a-zA-Z0-9\.\-\_]{3,4}$/
+        // let result = /\S+@\S+\.\S+/;
+        let re = /(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])/
+        let result = /\S+@([A-Z|a-z])+\S+\.([A-Z|a-z]){2,3}$/;
+        // let res = /^([A-Z|a-z|0-9](\.|_){0,1})+[A-Z|a-z|0-9]\@([A-Z|a-z])+((\.){0,1}[A-Z|a-z]){2}\.[a-z]{2,3}$/
+        // let result = /(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])(?=.[0-9])/
+        // let regex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]$/;
+        re.test(String(email).toLowerCase())
+        result.test(String(email).toLowerCase())
+
+        setEmail(text);
+        if (result.test(text) && re.test(text)) {
+          setcheckEmail(false);
+        } else {
+          setcheckEmail(true);
+        }
+        re.test(String(email).toLowerCase())
+        result.test(String(email).toLowerCase())
+
+      },
+      phonevaild = (text) => {
+        let re = /(?<!\d)\d{10}(?!\d)/;
+        setPhone(text)
+        if (re.test(text)) {
+          setcheckaPhone(false)
+        } else {
+          setcheckaPhone(true);
+        }
+      },
+      passwordvaild = (text) => {
+        let re = /^(?=.*\d)(?=.*[@$!%*?&])(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,15}/;
+
+        setPassword(text)
+        if (re.test(text)) {
+          setcheckaPass(false);
+        } else {
+          setcheckaPass(true);
+        }
+      }
   }
 
-  const emailvalida = (text) => {
-    // let re /(?!.*[\.\-\_]{2,})^[a-zA-Z0-9\.\-\_]{3,4}$/
-    // let result = /\S+@\S+\.\S+/;
-    let re = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])/
-    let result = /\S+@([A-Z|a-z])+\S+\.([A-Z|a-z]){2,3}$/;
-    // let res = /^([A-Z|a-z|0-9](\.|_){0,1})+[A-Z|a-z|0-9]\@([A-Z|a-z])+((\.){0,1}[A-Z|a-z]){2}\.[a-z]{2,3}$/
-    // let result = /(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])(?=.[0-9])/
-    // let regex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]$/;
-    re.test(String(email).toLowerCase())
-    result.test(String(email).toLowerCase())
 
-    setEmail(text);
-    if (result.test(text) && re.test(text)) {
-      setcheckEmail(false);
-    } else {
-      setcheckEmail(true);
-    }
-    re.test(String(email).toLowerCase())
-    result.test(String(email).toLowerCase())
-
-  }
-
-  const phonevaild = (text) => {
-    let re = /(?<!\d)\d{10}(?!\d)/;
-    setPhone(text)
-    if (re.test(text)) {
-      setcheckaPhone(false)
-    } else {
-      setcheckaPhone(true);
-    }
-  }
-
-  const passwordvaild = (text) => {
-    let re = /^(?=.*\d)(?=.*[@$!%*?&])(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,15}/;
-
-    setPassword(text)
-    if (re.test(text)) {
-      setcheckaPass(false);
-    } else {
-      setcheckaPass(true);
-    }
-  }
 
   const checkTextInput = () => {
 
-    if (usrename == '' || phone == '' || email == '' || password == ''
-      || checkPass == true || checkEmail == true
+    if (usrename == '' || phone == '' || email == '' || password == '') {
+
+      alert('Please Enter Details');
+
+    }
+    else if (checkPass == true || checkEmail == true
       || checkUsername == true || checkPhone == true) {
       alert('Please Enter Details Correctly');
 
     }
 
     else {
-      alert("Success Register")
 
-      storedata(email, usrename, phone, password)
+      Alert.alert("Success Register",
+        "Click to Process to Continue",
+        [
+          { text: 'Cancel', onPress: () => (console.log('Cancel Pressed')) },
+          {
+            text: 'OK', onPress: () => {
+              storedata(email, usrename, phone, password)
+              console.log(storedata)
+              navigation.navigate("Login")
+            }
+          }
+        ])
+    };
+    setEmail("");
+    setPassword("")
+    setUsrename("")
+    setPhone("")
+  }
 
-       navigation.navigate("Login")
-    }
-  };
-
-  const storedata = async (value,users,phones,passwords)=> {
+  const storedata = async (value, users, phones, passwords) => {
     try {
       await AsyncStorage.setItem('email', value);
       await AsyncStorage.setItem('usrename', users);
       await AsyncStorage.setItem('phone', phones);
       await AsyncStorage.setItem('password', passwords);
+      
     }
     catch (error) {
       console.log('error :', error);
@@ -120,10 +140,10 @@ let Register = ({ navigation }) => {
   //       My PhoneNumber is ${phones} 
   //       My Password is ${passwords}`)
   //      BackHandler
-        
+
   //     }
   //     else{
-        
+
   //     }
 
   //   }
@@ -132,7 +152,7 @@ let Register = ({ navigation }) => {
   //   }
   // }
 
-
+ 
   return (
     // <LinearGradient colors={["red","green","blue"]} style={styles.LinearGradient} >
     <ImageBackground
@@ -150,12 +170,17 @@ let Register = ({ navigation }) => {
 
         <View style={styles.Design}>
           <Text style={styles.TextField}>USERNAME</Text>
-          <TextInput
-            placeholder="Enter a name"
-            value={usrename}
-            placeholderTextColor="#7575a3"
-            style={styles.InputBase}
-            onChangeText={text => username(text)} />
+          <View style={styles.InputBases}>
+
+            <Image source={user} style={styles.icons} />
+            <TextInput
+              placeholder="Enter a name"
+              value={usrename}
+              style={styles.InputBase}
+              placeholderTextColor="#7575a3"
+
+              onChangeText={username} />
+          </View>
           {
             checkUsername
               ?
@@ -165,15 +190,16 @@ let Register = ({ navigation }) => {
           }
 
           <Text style={styles.AnotherFiled}>Email</Text>
-          <TextInput
-            placeholder="Enter a Email"
-            placeholderTextColor="#7575a3"
-            style={styles.InputBase}
-            value={email}
-            onChangeText={
+          <View style={styles.InputBases}>
 
-              (text => emailvalida(text))
-            } />
+            <Image source={emails} style={styles.icons} />
+            <TextInput
+              placeholder="Enter a Email"
+              placeholderTextColor="#7575a3"
+              style={styles.InputBase}
+              value={email}
+              onChangeText={emailvalida} />
+          </View>
           {
             checkEmail
               ?
@@ -183,16 +209,17 @@ let Register = ({ navigation }) => {
           }
 
           <Text style={styles.AnotherFiled}>Phone Number</Text>
-          <TextInput
-            placeholder="Enter a number"
-            keyboardType="numeric"
-            placeholderTextColor="#7575a3"
-            style={styles.InputBase}
-            value={phone}
-            onChangeText={
+          <View style={styles.InputBases}>
 
-              (text => phonevaild(text))
-            } />
+            <Image source={phones} style={styles.icons} />
+            <TextInput
+              placeholder="Enter a number"
+              keyboardType="numeric"
+              placeholderTextColor="#7575a3"
+              style={styles.InputBase}
+              value={phone}
+              onChangeText={phonevaild} />
+          </View>
           {
             checkPhone
               ?
@@ -202,14 +229,18 @@ let Register = ({ navigation }) => {
           }
 
           <Text style={styles.PassField}>PASSWORD</Text>
-          <TextInput
-            placeholder="Enter a Password"
-            placeholderTextColor="#7575a3"
-            style={styles.InputBase}
-            value={password}
-            secureTextEntry={seePassword}
-            onChangeText={(text => passwordvaild(text))}
-          />
+          <View style={styles.InputBases}>
+
+            <Image source={passwords} style={styles.icons} />
+            <TextInput
+              placeholder="Enter a Password"
+              placeholderTextColor="#7575a3"
+              style={styles.InputBase}
+              value={password}
+              secureTextEntry={seePassword}
+              onChangeText={passwordvaild}
+            />
+          </View>
           {
             checkPass
               ?
@@ -240,7 +271,7 @@ let Register = ({ navigation }) => {
             }>
             <Text style={styles.TextLogin}>Register</Text>
           </TouchableOpacity>
-{/* 
+          {/* 
           <TouchableOpacity
 
             style={styles.ViewMange}

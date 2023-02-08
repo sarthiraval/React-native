@@ -73,11 +73,18 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         color: "black",
         fontSize: 15,
+        width:270,
+        flexDirection:"row",
+        // borderColor:"white",
+        // borderWidth:2,
+        // padding:10,
+        // borderRadius:20,
         borderBottomColor: "white",
         borderBottomWidth: 1,
-        marginRight: 40,
-        marginLeft: 50
+        
     },
+    InputBases: {  flexDirection:"row",
+    marginLeft: 50 },
     ViewMange: {
         alignSelf: "center",
         marginTop: 50,
@@ -123,7 +130,7 @@ const styles = StyleSheet.create({
     icon: {
         marginTop: 352,
         width: 20,
-        marginRight: 30,
+        marginRight: 40,
         height: 15,
     },
     wrongEmail: {
@@ -131,8 +138,14 @@ const styles = StyleSheet.create({
         fontSize: 13,
         marginTop: -15,
         marginBottom: 10,
-        marginLeft: 50
+        marginLeft: 70
     },
+    icons:{
+        top:7,
+        height:15,
+        width:15,
+        marginRight:5
+    }
 })
 
 export default styles
