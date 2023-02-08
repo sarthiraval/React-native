@@ -11,7 +11,7 @@ let Login = ({ navigation }) => {
     try {
       var value = await AsyncStorage.getItem("email")
       var passwords = await AsyncStorage.getItem("password")
-      console.log(passwords);
+      // console.log(passwords);
       if (password != passwords || email != value) {
         // console.log("sarthi");
         alert('invalid Login')
@@ -114,6 +114,7 @@ return (
             placeholderTextColor="#7575a3"
             style={styles.InputBase}
             value={email}
+            autoCapitalize="none"
             onChangeText={emailvalida} />
         </View>
 
@@ -135,6 +136,7 @@ return (
           placeholder="Enter a Password"
           placeholderTextColor="#7575a3"
           value={password}
+          autoCapitalize="none"
           secureTextEntry={seePassword}
           style={styles.InputBase}
           onChangeText={passwordvaild} />

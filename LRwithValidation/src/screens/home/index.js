@@ -6,7 +6,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 let Home = () => {
-const [username, setname] = useState("")
+   const [username, setname] = useState("")
    const [uservalue, setvalue] = useState("")
    const [userphone, setphone] = useState("")
    const [userpass, setpass] = useState("")
@@ -18,8 +18,6 @@ const [username, setname] = useState("")
       setvalue(await AsyncStorage.getItem("usrename"));
       setphone(await AsyncStorage.getItem("phone"));
       setpass(await AsyncStorage.getItem("password"));
-
-
    }, [])
 
    
@@ -52,10 +50,10 @@ const [username, setname] = useState("")
 
             </TouchableOpacity> */}
 
-            <Text style={{ fontSize: 20, color: "black" }}>{username}</Text>
-            <Text style={{ fontSize: 20, color: "black" }}>{uservalue}</Text>
-            <Text style={{ fontSize: 20, color: "black" }}>{userphone}</Text>
-            <Text style={{ fontSize: 20, color: "black" }}>{userpass}</Text>
+            <Text style={styles.Texts}>Name = {username}</Text>
+            <Text style={styles.Texts}>Email = {uservalue}</Text>
+            <Text style={styles.Texts}>Phone = {userphone}</Text>
+            <Text style={styles.Texts}>Password = {userpass}</Text>
 
          </SafeAreaView>
       </ImageBackground>

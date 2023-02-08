@@ -175,6 +175,7 @@ let Register = ({ navigation }) => {
             <Image source={user} style={styles.icons} />
             <TextInput
               placeholder="Enter a name"
+              autoCapitalize="none"
               value={usrename}
               style={styles.InputBase}
               placeholderTextColor="#7575a3"
@@ -195,6 +196,7 @@ let Register = ({ navigation }) => {
             <Image source={emails} style={styles.icons} />
             <TextInput
               placeholder="Enter a Email"
+              autoCapitalize="none"
               placeholderTextColor="#7575a3"
               style={styles.InputBase}
               value={email}
@@ -234,6 +236,7 @@ let Register = ({ navigation }) => {
             <Image source={passwords} style={styles.icons} />
             <TextInput
               placeholder="Enter a Password"
+              autoCapitalize="none"
               placeholderTextColor="#7575a3"
               style={styles.InputBase}
               value={password}
