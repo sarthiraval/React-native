@@ -2,6 +2,8 @@ Vector Icon = npm install react-native-vector-icons --save
 
 Async storage = npm install @react-native-async-storage/async-storage --save
 
+npm install @react-navigation/native
+
 ios posd install = npx pod-install
 Android gradlew cleaning  = ./gradlew clean and ./gradlew wrapper
 upgrade =  npx react-native upgrade
@@ -9,4 +11,7 @@ checkBox =  npm i react-native-check-box --save
 safe area context =  npm install react-native-screens react-native-safe-area-context
 navigation Stack = npm install @react-navigation/native @react-navigation/native-stack
 gestuser =  npm install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
-drawer navigation =
+drawer navigation = npm install @react-navigation/drawer
+   npm install react-native-gesture-handler react-native-reanimated
+
+
