@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     icon: {
-        marginTop:15,
+        marginTop:-19,
         width: 20,
         marginRight: 40,
         height: 15,
@@ -138,6 +138,17 @@ const styles = StyleSheet.create({
         height:15,
         width:15,
         marginRight:5
+    },
+    iconsvaild:{
+        top:7,
+        height:30,
+        width:30,
+        marginHorizontal:10
+    },
+    iconViewMange:{
+        marginTop:10,
+        flexDirection:"row",
+        alignSelf:"center"
     },
     InputBases: {  flexDirection:"row",
     marginLeft: 50 },

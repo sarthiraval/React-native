@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './style';
-import { emails, hide, mini, see, passwords } from '../../assets/image/index';
+import {google,facebook,apple,emails, hide, mini, see, passwords } from '../../assets/image/index';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { SafeAreaView, View, Text, TextInput, ImageBackground, TouchableOpacity, Image, Alert } from 'react-native';
 // import LinearGradient from 'react-native-linear-gradient';
@@ -186,7 +186,13 @@ return (
           </TouchableOpacity> */}
 
 
+ 
 
+      <View style={styles.iconViewMange}>
+      <Image source={facebook} style={styles.iconsvaild} />
+      <Image source={google} style={styles.iconsvaild} />
+      <Image source={apple} style={styles.iconsvaild} />
+      </View>
 
 
 
