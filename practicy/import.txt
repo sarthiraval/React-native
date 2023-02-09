@@ -9,3 +9,4 @@ checkBox =  npm i react-native-check-box --save
 safe area context =  npm install react-native-screens react-native-safe-area-context
 navigation Stack = npm install @react-navigation/native @react-navigation/native-stack
 gestuser =  npm install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
+drawer navigation =
