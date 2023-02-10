@@ -7,6 +7,10 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 let Register = ({ navigation }) => {
 
+ function handleBackButtonClick() {
+      navigation.goBack(null)
+    return true;
+}
 
 
   const [usrename, setUsrename] = useState("")
