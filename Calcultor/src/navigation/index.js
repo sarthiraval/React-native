@@ -15,24 +15,17 @@ const Navigation = () => {
                 <Stack.Screen
                     name="Splash"
                     component={Splash}
-                    // options={{
-                    //     title: "Splash",
-                    //     headerTintColor: "white",
-                    //     // headerStyle:{
-                    //     //     backgroundColor:"red"
-                    //     // },
-                    //     headerTransparent: true
-
-                    // }}
+                   
                     options={{ headerShown: false }} />
              
                 <Stack.Screen
                     name="Calculator"
+                    
                     component={Calculator}
                     options={{
                         title: "Calculator",
                         headerTintColor: "white",
-                       
+                       headerBackVisible : false,
                         headerTransparent: true
 
                     }} />

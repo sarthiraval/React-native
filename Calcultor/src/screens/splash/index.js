@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './style';
-import { Image, SafeAreaView, Text, View } from 'react-native';
+import { SafeAreaView, Text, View } from 'react-native';
 
 
 let Splash = ({navigation}) => {
@@ -8,7 +8,7 @@ let Splash = ({navigation}) => {
     useEffect(() => {
         setTimeout(() => {
             setsplash(false)
-        }, 3000);
+        }, 2000);
     });
   
     return splash ? (
@@ -17,7 +17,7 @@ let Splash = ({navigation}) => {
             <SafeAreaView style={styles.Content} >
 
 
-                <Text style={styles.Title}>Welcome to My World</Text>
+                <Text style={styles.Title}>Come to MY Calculator</Text>
 
             </SafeAreaView>
         </View>
