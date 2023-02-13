@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     AllContent: {
         flex: 1,
-        backgroundColor:"white"
+        backgroundColor:"#d9d9d9"
     },
     imageGround:{
         height:250,
@@ -20,10 +20,10 @@ const styles = StyleSheet.create({
         fontStyle: "italic",
         fontSize: 25,
         marginTop: 20,
-        color: "yellow",
+        color: "black",
         alignSelf: "center",
         shadowColor: "red",
-        shadowOpacity: 1,
+        shadowOpacity: 3,
         marginHorizontal: 10,
         marginBottom: 20,
 

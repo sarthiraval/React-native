@@ -24,7 +24,7 @@ const Navigation = () => {
 
                         options={{
                             title: "Calculator",
-                            headerTintColor: "white",
+                            headerTintColor: "red",
                             headerBackVisible: false,
                             headerTransparent: true }} />
                     :

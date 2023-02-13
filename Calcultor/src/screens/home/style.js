@@ -132,9 +132,9 @@ const styles = StyleSheet.create({
     },
     left:{
         color: "white",
-        fontSize: 90,
-        marginTop:-20,
-        textAlign: "center"
+        fontSize: 70,
+        marginTop:-5,
+        alignSelf: "center"
     }
 
 
