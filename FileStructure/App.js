@@ -1,5 +1,5 @@
 import React from 'react';
-// import Login from './src/Screens/login'
+import Login from './src/Screens/login'
 // import Reg from './src/Screens/register'
 // import YourApp from './src/Screens/Another/index'
 //  import YourApp from './src/Screens/Another/flex1'
@@ -10,9 +10,9 @@ import React from 'react';
 
 let App = ()=>{
   return(
-  //  <Login />
+   <Login />
   //  <Reg/>
-    <YourApp />
+    // <YourApp />
   )
 }
 

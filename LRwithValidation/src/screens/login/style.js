@@ -100,17 +100,17 @@ const styles = StyleSheet.create({
         marginTop: 20
     },
     TextFirst: {
-        color: "black",
+        color: "white",
         fontSize: 14,
         textAlign: "center",
-        shadowColor: "white",
+        shadowColor: "black",
         shadowOpacity: 0.6,
     },
     TextSecond: {
-        color: "black",
+        color: "white",
         fontSize: 16,
         fontWeight: "bold",
-        shadowColor: "white",
+        shadowColor: "black",
         shadowOpacity: 0.6,
         marginHorizontal: 5
     },

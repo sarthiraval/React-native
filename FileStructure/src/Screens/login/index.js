@@ -7,7 +7,7 @@ let Login = ()=>{
 <View style={ {flex:1} }>    
 <ImageBackground 
     source={{
-      uri: 'https://images.pling.com/img/00/00/62/67/35/1584405/577c4dc30402a8dfa3915867a59e64a89b7b3498e9f327bcfb0bcc7dfcbf99908e32.jpg'    }}
+      uri: 'https://i.pinimg.com/736x/2a/e8/0c/2ae80c5adc8ea8cc05456bea68eab580.jpg'    }}
     style={{flex:1}}>
        
        <SafeAreaView>

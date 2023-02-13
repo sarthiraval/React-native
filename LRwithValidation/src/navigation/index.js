@@ -1,4 +1,4 @@
-import React from 'react';;
+import React, { useState } from 'react';;
 import Login from '../screens/login/index'
 import Register from '../screens/register/index'
 import Splash from '../screens/splash';
@@ -8,14 +8,18 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
 const Navigation = () => {
-
+    const [isloaded, setLoaded] = useState(false)
+    setTimeout(() => {
+        setLoaded(true)
+    }, 2000);
     const Stack = createNativeStackNavigator()
     return (
         <NavigationContainer>
             <Stack.Navigator >
+            {isloaded ?
                 <Stack.Screen
-                    name="Splash"
-                    component={Splash}
+                    name="Login"
+                    component={Login}
                     // options={{
                     //     title: "Splash",
                     //     headerTintColor: "white",
@@ -25,14 +29,9 @@ const Navigation = () => {
                     //     headerTransparent: true
 
                     // }}
-                    options={{ headerShown: false }} />
-                <Stack.Screen
-                    name="Login"
-                    component={Login}
-                    
                     options={{
-                        headerTintColor:"white",
-                        headerTransparent: true
+                        headerShown: false 
+                        
             
                     // headerStyle:{
                     //     backgroundColor:"red"
@@ -40,7 +39,15 @@ const Navigation = () => {
 
 
                 }}
+                    />
+                    :
+                <Stack.Screen
+                    name="Splash"
+                    component={Splash}
+                    
+                    options={{ headerShown: false }}
                      />
+            }
                 <Stack.Screen
                     name="Register"
                     component={Register}

@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styles from './style';
 import { Image, SafeAreaView, Text, View } from 'react-native';
 import { uptake } from '../../assets/image';
 
 
-let Splash = ({navigation}) => {
-    const [splash, setsplash] = useState(true)
-    useEffect(() => {
-        setTimeout(() => {
-            setsplash(false)
-        }, 3000);
-    });
+let Splash = () => {
+    // const [splash, setsplash] = useState(true)
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         setsplash(false)
+    //     }, 3000);
+    // });
   
-    return splash ? (
+    return  (
         // <ImageBackground 
         // source={
         //     {
@@ -33,10 +33,11 @@ let Splash = ({navigation}) => {
             </SafeAreaView>
         </View>
         //  </ImageBackground> 
-    ) : (
-        navigation.navigate("Register")
+    ) 
+    // : (
+    //     navigation.navigate("Register")
 
-    )
+    // )
 }
 
 
