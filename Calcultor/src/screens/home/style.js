@@ -8,7 +8,9 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: "#d9d9d9"
     },
-
+   mainBase:{
+    alignSelf:"center"
+   },
     main: {
         marginTop: 10,
         width: "90%",

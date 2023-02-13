@@ -124,7 +124,8 @@ let Calculator = () => {
                </Text>
 
             </ScrollView>
-
+ 
+ <View style={styles.mainBase}>
             <View style={styles.viewBase}>
 
                <View style={styles.designBas}>
@@ -257,7 +258,7 @@ let Calculator = () => {
                   </TouchableOpacity>
                </View>
             </View>
-
+            </View>
          </SafeAreaView>
       </View>
    )
