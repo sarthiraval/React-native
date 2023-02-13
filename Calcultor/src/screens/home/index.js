@@ -3,7 +3,6 @@ import styles from './style';
 import { Text, SafeAreaView, TouchableOpacity, View, Image } from 'react-native';
 
 import 'react-native-gesture-handler';
-import { left } from '../../assets/Image';
 // import { createDrawerNavigator } from '@react-navigation/drawer';
 
 
