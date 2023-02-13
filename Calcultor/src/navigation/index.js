@@ -11,7 +11,7 @@ const Navigation = () => {
 
     setTimeout(() => {
         setLoaded(true)
-    }, 2000);
+    }, 5000);
     const Stack = createNativeStackNavigator()
     return (
         <NavigationContainer>
@@ -22,22 +22,19 @@ const Navigation = () => {
                         name="Calculator"
                         component={Calculator}
 
-                        options={{
-                            title: "Calculator",
-                            headerTintColor: "red",
-                            headerBackVisible: false,
-                            headerTransparent: true }} />
+                        options={{ headerShown: false
+                           }} />
                     :
                     <Stack.Screen
                         name="Splash"
 
                         component={Splash}
                         options={{
-                          
                             headerShown: false
+                           
                         }} />
                 }
-                
+               
             </Stack.Navigator>
         </NavigationContainer>
     );

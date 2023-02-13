@@ -4,9 +4,15 @@ const styles = StyleSheet.create({
     SafeDesign: {
         flex: 1
     },
+    linedw:{
+      borderBottomColor: '#f2f2f2',
+            borderBottomWidth: 2,
+            marginBottom:15
+         
+    },
     AllContent: {
         flex: 1,
-        backgroundColor: "#d9d9d9"
+        backgroundColor: "white"
     },
    mainBase:{
     alignSelf:"center"
@@ -20,8 +26,6 @@ const styles = StyleSheet.create({
         height: "30%",
         borderRadius: 10,
         alignSelf: "center",
-        borderColor: "black",
-        borderWidth: 3,
     },
     mainText: {
         fontSize: 50,
@@ -39,21 +43,21 @@ const styles = StyleSheet.create({
         marginLeft: 10
     },
     designBase: {
-        backgroundColor: "white",
+        backgroundColor: "#f2f2f2",
         height: 80,
         marginRight: 10,
         width: 80,
         borderRadius: 80 / 2
     },
     designBas: {
-        backgroundColor: "#ff4000",
+        backgroundColor: "#f2f2f2",
         height: 80,
         marginRight: 10,
         width: 80,
         borderRadius: 80 / 2
     },
     multi: {
-        backgroundColor: "#ffaa00",
+        backgroundColor: "#f2f2f2",
         height: 80,
         marginRight: 10,
         width: 80,
@@ -61,7 +65,7 @@ const styles = StyleSheet.create({
     },
 
     designKnow: {
-        backgroundColor: "#ffaa00",
+        backgroundColor: "#f2f2f2",
         height: 80,
         marginRight: 10,
         width: 80,
@@ -74,19 +78,19 @@ const styles = StyleSheet.create({
         textAlign: "center"
     },
     numberofAC: {
-        color: "white",
+        color: "red",
         fontSize: 40,
         paddingTop: 12,
         paddingLeft: 12,
     },
     numberofData: {
-        color: "white",
+        color: "green",
         fontSize: 40,
         paddingTop: 11,
         paddingLeft: 22,
     },
     numberof: {
-        color: "white",
+        color: "green",
         fontSize: 50,
         top: 9,
         textAlign: "center"
@@ -98,29 +102,29 @@ const styles = StyleSheet.create({
     },
 
     signOf: {
-        color: "white",
+        color: "green",
         fontSize: 55,
         textAlign: "center"
 
     },
     equal: {
-        color: "white",
+        color: "green",
         fontSize: 60,
         textAlign: "center"
 
     },
     multiple: {
-        color: "white",
+        color: "green",
         fontSize: 90,
         textAlign: "center"
     },
     division: {
-        color: "white",
+        color: "green",
         fontSize: 60,
         alignSelf: "center"
     },
     addPlus: {
-        color: "white",
+        color: "green",
         fontSize: 60,
         alignSelf: 'center'
     },
@@ -131,7 +135,7 @@ const styles = StyleSheet.create({
         marginVertical: 13
     },
     left:{
-        color: "white",
+        color: "green",
         fontSize: 70,
         marginTop:-5,
         alignSelf: "center"

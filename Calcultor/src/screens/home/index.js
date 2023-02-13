@@ -19,7 +19,7 @@ let Calculator = () => {
 
          if ((value.match(/\(/g) || []).length ==
             (value.match(/\)/g) || []).length) {
-        
+
             try {
                if (value.slice(-1) == "+" ||
                   value.slice(-1) == "-" ||
@@ -124,140 +124,143 @@ let Calculator = () => {
                </Text>
 
             </ScrollView>
- 
- <View style={styles.mainBase}>
-            <View style={styles.viewBase}>
 
-               <View style={styles.designBas}>
-                  <TouchableOpacity onPress={() => { AccountZero('AC') }}>
-                     <Text style={styles.numberofAC}>AC</Text>
-                  </TouchableOpacity>
+            <View
+               style={styles.linedw}
+            />
+            <View style={styles.mainBase}>
+               <View style={styles.viewBase}>
+
+                  <View style={styles.designBas}>
+                     <TouchableOpacity onPress={() => { AccountZero('AC') }}>
+                        <Text style={styles.numberofAC}>AC</Text>
+                     </TouchableOpacity>
+                  </View>
+
+                  <View style={styles.designKnow}>
+                     <TouchableOpacity onPress={() => { AccountZero('( )') }}>
+                        <Text style={styles.numberofData}>( )</Text>
+                     </TouchableOpacity>
+                  </View>
+
+                  <View style={styles.designKnow}>
+                     <TouchableOpacity onPress={() => { AccountZero('%') }}>
+                        <Text style={styles.numberof}>% </Text>
+                     </TouchableOpacity>
+                  </View>
+
+                  <View style={styles.designKnow}>
+                     <TouchableOpacity onPress={() => { AccountZero('/') }}>
+                        <Text style={styles.signOf}>/ </Text>
+                     </TouchableOpacity>
+                  </View>
                </View>
 
-               <View style={styles.designKnow}>
-                  <TouchableOpacity onPress={() => { AccountZero('( )') }}>
-                     <Text style={styles.numberofData}>( )</Text>
-                  </TouchableOpacity>
+               <View style={styles.viewBas}>
+
+                  <View style={styles.designBase}>
+                     <TouchableOpacity onPress={() => { AccountZero('7') }}>
+                        <Text style={styles.numberofAll}>7</Text>
+                     </TouchableOpacity>
+                  </View>
+
+                  <View style={styles.designBase}>
+                     <TouchableOpacity onPress={() => { AccountZero('8') }}>
+                        <Text style={styles.numberofAll}>8</Text>
+                     </TouchableOpacity>
+                  </View>
+
+                  <View style={styles.designBase}>
+                     <TouchableOpacity onPress={() => { AccountZero('9') }}>
+                        <Text style={styles.numberofAll}>9</Text>
+                     </TouchableOpacity>
+                  </View>
+
+                  <View style={styles.multi}>
+                     <TouchableOpacity onPress={() => { AccountZero('*') }}>
+                        <Text style={styles.multiple}>* </Text>
+                     </TouchableOpacity>
+                  </View>
                </View>
 
-               <View style={styles.designKnow}>
-                  <TouchableOpacity onPress={() => { AccountZero('%') }}>
-                     <Text style={styles.numberof}>% </Text>
-                  </TouchableOpacity>
+               <View style={styles.viewBas}>
+
+                  <View style={styles.designBase}>
+                     <TouchableOpacity onPress={() => { AccountZero('4') }}>
+                        <Text style={styles.numberofAll}>4</Text>
+                     </TouchableOpacity>
+                  </View>
+
+                  <View style={styles.designBase}>
+                     <TouchableOpacity onPress={() => { AccountZero('5') }}>
+                        <Text style={styles.numberofAll}>5</Text>
+                     </TouchableOpacity>
+                  </View>
+
+                  <View style={styles.designBase}>
+                     <TouchableOpacity onPress={() => { AccountZero('6') }}>
+                        <Text style={styles.numberofAll}>6 </Text>
+                     </TouchableOpacity>
+                  </View>
+                  <View style={styles.multi}>
+                     <TouchableOpacity onPress={() => { AccountZero('-') }}>
+                        <Text style={styles.division}>-</Text>
+                     </TouchableOpacity>
+                  </View>
                </View>
 
-               <View style={styles.designKnow}>
-                  <TouchableOpacity onPress={() => { AccountZero('/') }}>
-                     <Text style={styles.signOf}>/ </Text>
-                  </TouchableOpacity>
-               </View>
-            </View>
+               <View style={styles.viewBas}>
 
-            <View style={styles.viewBas}>
+                  <View style={styles.designBase}>
+                     <TouchableOpacity onPress={() => { AccountZero('1') }}>
+                        <Text style={styles.numberofAll}>1</Text>
+                     </TouchableOpacity>
+                  </View>
 
-               <View style={styles.designBase}>
-                  <TouchableOpacity onPress={() => { AccountZero('7') }}>
-                     <Text style={styles.numberofAll}>7</Text>
-                  </TouchableOpacity>
-               </View>
+                  <View style={styles.designBase}>
+                     <TouchableOpacity onPress={() => { AccountZero('2') }}>
+                        <Text style={styles.numberofAll}>2</Text>
+                     </TouchableOpacity>
+                  </View>
 
-               <View style={styles.designBase}>
-                  <TouchableOpacity onPress={() => { AccountZero('8') }}>
-                     <Text style={styles.numberofAll}>8</Text>
-                  </TouchableOpacity>
-               </View>
-
-               <View style={styles.designBase}>
-                  <TouchableOpacity onPress={() => { AccountZero('9') }}>
-                     <Text style={styles.numberofAll}>9</Text>
-                  </TouchableOpacity>
-               </View>
-
-               <View style={styles.multi}>
-                  <TouchableOpacity onPress={() => { AccountZero('*') }}>
-                     <Text style={styles.multiple}>* </Text>
-                  </TouchableOpacity>
-               </View>
-            </View>
-
-            <View style={styles.viewBas}>
-
-               <View style={styles.designBase}>
-                  <TouchableOpacity onPress={() => { AccountZero('4') }}>
-                     <Text style={styles.numberofAll}>4</Text>
-                  </TouchableOpacity>
+                  <View style={styles.designBase}>
+                     <TouchableOpacity onPress={() => { AccountZero('3') }}>
+                        <Text style={styles.numberofAll}>3 </Text>
+                     </TouchableOpacity>
+                  </View>
+                  <View style={styles.multi}>
+                     <TouchableOpacity onPress={() => { AccountZero('+') }}>
+                        <Text style={styles.addPlus}>+</Text>
+                     </TouchableOpacity>
+                  </View>
                </View>
 
-               <View style={styles.designBase}>
-                  <TouchableOpacity onPress={() => { AccountZero('5') }}>
-                     <Text style={styles.numberofAll}>5</Text>
-                  </TouchableOpacity>
-               </View>
+               <View style={styles.viewBas}>
 
-               <View style={styles.designBase}>
-                  <TouchableOpacity onPress={() => { AccountZero('6') }}>
-                     <Text style={styles.numberofAll}>6 </Text>
-                  </TouchableOpacity>
-               </View>
-               <View style={styles.multi}>
-                  <TouchableOpacity onPress={() => { AccountZero('-') }}>
-                     <Text style={styles.division}>-</Text>
-                  </TouchableOpacity>
-               </View>
-            </View>
+                  <View style={styles.designBase}>
+                     <TouchableOpacity onPress={() => { AccountZero('0') }}>
+                        <Text style={styles.numberofAll}>0</Text>
+                     </TouchableOpacity>
+                  </View>
 
-            <View style={styles.viewBas}>
+                  <View style={styles.multi}>
+                     <TouchableOpacity onPress={() => { AccountZero('.') }}>
+                        {/* <Image source={full} style={styles.doting}/> */}
+                        <Image source={dot} style={styles.doting} />
+                     </TouchableOpacity>
+                  </View>
 
-               <View style={styles.designBase}>
-                  <TouchableOpacity onPress={() => { AccountZero('1') }}>
-                     <Text style={styles.numberofAll}>1</Text>
-                  </TouchableOpacity>
+                  <View style={styles.multi}>
+                     <TouchableOpacity onPress={() => { console.log(AccountZero('<')); }}>
+                        <Text style={styles.left}>&lt;</Text>
+                     </TouchableOpacity>
+                  </View>
+                  <View style={styles.designBas}>
+                     <TouchableOpacity onPress={() => { AccountZero('=') }}>
+                        <Text style={styles.equal}>=</Text>
+                     </TouchableOpacity>
+                  </View>
                </View>
-
-               <View style={styles.designBase}>
-                  <TouchableOpacity onPress={() => { AccountZero('2') }}>
-                     <Text style={styles.numberofAll}>2</Text>
-                  </TouchableOpacity>
-               </View>
-
-               <View style={styles.designBase}>
-                  <TouchableOpacity onPress={() => { AccountZero('3') }}>
-                     <Text style={styles.numberofAll}>3 </Text>
-                  </TouchableOpacity>
-               </View>
-               <View style={styles.multi}>
-                  <TouchableOpacity onPress={() => { AccountZero('+') }}>
-                     <Text style={styles.addPlus}>+</Text>
-                  </TouchableOpacity>
-               </View>
-            </View>
-
-            <View style={styles.viewBas}>
-
-               <View style={styles.designBase}>
-                  <TouchableOpacity onPress={() => { AccountZero('0') }}>
-                     <Text style={styles.numberofAll}>0</Text>
-                  </TouchableOpacity>
-               </View>
-
-               <View style={styles.multi}>
-                  <TouchableOpacity onPress={() => { AccountZero('.') }}>
-                     {/* <Image source={full} style={styles.doting}/> */}
-                     <Image source={dot} style={styles.doting} />
-                  </TouchableOpacity>
-               </View>
-
-               <View style={styles.multi}>
-                  <TouchableOpacity onPress={() => { console.log(AccountZero('<')); }}>
-                     <Text style={styles.left}>&lt;</Text>
-                  </TouchableOpacity>
-               </View>
-               <View style={styles.designBas}>
-                  <TouchableOpacity onPress={() => { AccountZero('=') }}>
-                     <Text style={styles.equal}>=</Text>
-                  </TouchableOpacity>
-               </View>
-            </View>
             </View>
          </SafeAreaView>
       </View>
