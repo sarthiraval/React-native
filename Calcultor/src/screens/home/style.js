@@ -90,10 +90,9 @@ const styles = StyleSheet.create({
         textAlign: "center"
     },
     doting: {
-        color: "white",
-        fontSize: 100,
-        marginTop: -50,
-        textAlign: "center"
+      width:80,
+      height:50,
+      marginVertical:15
     },
 
     signOf: {

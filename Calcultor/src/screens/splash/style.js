@@ -4,6 +4,13 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor:"white"
     },
+    imageGround:{
+        height:250,
+        width:300,
+        alignSelf:"center",
+        marginBottom:10
+    },
+
     Content: {
      
         flex: 1,
