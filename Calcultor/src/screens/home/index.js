@@ -11,7 +11,7 @@ let Calculator = () => {
    const [value, setValue] = useState("0");
    const [bracket, setBracket] = useState(false)
    const AccountZero = (val) => {
-      // console.log("pressed", val);
+
       if (val == "AC") {
          setValue("0")
       }
@@ -19,22 +19,24 @@ let Calculator = () => {
 
          if ((value.match(/\(/g) || []).length ==
             (value.match(/\)/g) || []).length) {
-            // setValue("Error")
-            // console.log("It is equal")
-            if (value.slice(-1) == "+" ||
-               value.slice(-1) == "-" ||
-               value.slice(-1) == "*" ||
-               value.slice(-1) == "/" ||
-               value.slice(-1) == "." ||
-               value.slice(-1) == "%") {
-               setValue(`${eval(value.replace('()', '(0)')).slice(0, -1)}`)
-            }
-            else {
-               setValue(`${eval(value.replace('()', '(0)'))}`)
+        
+            try {
+               if (value.slice(-1) == "+" ||
+                  value.slice(-1) == "-" ||
+                  value.slice(-1) == "*" ||
+                  value.slice(-1) == "/" ||
+                  value.slice(-1) == "." ||
+                  value.slice(-1) == "%") {
+                  setValue(`${eval(value.replace('()', '(0)')).slice(0, -1)}`)
+               }
+               else {
+                  setValue(`${eval(value.replace('()', '(0)'))}`)
+               }
+            } catch (error) {
+               setValue("Wrong Input")
             }
          }
          else {
-            console.log("UnEqual");
             setValue("Formate Error")
          }
       }
@@ -68,6 +70,9 @@ let Calculator = () => {
          }
       }
       else if (value == 'Formate Error') {
+         setValue(val)
+      }
+      else if (value == 'Wrong Input') {
          setValue(val)
       }
       else {
@@ -107,12 +112,13 @@ let Calculator = () => {
 
          <SafeAreaView style={styles.SafeDesign} >
             <ScrollView style={styles.main}
+               showsVerticalScrollIndicator={false}
                ref={ScrollViewRef}
                onContentSizeChange={() => ScrollViewRef.current.scrollToEnd({
                   animated: true
                })
                }
-               showsVerticalScrollIndicator="false">
+            >
                <Text style={styles.mainText}>
                   {value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                </Text>
