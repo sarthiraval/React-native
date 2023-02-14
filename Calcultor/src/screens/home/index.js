@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import styles from './style';
 import { Text, SafeAreaView, TouchableOpacity, View, Image } from 'react-native';
-import { dot } from "../../assets/Image/index"
+import { back, dot } from "../../assets/Image/index"
 import 'react-native-gesture-handler';
 import { ScrollView } from 'react-native-gesture-handler';
 
@@ -120,6 +120,7 @@ let Calculator = () => {
                }
             >
                <Text style={styles.mainText}>
+                  {/* [0-9]{15} */}
                   {value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                </Text>
 
@@ -252,7 +253,8 @@ let Calculator = () => {
 
                   <View style={styles.multi}>
                      <TouchableOpacity onPress={() => { console.log(AccountZero('<')); }}>
-                        <Text style={styles.left}>&lt;</Text>
+                        {/* <Text style={styles.left}>&lt;</Text> */}
+                        <Image source={back} style={styles.leftImages}/>
                      </TouchableOpacity>
                   </View>
                   <View style={styles.designBas}>

@@ -139,6 +139,12 @@ const styles = StyleSheet.create({
         fontSize: 70,
         marginTop:-5,
         alignSelf: "center"
+    },
+    leftImages:{
+        width:60,
+        height:60,
+        marginVertical:8,
+        marginHorizontal:8
     }
 
 

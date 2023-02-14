@@ -13,6 +13,7 @@ const Navigation = () => {
         setLoaded(true)
     }, 5000);
     const Stack = createNativeStackNavigator()
+    
     return (
         <NavigationContainer>
             <Stack.Navigator>

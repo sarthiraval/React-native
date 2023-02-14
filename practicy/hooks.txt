@@ -1,0 +1,10 @@
+feature of class based components in function based components.
+hook is a React features such as state and lifecycle methods.
+rules of hooks:-
+      hooks can only be called inside React function components.
+      hooks cannot be conditional
+
+ type of hooks:-
+    useState :-
+    useEffect :- 
+    useRef:-
