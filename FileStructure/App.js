@@ -4,7 +4,8 @@ import React from 'react';
 // import YourApp from './src/Screens/Another/index'
 //  import YourApp from './src/Screens/Another/flex1'
 //  import YourApp from './src/Screens/Another/flatandsection'
- import YourApp from './src/Screens/Another/h'
+//  import YourApp from './src/Screens/Another/h'
+ import YourApp from './src/Screens/hook';
 
 
 
