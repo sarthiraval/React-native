@@ -8,9 +8,9 @@ const [item,setitem]= useState([])
 const YourApp = () => {
 
     useEffect(() => {
-        let url = country
+        let url = country.Countries
+        console.log(url);
         fetch(url)
-            .then(res => res.json())
             .then(data => setitem(data))
     }, [resourseType]);
     return (
@@ -25,6 +25,5 @@ const YourApp = () => {
     );
 }
 
-const styles = StyleSheet.create({})
 
 export default YourApp;
