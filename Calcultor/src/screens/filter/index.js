@@ -20,52 +20,50 @@ const Filter = () => {
 
 
       <SafeAreaView style={styles.backColor}>
-         <Image source={cross} style={styles.crossSign} />
+         <Image source={cross} style={styles.crossIcon} />
 
-         <View style={styles.manageView}>
-            <Text style={styles.nameFilter}>Filters</Text>
+         <View style={styles.mainView}>
+            <Text style={styles.filterText}>Filters</Text>
             <ScrollView>
-               <View style={styles.mainView}>
-                  <Text style={styles.mainName}>
+               <View style={styles.manageView}>
+                  <Text style={styles.textCategory}>
                      Category
                   </Text>
                   <TouchableOpacity>
-                     <Image source={rightSide} style={styles.arrow} />
+                     <Image source={rightSide} style={styles.categoryIcon} />
                   </TouchableOpacity>
                </View>
 
-               <TextInput placeholder="Example:- Nurse,Housekeeper"
+               <TextInput placeholder="Nurse,Housekeeper"
                   placeholderTextColor={whiteGrey}
-                  style={styles.baseValue} />
+                  style={styles.categoryInput} />
 
-               <View style={styles.mainLine} />
+               <View style={styles.line} />
 
-               <View style={styles.mainView}>
-                  <Text style={styles.mainLocation}>
+               <View style={styles.manageView}>
+                  <Text style={styles.locationText}>
                      Locations
                   </Text>
                   <TouchableOpacity>
-                     <Image source={rightSide} style={styles.arrowDirection} />
+                     <Image source={rightSide} style={styles.locationIcon} />
                   </TouchableOpacity>
                </View>
 
                <TextInput placeholder="New York, NY; Chicago.IL;Atlanta,GA"
                   placeholderTextColor={whiteGrey}
-                  style={styles.baseLocation} />
+                  style={styles.locationInput} />
 
-               <View style={styles.viewLine} />
+               <View style={styles.line} />
 
-               <Text style={styles.nameDistance}>Distance</Text>
+               <Text style={styles.distanceBaseText}>Distance</Text>
 
-               <View style={styles.checkBase}>
+               <View style={styles.distanceButton}>
 
-                  <View style={styles.direction}>
+                  <View style={styles.distanceBaseView}>
                      <TouchableOpacity
-
-                        onPress={() => getData(!setData)}
-                     >
+                        onPress={() => getData(!setData)} >
                         <View
-                           style={styles.circleCheck}>
+                           style={styles.circleBorder}>
                            <View style={styles.circleSmall} />
                         </View>
                         {/* {
@@ -78,16 +76,14 @@ const Filter = () => {
                                        </View>
                            } */}
                      </TouchableOpacity>
-                     <Text style={styles.checkValue}>Exact location</Text>
+                     <Text style={styles.distanceText}>Exact location</Text>
                   </View>
 
-                  <View style={styles.checkDirection}>
+                  <View style={styles.distanceView}>
                      <TouchableOpacity
                         onPress={() => getData(!setData)}>
                         <View
-                           style={
-                              styles.circle
-                           }
+                           style={ styles.circle}
                         />
                         {/* {
                               setData
@@ -99,10 +95,10 @@ const Filter = () => {
                                        </View>
                            }*/}
                      </TouchableOpacity>
-                     <Text style={styles.checkValue}>5 miles from selected location</Text>
+                     <Text style={styles.distanceText}>5 miles from selected location</Text>
                   </View>
 
-                  <View style={styles.checkDirection}>
+                  <View style={styles.distanceView}>
                      <TouchableOpacity
                         onPress={() => getData(!setData)}>
                         <View
@@ -117,23 +113,23 @@ const Filter = () => {
                                        </View>
                            } */}
                      </TouchableOpacity>
-                     <Text style={styles.checkValue}>20 miles from selected location</Text>
+                     <Text style={styles.distanceText}>20 miles from selected location</Text>
                   </View>
 
                </View>
 
-               <View style={styles.baseLine} />
+               <View style={styles.distanceLine} />
 
-               <Text style={styles.nameSalary}>Salary</Text>
+               <Text style={styles.salaryBaseText}>Salary</Text>
 
-               <View style={styles.salaryBase}>
+               <View style={styles.salaryButton}>
 
 
-                  <View style={styles.direction}>
+                  <View style={styles.salaryBaseView}>
                      <TouchableOpacity
                         onPress={() => getSalary(!setSalary)}>
                         <View
-                           style={styles.circleCheck}>
+                           style={styles.circleBorder}>
                            <View style={styles.circleSmall} />
                         </View>
                         {/* {
@@ -146,10 +142,10 @@ const Filter = () => {
                                        </View>
                            } */}
                      </TouchableOpacity>
-                     <Text style={styles.checkValue}>Any Salary</Text>
+                     <Text style={styles.SalaryText}>Any Salary</Text>
                   </View>
 
-                  <View style={styles.salaryDirection}>
+                  <View style={styles.salaryView}>
                      <TouchableOpacity
                         onPress={() => getSalary(!setSalary)}>
                         <View
@@ -164,11 +160,11 @@ const Filter = () => {
                                        </View>
                            } */}
                      </TouchableOpacity>
-                     <Text style={styles.checkValue}>From $50/hour</Text>
+                     <Text style={styles.SalaryText}>From $50/hour</Text>
                   </View>
 
 
-                  <View style={styles.salaryDirection}>
+                  <View style={styles.salaryView}>
                      <TouchableOpacity
                         onPress={() => getSalary(!setSalary)}>
                         <View
@@ -183,18 +179,19 @@ const Filter = () => {
                                        </View>
                            } */}
                      </TouchableOpacity>
-                     <Text style={styles.checkValue}>From $???/hour</Text>
+                     <Text style={styles.SalaryText}>From $???/hour</Text>
                   </View>
+
                </View>
             </ScrollView>
 
          </View>
 
          <View
-            style={styles.backBase}>
+            style={styles.buttonView}>
             <TouchableOpacity
-               style={styles.buttonBase}>
-               <Text style={styles.textBase}>Show Results</Text>
+               style={styles.button}>
+               <Text style={styles.buttonText}>Show Results</Text>
             </TouchableOpacity>
          </View>
       </SafeAreaView>

@@ -1,45 +1,44 @@
 import { StyleSheet } from "react-native";
-import { white, black,circle, whiteGrey, skyBlue } from "../../assets/constants/index"
+import { white, black, circle, whiteGrey, skyBlue } from "../../assets/constants/index"
 const styles = StyleSheet.create({
   backColor: {
     backgroundColor: white
   },
-  crossSign: {
+  crossIcon: {
     width: 20,
     height: 40,
     alignSelf: "flex-end",
     marginRight: 20,
     marginTop: 1
   },
-  manageView: {
+  mainView: {
     width: 350,
     marginTop: 7,
     marginLeft: 20
   },
-  nameFilter: {
+  filterText: {
     fontSize: 30,
     fontWeight: 600,
-    
   },
-  mainView: {
+  manageView: {
     marginTop: 8,
     flexDirection: "row",
     justifyContent: "space-between"
   },
-  mainName: {
+  textCategory: {
     fontSize: 20,
     // color:"#808080",
     marginTop: 10,
     fontWeight: 600,
     marginBottom: 1
   },
-  arrow: {
+  categoryIcon: {
     marginTop: 15,
     fontSize: 25,
     height: 18,
     width: 15,
   },
-  baseValue: {
+  categoryInput: {
     marginTop: -5,
     height: 48,
     color: whiteGrey,
@@ -52,53 +51,47 @@ const styles = StyleSheet.create({
     // borderBottomWidth:1,
     // borderColor: "#d9d9d9"
   },
-  mainLine: {
+  line: {
     marginTop: 8,
     color: whiteGrey,
     fontSize: 15,
     borderBottomWidth: 1,
     borderColor: circle
   },
-  arrowDirection: {
+  locationIcon: {
     marginTop: 30,
     fontSize: 25,
     height: 18,
     width: 15,
   },
-  mainLocation: {
+  locationText: {
     fontSize: 20,
     marginTop: 24,
     fontWeight: "bold",
   },
-  baseLocation: {
+  locationInput: {
     height: 48,
-    marginTop:-3,
+    marginTop: -3,
     color: whiteGrey,
     fontSize: 17,
   },
-  viewLine: {
-    color: whiteGrey,
-    fontSize: 15,
-    marginTop: 8,
-    borderBottomWidth: 1,
-    borderColor: circle
-  },
-  nameDistance: {
+
+  distanceBaseText: {
     fontSize: 20,
     marginTop: 30,
     fontWeight: 600,
   },
-  direction: {
+  distanceBaseView: {
     flexDirection: "row",
   },
-  checkDirection: {
+  distanceView: {
     flexDirection: "row",
     marginTop: 17
   },
-  checkBase: {
+  distanceButton: {
     marginVertical: 17
   },
-  checkValue: {
+  distanceText: {
     fontSize: 20,
     fontWeight: 400,
     marginLeft: 10,
@@ -111,7 +104,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 20 / 2
   },
-  circleCheck: {
+  circleBorder: {
     marginTop: 2,
     height: 20,
     width: 20,
@@ -127,36 +120,45 @@ const styles = StyleSheet.create({
     backgroundColor: skyBlue,
     borderRadius: 20 / 2
   },
-  baseLine: {
+  distanceLine: {
     marginTop: 8,
     color: whiteGrey,
     fontSize: 15,
     borderBottomWidth: 1,
     borderColor: circle
   },
-  nameSalary: {
+  salaryBaseText: {
     fontSize: 20,
     marginTop: 29,
     fontWeight: 600,
   },
-  salaryBase: {
+  salaryButton: {
     marginVertical: 18
   },
-  salaryDirection: {
+  salaryBaseView: {
+    flexDirection: "row",
+    marginTop: 3
+  },
+  SalaryText: {
+    fontSize: 20,
+    fontWeight: 400,
+    marginLeft: 10,
+  },
+  salaryView: {
     flexDirection: "row",
     marginTop: 17
   },
-  backBase: {
+  buttonView: {
     marginTop: -11,
     marginHorizontal: 5,
-    borderColor:white,
-    borderWidth:1,
-    height:98,
-    shadowColor:black,
-    shadowOpacity:0.1,
+    borderColor: white,
+    borderWidth: 1,
+    height: 98,
+    shadowColor: black,
+    shadowOpacity: 0.1,
     backgroundColor: white
   },
-  buttonBase: {
+  button: {
     backgroundColor: skyBlue,
     height: 65,
     alignSelf: "center",
@@ -164,19 +166,14 @@ const styles = StyleSheet.create({
     marginVertical: 15,
     borderRadius: 65 / 2
   },
-  textBase: {
+  buttonText: {
     marginVertical: 17,
     color: white,
     fontSize: 20,
     alignSelf: "center",
     fontWeight: 600
-  }, 
- line: {
-    color: whiteGrey,
-    fontSize: 15,
-    borderBottomWidth: 1,
-    borderColor: circle
   },
+
 
 })
 
