@@ -1,6 +1,6 @@
 import React, { useState } from 'react';;
 
-import Calculator from '../screens/home';
+import Filter from '../screens/filter';
 import Splash from '../screens/splash';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -20,10 +20,13 @@ const Navigation = () => {
                 {isloaded ?
                 
                     <Stack.Screen
-                        name="Calculator"
-                        component={Calculator}
-
-                        options={{ headerShown: false
+                        name="Filter"
+                        component={Filter}
+                        options={{ 
+                            headerTitle:"",
+                            headerShown: false,
+                            // headerLeft: () =><Image source={cross} />,
+                            // headerRight : ()=> <></>
                            }} />
                     :
                     <Stack.Screen
@@ -31,8 +34,9 @@ const Navigation = () => {
 
                         component={Splash}
                         options={{
-                            headerShown: false
-                           
+                            headerShown: false,
+                            // headerLeft: () => <></>,
+
                         }} />
                 }
                

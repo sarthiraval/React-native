@@ -1,6 +1,6 @@
 import { Image, SafeAreaView, TouchableOpacity, Text } from 'react-native'
 import React, { useEffect, useLayoutEffect, useMemo, useReducer, useRef, useState } from 'react'
-import { box, down,up } from "../../img/index"
+import { box, down } from "../../img/index"
 import { check } from '../../img/index'
 
 const props = () => {

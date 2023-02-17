@@ -2,6 +2,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     AllContent: {
         flex: 1,
+        justifyContent:"center",
         backgroundColor: "white",
        
     },
@@ -19,14 +20,13 @@ const styles = StyleSheet.create({
     imageGround: {
         height: 300,
         width: 300,
-    
         alignSelf: "center",
         marginBottom: 10
     },
 
     Content: {
         flex: 1,
-        // justifyContent:"center"
+        justifyContent:"center"
     },
     Title: {
         fontSize: 25,

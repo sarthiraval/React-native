@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './style';
 import { Image, SafeAreaView, Text, View } from 'react-native';
-import { arrowleft } from '../../assets/Image/index'
+import { arrowleft, insta } from '../../assets/Image/index'
 
 // let Splash = ({navigation}) => {
 let Splash = () => {
@@ -18,17 +18,17 @@ let Splash = () => {
             <SafeAreaView style={styles.Content} >
 
                 
-             {/* <Image
-                   source={arrowleft}
-                   style={styles.imageGround}/> */}
-               <View style={styles.AllData}>
+             <Image
+                   source={insta}
+                   style={styles.imageGround}/>
+               {/* <View style={styles.AllData}>
                     <Text style={styles.add}>+</Text>
                     <Text style={styles.div}>÷</Text>
                 </View>
                 <View style={styles.AllConten}>
                     <Text style={styles.min}>-</Text>
                     <Text style={styles.mul}>x</Text>
-                </View>
+                </View> */}
                 {/* <Text style={styles.Title}>Calculator</Text> */}
 
             </SafeAreaView>

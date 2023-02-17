@@ -1,3 +1,6 @@
 export const arrowleft = require('./ds.png')
 export const dot = require('./full.png')
 export const back = require('./backspace.png')
+export const cross = require('./close.png')
+export const insta = require('./insta.jpeg')
+export const rightSide = require('./right.png')
