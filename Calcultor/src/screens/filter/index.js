@@ -8,7 +8,7 @@ import { cross, rightSide } from '../../assets/Image';
 import { whiteGrey } from '../../assets/constants';
 
 
-let Filter = () => {
+const Filter = () => {
    const [setData, getData] = useState(0)
    const [setSalary, getSalary] = useState(true)
 
