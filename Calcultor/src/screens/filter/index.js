@@ -10,6 +10,8 @@ import { whiteGrey } from '../../assets/constants';
 
 const Filter = () => {
    const [setData, getData] = useState(0)
+   var distanceData = ['Exact location', '5 miles from selected location',
+   '20 milles from selected location'];
    const [setSalary, getSalary] = useState(true)
 
    // const handleClick = (item, id) => {
@@ -20,13 +22,13 @@ const Filter = () => {
 
 
       <View style={styles.backColor}>
-     
+
 
          <View style={styles.mainView}>
-         <Image source={cross} style={styles.crossIcon} />
+            <Image source={cross} style={styles.crossIcon} />
             <Text style={styles.filterText}>Filters</Text>
             <ScrollView
-              showsVerticalScrollIndicator={false}>
+               showsVerticalScrollIndicator={false}>
                <View style={styles.manageView}>
                   <Text style={styles.textCategory}>
                      Category
@@ -60,64 +62,74 @@ const Filter = () => {
                <Text style={styles.distanceBaseText}>Distance</Text>
 
                <View style={styles.distanceButton}>
+                  {distanceData.map((distanceData, key) => {
+                     return (
+                        <View style={styles.distanceBaseView}
+                         key={distanceData}>
 
-                  <View style={styles.distanceBaseView}>
-                     <TouchableOpacity
-                        onPress={() => getData(!setData)} >
-                        <View
-                           style={styles.circleBorder}>
-                           <View style={styles.circleSmall} />
+                           <TouchableOpacity
+                              onPress={() => getData(!setData)} >
+                              {setData == key ? (
+                                 <View
+                                    style={styles.circleBorder}>
+                                    <View style={styles.circleSmall} />
+                                 </View>
+                              ) : (
+                                 <View
+                                    style={styles.circle} />
+                              )}
+                              {/* {
+                              setData
+                                 ? <View
+                                    style={styles.circle} />
+                                 : <View
+                                    style={styles.circleCheck}>
+                                       <View style={styles.circleSmall}/>
+                                       </View>
+                           } */}
+                           </TouchableOpacity>
+                           <Text style={styles.distanceText}>{distanceData}</Text>
                         </View>
-                        {/* {
-                              setData
-                                 ? <View
-                                    style={styles.circle} />
-                                 : <View
-                                    style={styles.circleCheck}>
-                                       <View style={styles.circleSmall}/>
-                                       </View>
-                           } */}
-                     </TouchableOpacity>
-                     <Text style={styles.distanceText}>Exact location</Text>
-                  </View>
 
-                  <View style={styles.distanceView}>
-                     <TouchableOpacity
-                        onPress={() => getData(!setData)}>
-                        <View
-                           style={ styles.circle}
-                        />
-                        {/* {
-                              setData
-                                 ? <View
-                                    style={styles.circle} />
-                                 : <View
-                                    style={styles.circleCheck}>
-                                       <View style={styles.circleSmall}/>
-                                       </View>
-                           }*/}
-                     </TouchableOpacity>
-                     <Text style={styles.distanceText}>5 miles from selected location</Text>
-                  </View>
+                        // <View style={styles.distanceView}>
+                        //    <TouchableOpacity
+                        //       onPress={() => getData(!setData)}>
+                        //       <View
+                        //          style={ styles.circle}
+                        //       />
+                        //       {/* {
+                        //             setData
+                        //                ? <View
+                        //                   style={styles.circle} />
+                        //                : <View
+                        //                   style={styles.circleCheck}>
+                        //                      <View style={styles.circleSmall}/>
+                        //                      </View>
+                        //          }*/}
+                        //    </TouchableOpacity>
+                        //    <Text style={styles.distanceText}></Text>
+                        // </View>
 
-                  <View style={styles.distanceView}>
-                     <TouchableOpacity
-                        onPress={() => getData(!setData)}>
-                        <View
-                           style={styles.circle} />
-                        {/* {
-                              setData
-                                 ? <View
-                                    style={styles.circle} />
-                                 : <View
-                                    style={styles.circleCheck}>
-                                       <View style={styles.circleSmall}/>
-                                       </View>
-                           } */}
-                     </TouchableOpacity>
-                     <Text style={styles.distanceText}>20 miles from selected location</Text>
-                  </View>
+                        // <View style={styles.distanceView}>
+                        //    <TouchableOpacity
+                        //       onPress={() => getData(!setData)}>
+                        //       <View
+                        //          style={styles.circle} />
+                        //       {/* {
+                        //             setData
+                        //                ? <View
+                        //                   style={styles.circle} />
+                        //                : <View
+                        //                   style={styles.circleCheck}>
+                        //                      <View style={styles.circleSmall}/>
+                        //                      </View>
+                        //          } */}
+                        //    </TouchableOpacity>
+                        //    <Text style={styles.distanceText}>20 miles from selected location</Text>
+                        // </View>
 
+                     );
+                  })}
                </View>
 
                <View style={styles.distanceLine} />
@@ -187,9 +199,9 @@ const Filter = () => {
                </View>
 
 
-               
+
             </ScrollView>
-           
+
          </View>
          <View
             style={styles.buttonView}>
@@ -198,8 +210,8 @@ const Filter = () => {
                <Text style={styles.buttonText}>Show Results</Text>
             </TouchableOpacity>
          </View>
-         
-        
+
+
       </View>
 
 

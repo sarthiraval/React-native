@@ -99,9 +99,10 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 400,
     marginLeft: 10,
+    marginTop: 11,
   },
   circle: {
-    marginTop: 2,
+    marginTop: 15,
     height: 20,
     width: 20,
     borderColor: circle,
@@ -109,7 +110,7 @@ const styles = StyleSheet.create({
     borderRadius: 10
   },
   circleBorder: {
-    marginTop: 2,
+    marginTop: 15,
     height: 20,
     width: 20,
     borderColor: skyBlue,
@@ -147,6 +148,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 400,
     marginLeft: 10,
+    marginTop:11
   },
   salaryView: {
     flexDirection: "row",
