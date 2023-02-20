@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   },
   mainView: {
     width: "90%",
-    height: "85%",
+    height: "87%",
     marginTop: 20,
     marginLeft: 20
   },
@@ -155,7 +155,6 @@ const styles = StyleSheet.create({
     marginTop: 17
   },
   buttonView: {
-   maxHeight:"20%",
     borderColor: white,
     borderWidth: 1,
     shadowColor: black,
