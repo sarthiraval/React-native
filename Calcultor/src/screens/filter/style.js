@@ -2,22 +2,26 @@ import { StyleSheet } from "react-native";
 import { white, black, circle, whiteGrey, skyBlue } from "../../assets/constants/index"
 const styles = StyleSheet.create({
   backColor: {
+    height:"100%",
     backgroundColor: white
   },
   crossIcon: {
     width: 20,
     height: 40,
+    right:5,
+    top:20,
     alignSelf: "flex-end",
-    marginRight: 20,
-    marginTop: 1
   },
   mainView: {
-    width: 350,
-    marginTop: 7,
+    width: "90%",
+    height: "85%",
+    marginTop: 20,
     marginLeft: 20
   },
+  
   filterText: {
     fontSize: 30,
+    marginTop:10,
     fontWeight: 600,
   },
   manageView: {
@@ -102,7 +106,7 @@ const styles = StyleSheet.create({
     width: 20,
     borderColor: circle,
     borderWidth: 1,
-    borderRadius: 20 / 2
+    borderRadius: 10
   },
   circleBorder: {
     marginTop: 2,
@@ -110,7 +114,7 @@ const styles = StyleSheet.create({
     width: 20,
     borderColor: skyBlue,
     borderWidth: 1,
-    borderRadius: 20 / 2
+    borderRadius: 10
   },
   circleSmall: {
     height: 10,
@@ -118,7 +122,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     marginVertical: 4,
     backgroundColor: skyBlue,
-    borderRadius: 20 / 2
+    borderRadius: 10
   },
   distanceLine: {
     marginTop: 8,
@@ -149,27 +153,24 @@ const styles = StyleSheet.create({
     marginTop: 17
   },
   buttonView: {
-    marginTop: -11,
-    marginHorizontal: 5,
+   maxHeight:"20%",
     borderColor: white,
     borderWidth: 1,
-    height: 98,
     shadowColor: black,
     shadowOpacity: 0.1,
-    backgroundColor: white
+    marginHorizontal:5,
+    backgroundColor: white,
   },
   button: {
     backgroundColor: skyBlue,
-    height: 65,
-    alignSelf: "center",
-    width: 280,
-    marginVertical: 15,
-    borderRadius: 65 / 2
+    marginVertical:10,
+    marginHorizontal:30,
+    borderRadius: 32
   },
   buttonText: {
-    marginVertical: 17,
     color: white,
     fontSize: 20,
+    marginVertical:15,
     alignSelf: "center",
     fontWeight: 600
   },

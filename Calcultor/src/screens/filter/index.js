@@ -19,12 +19,14 @@ const Filter = () => {
    return (
 
 
-      <SafeAreaView style={styles.backColor}>
-         <Image source={cross} style={styles.crossIcon} />
+      <View style={styles.backColor}>
+     
 
          <View style={styles.mainView}>
+         <Image source={cross} style={styles.crossIcon} />
             <Text style={styles.filterText}>Filters</Text>
-            <ScrollView>
+            <ScrollView
+              showsVerticalScrollIndicator={false}>
                <View style={styles.manageView}>
                   <Text style={styles.textCategory}>
                      Category
@@ -183,10 +185,12 @@ const Filter = () => {
                   </View>
 
                </View>
+
+
+               
             </ScrollView>
-
+           
          </View>
-
          <View
             style={styles.buttonView}>
             <TouchableOpacity
@@ -194,7 +198,9 @@ const Filter = () => {
                <Text style={styles.buttonText}>Show Results</Text>
             </TouchableOpacity>
          </View>
-      </SafeAreaView>
+         
+        
+      </View>
 
 
    )
