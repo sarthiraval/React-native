@@ -2,50 +2,49 @@ import { StyleSheet } from "react-native";
 import { white, black, circle, whiteGrey, skyBlue } from "../../assets/constants/index"
 const styles = StyleSheet.create({
   backColor: {
-    height:"100%",
     backgroundColor: white
   },
   crossIcon: {
     width: 20,
-    height: 40,
-    right:5,
-    top:20,
+    height: "9%",
+    right: 5,
+    marginTop: 15,
     alignSelf: "flex-end",
   },
   mainView: {
     width: "90%",
     height: "87%",
-    marginTop: 20,
+    marginTop: 15,
     marginLeft: 20
   },
-  
   filterText: {
     fontSize: 30,
-    marginTop:10,
+    marginTop:-10,
+    color:black,
     fontWeight: 600,
   },
   manageView: {
-    marginTop: 8,
+    marginTop: 10,
     flexDirection: "row",
     justifyContent: "space-between"
   },
-  textCategory: {
+  itemText: {
     fontSize: 20,
-    // color:"#808080",
-    marginTop: 10,
+    color:black,
+    marginTop: 13,
     fontWeight: 600,
     marginBottom: 1
   },
-  categoryIcon: {
-    marginTop: 15,
+  icons: {
+    marginTop: 18,
     fontSize: 25,
     height: 18,
     width: 15,
   },
-  categoryInput: {
-    marginTop: -5,
+  itemTextInput: {
+    marginTop: -1,
     height: 48,
-    color: whiteGrey,
+    color: black,
     fontSize: 17,
     // textDecorationLine: "underline",
     // borderBottomColor: whiteGrey,
@@ -56,50 +55,31 @@ const styles = StyleSheet.create({
     // borderColor: "#d9d9d9"
   },
   line: {
-    marginTop: 8,
+    marginTop: 10,
     color: whiteGrey,
     fontSize: 15,
     borderBottomWidth: 1,
     borderColor: circle
   },
-  locationIcon: {
-    marginTop: 30,
-    fontSize: 25,
-    height: 18,
-    width: 15,
-  },
-  locationText: {
+  dsMainText: {
     fontSize: 20,
-    marginTop: 24,
-    fontWeight: "bold",
-  },
-  locationInput: {
-    height: 48,
-    marginTop: -3,
-    color: whiteGrey,
-    fontSize: 17,
-  },
-
-  distanceBaseText: {
-    fontSize: 20,
-    marginTop: 30,
+    color:black,
+    marginTop: 38,
     fontWeight: 600,
   },
-  distanceBaseView: {
+  dsMainView: {
     flexDirection: "row",
+    marginTop:5
   },
-  distanceView: {
-    flexDirection: "row",
-    marginTop: 17
-  },
-  distanceButton: {
-    marginVertical: 17
-  },
-  distanceText: {
+  dsBaseText: {
     fontSize: 20,
+    color:black,
     fontWeight: 400,
     marginLeft: 10,
     marginTop: 11,
+  },
+  space:{
+   marginBottom:15
   },
   circle: {
     marginTop: 15,
@@ -125,56 +105,27 @@ const styles = StyleSheet.create({
     backgroundColor: skyBlue,
     borderRadius: 10
   },
-  distanceLine: {
-    marginTop: 8,
-    color: whiteGrey,
-    fontSize: 15,
-    borderBottomWidth: 1,
-    borderColor: circle
-  },
-  salaryBaseText: {
-    fontSize: 20,
-    marginTop: 29,
-    fontWeight: 600,
-  },
-  salaryButton: {
-    marginVertical: 18
-  },
-  salaryBaseView: {
-    flexDirection: "row",
-    marginTop: 3
-  },
-  SalaryText: {
-    fontSize: 20,
-    fontWeight: 400,
-    marginLeft: 10,
-    marginTop:11
-  },
-  salaryView: {
-    flexDirection: "row",
-    marginTop: 17
-  },
   buttonView: {
     borderColor: white,
     borderWidth: 1,
     shadowColor: black,
+    bottom: 10,
     shadowOpacity: 0.1,
-    marginHorizontal:5,
+    marginHorizontal: 5,
     backgroundColor: white,
   },
   button: {
     backgroundColor: skyBlue,
-    marginVertical:10,
-    marginHorizontal:30,
+    marginVertical: 10,
+    marginHorizontal: 30,
     borderRadius: 32
   },
   buttonText: {
     color: white,
     fontSize: 20,
-    marginVertical:15,
+    marginVertical: 15,
     alignSelf: "center",
     fontWeight: 600
   },
 })
-
 export default styles

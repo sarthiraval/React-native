@@ -2,24 +2,45 @@ import React, { useState } from 'react';
 import styles from './style';
 import { Text, SafeAreaView, TouchableOpacity, View, Image } from 'react-native';
 import 'react-native-gesture-handler';
-import { ScrollView, TextInput } from 'react-native-gesture-handler';
+import { FlatList, ScrollView, TextInput } from 'react-native-gesture-handler';
 import { cross, rightSide } from '../../assets/Image';
-import { whiteGrey } from '../../assets/constants';
+import { whiteGrey } from '../../assets/constants/index'
 
 const Filter = () => {
-   var distanceData = [
+   const textInputDta = [
+      { title: 'Category', option: "Nurse,Housekeeper", iconLeft: rightSide },
+      { title: 'Locations', option: "New York, NY; Chicago.IL;Atlanta,GA", iconLeft: rightSide },
+   ];
+   const distanceData = [
       { id: 1, title: 'Exact location' },
       { id: 2, title: '5 miles from selected location' },
       { id: 3, title: '20 milles from selected location' }
    ];
+   const inputField = ({ item }) => {
+      return (
+         <><View style={styles.manageView}>
+            <Text style={styles.itemText}>
+               {item.title}
+            </Text>
+            <TouchableOpacity>
+               <Image source={item.iconLeft}
+                  style={styles.icons} />
+            </TouchableOpacity>
+         </View>
+            <TextInput placeholder={item.option}
+               placeholderTextColor={whiteGrey}
+               style={styles.itemTextInput} />
+            <View style={styles.line} /></>
+      )
+   }
    const [setData, getData] = useState(1)
-   var salaryData = [
-      { id: 1, title: 'Exact location' },
-      { id: 2, title: '5 miles from selected location' },
-      { id: 3, title: '20 milles from selected location' }
+   const salaryData = [
+      { id: 1, title: 'Any Salary' },
+      { id: 2, title: 'Form $50/hour' },
+      { id: 3, title: 'Form $???/hour' }
    ];
    const [setSalary, getSalary] = useState(1)
-   
+
    return (
       <View style={styles.backColor}>
          <View style={styles.mainView}>
@@ -27,35 +48,15 @@ const Filter = () => {
             <Text style={styles.filterText}>Filters</Text>
             <ScrollView
                showsVerticalScrollIndicator={false}>
-               <View style={styles.manageView}>
-                  <Text style={styles.textCategory}>
-                     Category
-                  </Text>
-                  <TouchableOpacity>
-                     <Image source={rightSide} style={styles.categoryIcon} />
-                  </TouchableOpacity>
-               </View>
-               <TextInput placeholder="Nurse,Housekeeper"
-                  placeholderTextColor={whiteGrey}
-                  style={styles.categoryInput} />
-               <View style={styles.line} />
-               <View style={styles.manageView}>
-                  <Text style={styles.locationText}>
-                     Locations
-                  </Text>
-                  <TouchableOpacity>
-                     <Image source={rightSide} style={styles.locationIcon} />
-                  </TouchableOpacity>
-               </View>
-               <TextInput placeholder="New York, NY; Chicago.IL;Atlanta,GA"
-                  placeholderTextColor={whiteGrey}
-                  style={styles.locationInput} />
-               <View style={styles.line} />
-               <Text style={styles.distanceBaseText}>Distance</Text>
-               <View style={styles.distanceButton}>
+               <FlatList
+                  data={textInputDta}
+                  renderItem={inputField}
+               />
+               <Text style={styles.dsMainText}>Distance</Text>
+               <View style={styles.space}>
                   {distanceData.map((item, index) => {
                      return (
-                        <View style={styles.distanceBaseView}>
+                        <View style={styles.dsMainView}>
 
                            <TouchableOpacity
                               key={index}
@@ -71,24 +72,21 @@ const Filter = () => {
                               }
 
                            </TouchableOpacity>
-                           <Text style={styles.distanceText}>{item.title}</Text>
+                           <Text style={styles.dsBaseText}>{item.title}</Text>
                         </View>
 
                      );
                   })}
                </View>
-               <View style={styles.distanceLine} />
-               <Text style={styles.salaryBaseText}>Salary</Text>
-               <View style={styles.salaryButton}>
+               <View style={styles.line} />
+               <Text style={styles.dsMainText}>Salary</Text>
+               <View style={styles.space}>
                   {salaryData.map((item, index) => {
                      return (
-
-                        <View style={styles.salaryBaseView}>
-
+                        <View style={styles.dsMainView}>
                            <TouchableOpacity
                               key={index}
                               onPress={() => getSalary(item.id)} >
-
                               {
                                  setSalary == item.id ?
                                     <View
@@ -97,9 +95,8 @@ const Filter = () => {
                                     </View> : <View
                                        style={styles.circle} />
                               }
-
                            </TouchableOpacity>
-                           <Text style={styles.SalaryText}>{item.title}</Text>
+                           <Text style={styles.dsBaseText}>{item.title}</Text>
                         </View>
                      );
                   })}
@@ -117,39 +114,3 @@ const Filter = () => {
    )
 }
 export default Filter
-
-
-                  // <View style={styles.salaryView}>
-                  //    <TouchableOpacity
-                  //       onPress={() => getSalary(!setSalary)}>
-                  //       <View
-                  //          style={styles.circle} />
-                  //       {
-                  //             setSalary
-                  //                ? <View
-                  //                   style={styles.circle} />
-                  //                : <View
-                  //                   style={styles.circleCheck}>
-                  //                      <View style={styles.circleSmall}/>
-                  //                      </View>
-                  //          }
-                  //    </TouchableOpacity>
-                  //    <Text style={styles.SalaryText}>From $50/hour</Text>
-                  // </View>
-                  // <View style={styles.salaryView}>
-                  //    <TouchableOpacity
-                  //       onPress={() => getSalary(!setSalary)}>
-                  //       <View
-                  //          style={styles.circle} />
-                  //       {
-                  //             setSalary
-                  //                ? <View
-                  //                   style={styles.circle} />
-                  //                : <View
-                  //                   style={styles.circleCheck}>
-                  //                      <View style={styles.circleSmall}/>
-                  //                      </View>
-                  //          }
-                  //    </TouchableOpacity>
-                  //    <Text style={styles.SalaryText}>From $???/hour</Text>
-                  // </View> 
