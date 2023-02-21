@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './style';
 import { Image, SafeAreaView, Text, View } from 'react-native';
 import { arrowleft, insta } from '../../assets/Image/index'
+import Filter from '../filter';
 
 
 
@@ -10,7 +11,7 @@ let Splash = ({navigation}) => {
     // const [splash, setsplash] = useState(true)
     useEffect(() => {
         setTimeout(() => {
-            navigation.navigate("Filter")
+            navigation.navigate(Filter)
         }, 2000);
     });
 
