@@ -13,6 +13,10 @@ navigation Stack = npm install @react-navigation/native @react-navigation/native
 gestuser =  npm install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
 drawer navigation = npm install @react-navigation/drawer
    npm install react-native-gesture-handler react-native-reanimated
+   npm start -- --reset-cache
+
+
+
 
 
 Use button :- npm i apsl-react-native-button --save

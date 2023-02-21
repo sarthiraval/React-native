@@ -2,7 +2,8 @@ import { StyleSheet } from "react-native";
 import { white, black, circle, whiteGrey, skyBlue } from "../../assets/constants/index"
 const styles = StyleSheet.create({
   backColor: {
-    backgroundColor: white
+    backgroundColor: white,
+    height:"100%"
   },
   crossIcon: {
     width: 20,
@@ -37,7 +38,6 @@ const styles = StyleSheet.create({
   },
   icons: {
     marginTop: 18,
-    fontSize: 25,
     height: 18,
     width: 15,
   },

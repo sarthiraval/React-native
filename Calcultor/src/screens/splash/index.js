@@ -3,21 +3,22 @@ import styles from './style';
 import { Image, SafeAreaView, Text, View } from 'react-native';
 import { arrowleft, insta } from '../../assets/Image/index'
 
-// let Splash = ({navigation}) => {
-let Splash = () => {
-    // const [splash, setsplash] = useState(true)
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         setsplash(false)
-    //     }, 2000);
-    // });
 
-    return  /* splash*/ (
+
+let Splash = ({navigation}) => {
+// let Splash = () => {
+    // const [splash, setsplash] = useState(true)
+    useEffect(() => {
+        setTimeout(() => {
+            navigation.navigate("Filter")
+        }, 2000);
+    });
+
+    return  (
 
         <View style={styles.AllContent}>
             <SafeAreaView style={styles.Content} >
 
-                
              <Image
                    source={insta}
                    style={styles.imageGround}/>
@@ -34,10 +35,7 @@ let Splash = () => {
             </SafeAreaView>
         </View>
     )
-    // : (
-    //     navigation.navigate("Calculator")
-
-    // )
+ 
 }
 
 
