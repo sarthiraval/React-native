@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import styles from './style';
-import { Text, SafeAreaView, TouchableOpacity, View, Image } from 'react-native';
+import { Text, TouchableOpacity, View, Image } from 'react-native';
 import 'react-native-gesture-handler';
 import { FlatList, ScrollView, TextInput } from 'react-native-gesture-handler';
 import { cross, rightSide } from '../../assets/Image';
 import { whiteGrey } from '../../assets/constants'
-import DrawerNavigation from '../../drawer';
 const Filter = () => {
    const textInputDta = [
       { id:1,title: 'Category', option: "Nurse,Housekeeper", iconLeft: rightSide },
@@ -56,7 +55,7 @@ const Filter = () => {
                   nestedScrollEnable={true}
                   renderItem={inputField}
                />
-               <DrawerNavigation />
+               {/* <DrawerNavigation /> */}
                <Text style={styles.dsMainText}>Distance</Text>
                <View style={styles.space}>
                   {distanceData.map((item) => {

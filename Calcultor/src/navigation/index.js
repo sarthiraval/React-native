@@ -36,7 +36,7 @@ const Navigation = () => {
                         name="Filter"
                         component={Filter}
                         options={{
-                            headerShown: true,
+                            headerShown: false,
                             // headerLeft: () => <></>,
 
                         }}
