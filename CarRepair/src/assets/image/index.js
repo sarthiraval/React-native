@@ -1,2 +1,6 @@
-export const carRepair = require("./carrepair")
-export const carCheck = require("./check")
+export const carRepair = require("./car.png")
+export const carCheck = require("./check.png")
+export const carSearch = require("./search.png")
+export const mechanic_1 = require('./mechanic_1.png')
+export const mechanic_2 = require('./mechanic_2.png')
+export const mechanic_3 = require('./mechanic_3.png')

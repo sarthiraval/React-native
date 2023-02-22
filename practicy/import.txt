@@ -2,7 +2,7 @@ Vector Icon = npm install react-native-vector-icons --save
 
 Async storage = npm install @react-native-async-storage/async-storage --save
 
-npm install @react-navigation/native
+
 
 ios posd install = npx pod-install
 Android gradlew cleaning  = ./gradlew clean and ./gradlew wrapper
@@ -21,3 +21,23 @@ drawer navigation = npm install @react-navigation/drawer
 
 Use button :- npm i apsl-react-native-button --save
      import Button from 'apsl-react-native-button'
+
+   return (
+        <View style={styles.flatListView}>
+            {words.map((item) => {
+                return ( 
+                    <TouchableOpacity style={stylesflatMainVie}
+                        key={words.id}
+                        onPress={() => setInput(item.id)}>
+                        <Text style={styles.flatText}>{item.name}</Text>
+                        {
+                            input == item.id ?
+                                <Image source={carCheck} style={styles.imageData} />
+                                : null
+                        }
+                    </TouchableOpacity>
+                );
+                
+            })}
+        </View>
+    );
