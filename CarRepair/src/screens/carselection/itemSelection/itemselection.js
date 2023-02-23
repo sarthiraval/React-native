@@ -19,11 +19,11 @@ const words = [
     { id: 11, name: "Toyota" },
     { id: 12, name: "Volvo" },
     { id: 13, name: "Ford" },
-    { id: 14, name: "Tesla" },
+    { id: 14, name: "MotoRolla" },
     { id: 15, name: "Hyundai" },
 ]
-const ItemSelection = ({ navigation, input, setInput }) => {
-    const [seletedvalue, setselectValue] = useState()
+const ItemSelection = ({ navigation, input,setInput }) => {
+    const [seletedvalue, setselectValue] = useState(input)
     const inputField = ({ item }) => {
         console.log("Item", item.id);
         console.log("selected value", seletedvalue);
@@ -35,43 +35,43 @@ const ItemSelection = ({ navigation, input, setInput }) => {
                         marginTop: 10,
                         width: "100%",
                         height: 50,
-                        backgroundColor: seletedvalue == item.name ? backgroundData : null,
+                        backgroundColor: seletedvalue == item.id ? backgroundData : null,
                         justifyContent: "space-between",
                         flexDirection: "row",
                     }}
                     // () => setInput(item.id)
-                    onPress={() => {
-                        seletedvalue == item.name ?
-                            <Image source={carCheck} style={styles.imageData} /> : null
-                    }}>
-                    <Text style={styles.flatText} >{item.name}</Text>
-
-                </TouchableOpacity>
-            )
-        }
-        if (seletedvalue == "") {
-            return (
-                <TouchableOpacity
-                    style={{
-                        marginTop: 10,
-                        width: "100%",
-                        height: 50,
-                        backgroundColor: seletedvalue === item.id ? backgroundData : null,
-                        justifyContent: "space-between",
-                        flexDirection: "row",
-                    }}
-                    key={words.id}
                     onPress={() => setselectValue(item.id)}>
                     <Text style={styles.flatText} >{item.name}</Text>
                     {seletedvalue == item.id ?
-                        null
-                        : <Image source={carCheck} style={styles.imageData} />
+                       
+                         <Image source={carCheck} style={styles.imageData} /> :null
                     }
-
                 </TouchableOpacity>
-
-            );
+            )
         }
+       if(seletedvalue == ""){
+        return (
+            <TouchableOpacity
+                style={{
+                    marginTop: 10,
+                    width: "100%",
+                    height: 50,
+                    backgroundColor: seletedvalue === item.id ? backgroundData : null,
+                    justifyContent: "space-between",
+                    flexDirection: "row",
+                }}
+                key={words.id}
+                onPress={() => setselectValue(item.id)}>
+                <Text style={styles.flatText} >{item.name}</Text>
+                {seletedvalue == item.id ?
+                   
+                     <Image source={carCheck} style={styles.imageData} /> :null
+                }
+
+            </TouchableOpacity>
+
+        );}
+
     }
 
 
@@ -157,14 +157,14 @@ const ItemSelection = ({ navigation, input, setInput }) => {
                                 marginTop: 10,
                                 width: 390,
                                 height: 50,
-                                backgroundColor: input == item.id ? backgroundData : null,
+                                backgroundColor: seletedvalue == item.id ? backgroundData : null,
                                 justifyContent: "space-between",
                                 flexDirection: "row",
                             }}
                             key={words.id}
-                            onPress={() => setInput(item.id)}>
+                            onPress={() => setselectValue(item.id)}>
                             <Text style={styles.flatText} >{item.name}</Text>
-                            {input == item.id ?
+                            {seletedvalue == item.id ?
                                 <Image source={carCheck} style={styles.imageData} />
                                 : null}
                         </TouchableOpacity>
@@ -175,7 +175,7 @@ const ItemSelection = ({ navigation, input, setInput }) => {
             <TouchableOpacity
                 onPress={CheckData}
                 style={styles.noneButton}>
-                {input ?
+                {seletedvalue ?
                     <Text style={styles.buttonText}>Done</Text>
                     : <Text style={styles.buttonText}>None</Text>}
                 <Text style={styles.buttonText}></Text>
