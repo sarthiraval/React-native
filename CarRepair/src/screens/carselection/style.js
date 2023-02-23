@@ -3,9 +3,11 @@ import { darkBlue, darkblue, text, white } from "../../assets/constant";
 
 const styles = StyleSheet.create({
   backColor: {
+    height:"100%",
     backgroundColor: white,
   },
   mainView:{
+    marginTop:10,
     left:20,
   },
   carText: {
@@ -25,7 +27,7 @@ const styles = StyleSheet.create({
     fontWeight:'400',
     borderColor:darkblue,
     borderWidth:2,
-    marginTop:-20,
+    marginTop:20,
     borderRadius: 15
   },
   searchText: {
@@ -48,10 +50,9 @@ const styles = StyleSheet.create({
     color:text
   },
   flatListView: {
-    marginTop: 50,
-    height:"55%",
+     marginTop:"10%"
     // backgroundColor:"red",
-    marginBottom: 81,
+  
   },
   dataView :{
     marginTop: 10,
@@ -73,7 +74,7 @@ const styles = StyleSheet.create({
     backgroundColor: darkBlue,
     height: 60,
     width: 300,
-    bottom:"5%",
+    bottom:"-1%",
     borderRadius: 32
   },
   buttonText: {

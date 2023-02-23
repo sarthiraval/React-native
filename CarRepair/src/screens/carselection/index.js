@@ -25,9 +25,6 @@ const CarSelection = ({ navigation }) => {
         { id: 14, name: "MotoRolla" },
         { id: 15, name: "Hyundai" },
     ]
-
-
-
     const [seletedvalue, setselectValue] = useState(input)
     const inputField = ({ item }) => {
         // console.log("Item", item.id);
@@ -47,12 +44,9 @@ const CarSelection = ({ navigation }) => {
                     onPress={() => setselectValue(item.id)}>
                     <Text style={styles.flatText} >{item.name}</Text>
                     {seletedvalue == item.id ?
-
                         <Image source={carCheck} style={styles.imageData} /> : null
                     }
-
                 </TouchableOpacity>
-
             );
         }
         if (item.name.toLowerCase().includes(input.toLowerCase())) {
@@ -66,35 +60,29 @@ const CarSelection = ({ navigation }) => {
                         justifyContent: "space-between",
                         flexDirection: "row",
                     }}
-                    // () => setInput(item.id)
                     onPress={() => setselectValue(item.id)}>
-
                     <Text style={styles.flatText} >{item.name}</Text>
                     {seletedvalue == item.id ?
-
                         <Image source={carCheck} style={styles.imageData} /> : null
                     }
                 </TouchableOpacity>
             )
         }
     }
-
     const CheckData = () => {
         if (seletedvalue == "") {
             navigation.navigate("CarList")
         }
         else if (seletedvalue != "") {
             navigation.navigate("CarLoading")
-            // alert("carLoading")
-            // setInput(!input)
         }
     }
 
     return (
-        <View style={styles.backColor}>
-            <SafeAreaView style={styles.mainView}>
+        <SafeAreaView style={styles.backColor}>
+            <View style={styles.mainView}>
                 <Text style={styles.carText}>What's your car?</Text>
-            </SafeAreaView>
+            </View>
             <View style={styles.searchView}>
                 <Image style={styles.searchIcon} source={carSearch} />
                 <TextInput
@@ -109,54 +97,8 @@ const CarSelection = ({ navigation }) => {
                 data={words}
                 style={styles.flatListView}
                 showsVerticalScrollIndicator={false}
-                renderItem={inputField
-                    // ({ items }) => {
-                    //         {words.map((item) => {
-
-                    //             if (input == "") {
-                    //                 <TouchableOpacity
-                    //                     style={{
-                    //                         marginTop: 10,
-                    //                         width: 390,
-                    //                         height: 50,
-                    //                         backgroundColor: input == item.id ? backgroundData : null,
-                    //                         justifyContent: "space-between",
-                    //                         flexDirection: "row",
-                    //                     }}
-                    //                     key={words.id}
-                    //                     onPress={() => setInput(items.id)}>
-                    //                     <Text style={styles.flatText} >{item.name}</Text>
-                    //                     {input == item.id ?
-                    //                         <Image source={carCheck} style={styles.imageData} />
-                    //                         : null}
-                    //                 </TouchableOpacity>
-                    //             }
-                    //              if (item.name.toLowerCase().includes(input.toLowerCase())) {
-                    //                 <TouchableOpacity
-                    //                     style={{
-                    //                         marginTop: 10,
-                    //                         width: 390,
-                    //                         height: 50,
-                    //                         backgroundColor: input == item.id ? backgroundData : null,
-                    //                         justifyContent: "space-between",
-                    //                         flexDirection: "row",
-                    //                     }}
-                    //                     key={words.id}
-                    //                     onPress={() => setInput(items.id)}>
-                    //                     <Text style={styles.flatText} >{item.name}</Text>
-                    //                     {input == item.id ?
-                    //                         <Image source={carCheck} style={styles.imageData} />
-                    //                         : null}
-                    //                 </TouchableOpacity>
-                    //             }
-
-
-
-                    //         })}
-                    //     }
-                }
+                renderItem={inputField}
                 ListEmptyComponent={<Text>No Data Found</Text>} />
-            {/* <ItemSelection style={styles.ItemView} input={input} /> */}
             <TouchableOpacity
                 onPress={CheckData}
                 style={styles.noneButton}>
@@ -165,10 +107,7 @@ const CarSelection = ({ navigation }) => {
                     : <Text style={styles.buttonText}>None</Text>}
                 <Text style={styles.buttonText}></Text>
             </TouchableOpacity>
-
-
-        </View>
-
+        </SafeAreaView>
     )
 }
 export default CarSelection
