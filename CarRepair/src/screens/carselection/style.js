@@ -4,7 +4,6 @@ import { darkBlue, darkblue, text, white } from "../../assets/constant";
 const styles = StyleSheet.create({
   backColor: {
     backgroundColor: white,
-    height: "100%",
   },
   mainView:{
     left:20,
@@ -39,6 +38,35 @@ const styles = StyleSheet.create({
       marginHorizontal:10,
       height:30,  
       alignSelf:"center"
+  },
+
+  flatText: {
+    fontSize: 28,
+    fontWeight: 400,
+    marginLeft:25,
+    alignSelf:"center",
+    color:text
+  },
+  flatListView: {
+    marginTop: 50,
+    height:"55%",
+    // backgroundColor:"red",
+    marginBottom: 81,
+  },
+  dataView :{
+    marginTop: 10,
+    // backgroundColor:"red",
+  },
+  flatMainView: {
+    marginTop: 10,
+    width:"50%",
+    backgroundColor:white,
+    justifyContent:"space-between",
+    flexDirection: "row",
+  },
+  imageData:{
+    marginRight:20,
+    alignSelf:"center",
   },
   noneButton: {
     alignSelf: "center",
