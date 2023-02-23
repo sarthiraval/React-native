@@ -6,9 +6,8 @@ import CarLoading from '../screens/carloading'
 import Onboarding from '../screens/Onboarding';
 import CarList from '../screens/CarList';
 import ThankYou from '../screens/ThankYou';
-
 import CarSelection from '../screens/carselection'
-
+import ItemSelection from '../screens/carselection/itemSelection/itemselection'
 const  Navigator =() =>{
   const Stack = createNativeStackNavigator()
   return (
@@ -16,6 +15,7 @@ const  Navigator =() =>{
         <Stack.Navigator>
         <Stack.Screen name='Onboarding' component={Onboarding} options={{ title: "Onboarding",  headerShown:false}} />  
         <Stack.Screen name="CarSelection" component={CarSelection} options={{headerShown : false}}/>
+        <Stack.Screen name='ItemSelection' component={ItemSelection} options={{ title: "ItemSelection",  headerShown:false}} />  
         <Stack.Screen name='CarList' component={CarList} options={{ title: "CarList",  headerShown:false}} />  
         <Stack.Screen name="CarLoading" component={CarLoading}  options={{headerShown : false}}/>
         <Stack.Screen name="CarAdd" component={CarAdd} options={{headerShown : false}}/>

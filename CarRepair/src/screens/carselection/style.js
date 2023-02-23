@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { darkblue, text, white } from "../../assets/constant";
+import { darkBlue, darkblue, text, white } from "../../assets/constant";
 
 const styles = StyleSheet.create({
   backColor: {
@@ -42,19 +42,10 @@ const styles = StyleSheet.create({
   },
   noneButton: {
     alignSelf: "center",
-    backgroundColor: darkblue,
+    backgroundColor: darkBlue,
     height: 60,
     width: 300,
     bottom:"5%",
-    borderRadius: 32
-  },
-  doneButtons:{
-    alignSelf: "center",
-    backgroundColor: darkblue,
-    height: 60,
-    width: 300,
-    bottom:"5%",
-    marginTop:1,
     borderRadius: 32
   },
   buttonText: {

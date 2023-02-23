@@ -1,11 +1,12 @@
 import { StyleSheet } from "react-native";
-import { backgroundData, backgrounddata, text, white } from "../../../assets/constant";
+import { backgroundData, backgrounddata, darkBlue, text, white } from "../../../assets/constant";
 const styles = StyleSheet.create({
 
   flatText: {
     fontSize: 28,
     fontWeight: 400,
     marginLeft:25,
+    alignSelf:"center",
     color:text
   },
   flatListView: {
@@ -25,15 +26,27 @@ const styles = StyleSheet.create({
     justifyContent:"space-between",
     flexDirection: "row",
   },
-  flatMainVie: {
-    marginTop: 10,
-    width:"100%",
-    backgroundColor:backgroundData,
-    justifyContent:"space-between",
-    flexDirection: "row",
-  },
   imageData:{
-    marginRight:20
-  }
+    marginRight:20,
+    alignSelf:"center",
+  },
+  noneButton: {
+    alignSelf: "center",
+    backgroundColor: darkBlue,
+    height: 60,
+    width: 300,
+    bottom:"60%",
+    borderRadius: 32
+  },
+  buttonText: {
+    color: white,
+    fontSize: 16,
+    marginVertical: 15,
+    fontWeight: 500,
+    alignSelf: "center",
+    marginTop: 20,
+    fontWeight: 600
+  },
+ 
 })
 export default styles

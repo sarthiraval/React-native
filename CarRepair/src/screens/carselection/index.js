@@ -10,7 +10,6 @@ const CarSelection = ({ navigation }) => {
 
   const [input, setInput] = useState("")
 
-
   return (
     <View style={styles.backColor}>
       <SafeAreaView style={styles.mainView}>
@@ -28,17 +27,18 @@ const CarSelection = ({ navigation }) => {
       </View>
       <ItemSelection style={styles.ItemView} input={input} setInput={setInput} />
      
- 
-      <TouchableOpacity
-        onPress={() => navigation.navigate("CarList")}
-        style={styles.noneButton}>
-        <Text style={styles.buttonText}>None</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
+    
+   
+      {/* <TouchableOpacity
         onPress={() => navigation.navigate("CarLoading")}
         style={styles.doneButtons}>
         <Text style={styles.buttonText}>Done</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
+      {/* <TouchableOpacity
+                onPress={CheckData}
+                style={styles.noneButton}>
+                <Text style={styles.buttonText}>None</Text>
+            </TouchableOpacity> */}
     </View>
 
   )

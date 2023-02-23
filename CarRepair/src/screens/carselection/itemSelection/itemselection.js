@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './style';
 import { Image, View, Text, FlatList } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import { carCheck } from '../../../assets/image';
+import { withNavigation } from 'react-navigation';
+import { backgroundData, white } from '../../../assets/constant';
 const words = [
     { id: 1, name: "Kiwi" },
     { id: 2, name: "Honda" },
@@ -20,54 +22,167 @@ const words = [
     { id: 14, name: "Tesla" },
     { id: 15, name: "Hyundai" },
 ]
-const ItemSelection = ({ input, setInput }) => {
-       const inputField = ({ item }) => {
-        if (input == "") {
-
-            return (
-                <TouchableOpacity style={styles.flatMainView}
-                    key={words.id}
-                    onPress={() => setInput(item.id)}>
-                    <Text style={styles.flatText}>{item.name}</Text>
-                    <Image source={carCheck} style={styles.imageData} />
-
-                    {
-                        input == item.id ?
-                            <Image source={carCheck} style={styles.imageData} />
-                            : null
-                    }
-                </TouchableOpacity>
-            );
-
-        }
+const ItemSelection = ({ navigation, input, setInput }) => {
+    const [seletedvalue, setselectValue] = useState()
+    const inputField = ({ item }) => {
+        console.log("Item", item.id);
+        console.log("selected value", seletedvalue);
 
         if (item.name.toLowerCase().includes(input.toLowerCase())) {
             return (
-                <View style={styles.dataView}>
-                    <TouchableOpacity style={styles.flatMainView}
-                        key={words.id}
-                        onPress={() => setInput(item.id)}>
-                        <Text style={styles.flatText}>{item.name}</Text>
-                        {
-                            input == item.id ?
-                                <Image source={carCheck} style={styles.imageData} />
-                                : null
-                        }
-                                            <Image source={carCheck} style={styles.imageData} />
+                <TouchableOpacity
+                    style={{
+                        marginTop: 10,
+                        width: "100%",
+                        height: 50,
+                        backgroundColor: seletedvalue == item.name ? backgroundData : null,
+                        justifyContent: "space-between",
+                        flexDirection: "row",
+                    }}
+                    // () => setInput(item.id)
+                    onPress={() => {
+                        seletedvalue == item.name ?
+                            <Image source={carCheck} style={styles.imageData} /> : null
+                    }}>
+                    <Text style={styles.flatText} >{item.name}</Text>
 
-                    </TouchableOpacity>
-                </View>
+                </TouchableOpacity>
             )
         }
+        if (seletedvalue == "") {
+            return (
+                <TouchableOpacity
+                    style={{
+                        marginTop: 10,
+                        width: "100%",
+                        height: 50,
+                        backgroundColor: seletedvalue === item.id ? backgroundData : null,
+                        justifyContent: "space-between",
+                        flexDirection: "row",
+                    }}
+                    key={words.id}
+                    onPress={() => setselectValue(item.id)}>
+                    <Text style={styles.flatText} >{item.name}</Text>
+                    {seletedvalue == item.id ?
+                        null
+                        : <Image source={carCheck} style={styles.imageData} />
+                    }
+
+                </TouchableOpacity>
+
+            );
+        }
     }
+
+
+
+    const CheckData = () => {
+        if (input == "") {
+            // withNavigation.navigate("CarList")
+            // navigation.navigate("CarList")
+            alert("carLIst")
+            // setInput(!input)
+
+        }
+        else if (input != "") {
+            // withNavigation.navigate("CarLoading")
+            // navigation.navigate("CarLoading")            
+            alert("carLoading")
+            // setInput(!input)
+        }
+    }
+
     return (
-        <FlatList
-            data={words}
-            style={styles.flatListView}
-            showsVerticalScrollIndicator={false}
-            renderItem={inputField}
-            ListEmptyComponent={<Text>No Data Found</Text>}
-        />
+        <>
+            <FlatList
+                data={words}
+                style={styles.flatListView}
+                showsVerticalScrollIndicator={false}
+                renderItem={inputField
+                    // ({ items }) => {
+                    //         {words.map((item) => {
+
+                    //             if (input == "") {
+                    //                 <TouchableOpacity
+                    //                     style={{
+                    //                         marginTop: 10,
+                    //                         width: 390,
+                    //                         height: 50,
+                    //                         backgroundColor: input == item.id ? backgroundData : null,
+                    //                         justifyContent: "space-between",
+                    //                         flexDirection: "row",
+                    //                     }}
+                    //                     key={words.id}
+                    //                     onPress={() => setInput(items.id)}>
+                    //                     <Text style={styles.flatText} >{item.name}</Text>
+                    //                     {input == item.id ?
+                    //                         <Image source={carCheck} style={styles.imageData} />
+                    //                         : null}
+                    //                 </TouchableOpacity>
+                    //             }
+                    //              if (item.name.toLowerCase().includes(input.toLowerCase())) {
+                    //                 <TouchableOpacity
+                    //                     style={{
+                    //                         marginTop: 10,
+                    //                         width: 390,
+                    //                         height: 50,
+                    //                         backgroundColor: input == item.id ? backgroundData : null,
+                    //                         justifyContent: "space-between",
+                    //                         flexDirection: "row",
+                    //                     }}
+                    //                     key={words.id}
+                    //                     onPress={() => setInput(items.id)}>
+                    //                     <Text style={styles.flatText} >{item.name}</Text>
+                    //                     {input == item.id ?
+                    //                         <Image source={carCheck} style={styles.imageData} />
+                    //                         : null}
+                    //                 </TouchableOpacity>
+                    //             }
+
+
+
+                    //         })}
+                    //     }
+                }
+                ListEmptyComponent={<Text>No Data Found</Text>} />
+
+            {/* <ScrollView
+                style={styles.flatListView}
+                showsVerticalScrollIndicator={false}>
+
+                {words.map((item) => {
+                    return (
+                        <TouchableOpacity
+                            style={{
+                                marginTop: 10,
+                                width: 390,
+                                height: 50,
+                                backgroundColor: input == item.id ? backgroundData : null,
+                                justifyContent: "space-between",
+                                flexDirection: "row",
+                            }}
+                            key={words.id}
+                            onPress={() => setInput(item.id)}>
+                            <Text style={styles.flatText} >{item.name}</Text>
+                            {input == item.id ?
+                                <Image source={carCheck} style={styles.imageData} />
+                                : null}
+                        </TouchableOpacity>
+
+                    );
+                })}
+            </ScrollView> */}
+            <TouchableOpacity
+                onPress={CheckData}
+                style={styles.noneButton}>
+                {input ?
+                    <Text style={styles.buttonText}>Done</Text>
+                    : <Text style={styles.buttonText}>None</Text>}
+                <Text style={styles.buttonText}></Text>
+            </TouchableOpacity>
+
+
+        </>
     );
 }
 
