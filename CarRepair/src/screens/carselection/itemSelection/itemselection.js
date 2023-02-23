@@ -22,11 +22,11 @@ const words = [
     { id: 14, name: "MotoRolla" },
     { id: 15, name: "Hyundai" },
 ]
-const ItemSelection = ({ navigation, input,setInput }) => {
+const ItemSelection = ({ input, setInput }) => {
     const [seletedvalue, setselectValue] = useState(input)
     const inputField = ({ item }) => {
-        console.log("Item", item.id);
-        console.log("selected value", seletedvalue);
+        // console.log("Item", item.id);
+
 
         if (item.name.toLowerCase().includes(input.toLowerCase())) {
             return (
@@ -41,53 +41,55 @@ const ItemSelection = ({ navigation, input,setInput }) => {
                     }}
                     // () => setInput(item.id)
                     onPress={() => setselectValue(item.id)}>
+
                     <Text style={styles.flatText} >{item.name}</Text>
                     {seletedvalue == item.id ?
-                       
-                         <Image source={carCheck} style={styles.imageData} /> :null
+
+                        <Image source={carCheck} style={styles.imageData} /> : null
                     }
                 </TouchableOpacity>
             )
         }
-       if(seletedvalue == ""){
-        return (
-            <TouchableOpacity
-                style={{
-                    marginTop: 10,
-                    width: "100%",
-                    height: 50,
-                    backgroundColor: seletedvalue === item.id ? backgroundData : null,
-                    justifyContent: "space-between",
-                    flexDirection: "row",
-                }}
-                key={words.id}
-                onPress={() => setselectValue(item.id)}>
-                <Text style={styles.flatText} >{item.name}</Text>
-                {seletedvalue == item.id ?
-                   
-                     <Image source={carCheck} style={styles.imageData} /> :null
-                }
+        if (seletedvalue == "") {
+            return (
+                <TouchableOpacity
+                    style={{
+                        marginTop: 10,
+                        width: "100%",
+                        height: 50,
+                        backgroundColor: seletedvalue === item.id ? backgroundData : null,
+                        justifyContent: "space-between",
+                        flexDirection: "row",
+                    }}
+                    key={words.id}
+                    onPress={() => setselectValue(item.id)}>
+                    <Text style={styles.flatText} >{item.name}</Text>
+                    {seletedvalue == item.id ?
 
-            </TouchableOpacity>
+                        <Image source={carCheck} style={styles.imageData} /> : null
+                    }
 
-        );}
+                </TouchableOpacity>
+
+            );
+        }
 
     }
 
 
 
     const CheckData = () => {
-        if (input == "") {
+        if (seletedvalue == "") {
             // withNavigation.navigate("CarList")
-            // navigation.navigate("CarList")
-            alert("carLIst")
+            navigate("CarList")
+            // alert("carLIst")
             // setInput(!input)
 
         }
-        else if (input != "") {
+        else if (seletedvalue != "") {
             // withNavigation.navigate("CarLoading")
-            // navigation.navigate("CarLoading")            
-            alert("carLoading")
+            navigate("CarLoading")
+            // alert("carLoading")
             // setInput(!input)
         }
     }
