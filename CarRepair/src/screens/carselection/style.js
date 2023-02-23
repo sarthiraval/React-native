@@ -1,13 +1,12 @@
 import { StyleSheet } from "react-native";
 import { darkBlue, darkblue, text, white } from "../../assets/constant";
-
 const styles = StyleSheet.create({
   backColor: {
     height:"100%",
     backgroundColor: white,
   },
   mainView:{
-    marginTop:10,
+    marginTop:15,
     left:20,
   },
   carText: {
@@ -41,7 +40,6 @@ const styles = StyleSheet.create({
       height:30,  
       alignSelf:"center"
   },
-
   flatText: {
     fontSize: 28,
     fontWeight: 400,
@@ -50,17 +48,10 @@ const styles = StyleSheet.create({
     color:text
   },
   flatListView: {
-     marginTop:"10%"
-    // backgroundColor:"red",
-  
-  },
-  dataView :{
-    marginTop: 10,
-    // backgroundColor:"red",
+     marginTop:"7%"
   },
   flatMainView: {
-    marginTop: 10,
-    width:"50%",
+    width:"100%",
     backgroundColor:white,
     justifyContent:"space-between",
     flexDirection: "row",
@@ -86,7 +77,6 @@ const styles = StyleSheet.create({
     marginTop: 20,
     fontWeight: 600
   },
-
 })
 
 export default styles
