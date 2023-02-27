@@ -1,4 +1,5 @@
 export const deleteButton = require("./delete.png")
-export const checkButton = require("./check.png")
 export const plus = require("./plus.png")
 export const listSearch = require("./search.png")
+export const image1 = require("./i.jpeg")
+export const image2 = require("./images.jpeg")

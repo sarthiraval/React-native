@@ -7,17 +7,18 @@ const Navigation = () => {
     const Stack = createNativeStackNavigator()
     return (
         <NavigationContainer>
+
             <Stack.Navigator>
-             <Stack.Screen
-                name="TodoList"
-                component={TodoList}
-                screenOptions={{
-                    headerShown: false,
-                }}
-                options={{
-                    headerShown: false,
-                }}
-            />
+                <Stack.Screen
+                    name="TodoList"
+                    component={TodoList}
+                    screenOptions={{
+                        headerShown: false,
+                    }}
+                    options={{
+                        headerShown: false,
+                    }}
+                />
             </Stack.Navigator>
         </NavigationContainer>
     )
