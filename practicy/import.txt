@@ -14,6 +14,7 @@ gestuser =  npm install react-native-reanimated react-native-gesture-handler rea
 drawer navigation = npm install @react-navigation/drawer
    npm install react-native-gesture-handler react-native-reanimated
    npm start -- --reset-cache
+npm start --clearCache
 
 
 

@@ -13,7 +13,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 const COLORS = {primary: '#1f145c', white: '#fff'};
 
-const App = () => {
+const TodoLIst = () => {
   const [todos, setTodos] = React.useState([]);
   const [textInput, setTextInput] = React.useState('');
 
@@ -214,5 +214,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
-Footer
+export default TodoLIst;
