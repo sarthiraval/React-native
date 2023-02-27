@@ -1,6 +1,15 @@
 import { StyleSheet } from "react-native";
 import { darkBlue, darkblue, text, white } from "../../assets/constant";
 const styles = StyleSheet.create({
+  backColors: {
+    backgroundColor: white,
+    height:"100%",
+    justifyContent:"center"
+  },
+carImage :{
+    width:"100%",
+    alignSelf:"center"
+},
   backColor: {
     height:"100%",
     backgroundColor: white,

@@ -1,13 +1,21 @@
 import { TouchableOpacity, FlatList, Text, View, TextInput, Image } from 'react-native'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './style'
-import { carCheck, carSearch } from '../../assets/image'
+import { carCheck, carSearch, carRepair } from '../../assets/image'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { backgroundData, text } from '../../assets/constant'
 
 const CarSelection = ({ navigation }) => {
 
     const [input, setInput] = useState("")
+    const [carLoading, setLoading] = useState(true)
+    useEffect(() => {
+        const loadData = async () => {
+            await new Promise((r) => setTimeout(r, 1000))
+            setLoading((loading) => !loading)
+        };
+        loadData();
+    }, []);
     const words = [
         { id: 1, name: "Kiwi" },
         { id: 2, name: "Honda" },
@@ -76,7 +84,21 @@ const CarSelection = ({ navigation }) => {
             navigation.navigate("CarList")
         }
         else if (seletedvalue != "") {
-            navigation.navigate("CarLoading")
+            {
+                // if (carLoading) {
+                //     return (
+                //         <TouchableOpacity onPress={() => navigation.navigate("CarLoading")}>
+                //             <View style={styles.backColors}>
+                //                 <Image source={carRepair} style={styles.carImage} />
+                //             </View>
+                //         </TouchableOpacity>
+                //     )
+                // }
+                // else{
+                //     
+                // }
+                navigation.navigate("CarLoading")
+            }
         }
     }
 
