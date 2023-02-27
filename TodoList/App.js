@@ -1,10 +1,10 @@
 import React from 'react';
+import { View ,Text} from 'react-native';
+import Navigation from './src/navigation';
 
 const App =()=>{
   return(
-     <View>
-        <Text style={{}}>45</Text>
-     </View>
+    <Navigation/>
   )
 }
 export default App
