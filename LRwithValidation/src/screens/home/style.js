@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { black, darkBlue, green, lightBlue, red, textInput } from "../../assets/constants";
 
 const styles = StyleSheet.create({
     SafeDesign: {
@@ -6,12 +7,13 @@ const styles = StyleSheet.create({
     },
     AllContent: {
         flex: 1,
-        
-
     },
     Texts:{
-        fontSize:20,color:"red",marginVertical:10,
-        marginHorizontal:10
+        fontSize:20,
+        color:darkBlue,
+        marginTop: "10%",
+        marginLeft:30,
+        fontWeight: "600",
     },
     textColor: {
         fontSize: 30,

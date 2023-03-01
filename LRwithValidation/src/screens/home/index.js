@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styles from './style';
-import { mini } from '../../assets/image';
-import { ImageBackground, SafeAreaView, Text } from 'react-native';
+import { deleteButton, mini, plus } from '../../assets/image';
+import { FlatList, Image, ImageBackground, SafeAreaView, Text ,View} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
+import { ScrollView, TextInput, TouchableOpacity } from 'react-native-gesture-handler';
 import 'react-native-gesture-handler';
 // import { createDrawerNavigator } from '@react-navigation/drawer';
 
@@ -11,10 +11,10 @@ import 'react-native-gesture-handler';
 
 
 let Home = () => {
-   const [username, setname] = useState("")
+   // const [username, setname] = useState("")
    const [uservalue, setvalue] = useState("")
-   const [userphone, setphone] = useState("")
-   const [userpass, setpass] = useState("")
+   // const [userphone, setphone] = useState("")
+   // const [userpass, setpass] = useState("")
    const [input, setInput] = useState([]);
     const [textInput, setTextInput] = useState('');
    //  var users = await AsyncStorage.getItem("usrename")
@@ -49,12 +49,15 @@ const ListItem = ({ todo }) => {
        </View>
    );
 };
-   useEffect(async () => {
-      setname(await AsyncStorage.getItem("email"));
+   useEffect(() => {
+      async function fetchData(){
+      // setname(await AsyncStorage.getItem("email"));
       setvalue(await AsyncStorage.getItem("usrename"));
-      setphone(await AsyncStorage.getItem("phone"));
-      setpass(await AsyncStorage.getItem("password"));
-   }, [])
+      // setphone(await AsyncStorage.getItem("phone"));
+      // setpass(await AsyncStorage.getItem("password"));
+   }
+   fetchData()
+}, [])
 
    
    // console.log(usename);
@@ -85,13 +88,13 @@ const ListItem = ({ todo }) => {
                <Text style={styles.Texts}>Sarthi</Text>
 
             </TouchableOpacity> */}
-<ScrollView>
-            <Text style={styles.Texts}>Name = {username}</Text>
-            <Text style={styles.Texts}>Email = {uservalue}</Text>
+
+            <Text style={styles.Texts}>Hello,{uservalue}</Text>
+            {/* <Text style={styles.Texts}>Email = {uservalue}</Text>
             <Text style={styles.Texts}>Phone = {userphone}</Text>
-            <Text style={styles.Texts}>Password = {userpass}</Text>
+            <Text style={styles.Texts}>Password = {userpass}</Text> */}
          
-            <Text style={styles.textColor}>Task List</Text>
+            {/* <Text style={styles.textColor}>Task List</Text> */}
             <View style={styles.listView}>
                 <TextInput
                     value={textInput}
@@ -114,9 +117,30 @@ const ListItem = ({ todo }) => {
                 keyExtractor={item => item.id} />
 
          
-            </ScrollView>
          </SafeAreaView>
       </ImageBackground>
    )
 }
 export default Home
+
+// useEffect(() => {
+//    async function check() {
+//      var item = await AsyncStorage.getItem("User");
+//    console.log(item);
+//    if (item == null || item == undefined) {
+//      props.navigation.navigate("Login");
+//    }
+//    else {
+//      var user = await JSON.parse(item);
+//      if(user.fullname=="admin"){
+//        props.navigation.navigate("AdminHP");
+//      }
+//      else{
+//        props.navigation.navigate("UserHP");
+//      }
+//    }
+//    console.log("effect");
+//    }
+
+//    check()
+//  }, [])

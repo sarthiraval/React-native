@@ -16,46 +16,46 @@ const Navigation = () => {
     return (
         <NavigationContainer>
             <Stack.Navigator >
-            {isloaded ?
-                <Stack.Screen
-                    name="Login"
-                    component={Login}
-                    // options={{
-                    //     title: "Splash",
-                    //     headerTintColor: "white",
-                    //     // headerStyle:{
-                    //     //     backgroundColor:"red"
-                    //     // },
-                    //     headerTransparent: true
+                {isloaded ?
+                    <Stack.Screen
+                        name="Login"
+                        component={Login}
+                        // options={{
+                        //     title: "Splash",
+                        //     headerTintColor: "white",
+                        //     // headerStyle:{
+                        //     //     backgroundColor:"red"
+                        //     // },
+                        //     headerTransparent: true
 
-                    // }}
-                    options={{
-                        headerShown: false 
-                        
-            
-                    // headerStyle:{
-                    //     backgroundColor:"red"
-                    // },
+                        // }}
+                        options={{
+                            headerShown: false
 
 
-                }}
+                            // headerStyle:{
+                            //     backgroundColor:"red"
+                            // },
+
+
+                        }}
                     />
                     :
-                <Stack.Screen
-                    name="Splash"
-                    component={Splash}
-                    
-                    options={{ headerShown: false }}
-                     />
-            }
+                    <Stack.Screen
+                        name="Splash"
+                        component={Splash}
+
+                        options={{ headerShown: false }}
+                    />
+                }
                 <Stack.Screen
                     name="Register"
                     component={Register}
-                
-                        options={{
-                            headerShown: false,
-                            headerTransparent: true
-                
+
+                    options={{
+                        headerShown: false,
+                        headerTransparent: true
+
                         // headerStyle:{
                         //     backgroundColor:"red"
                         // },
@@ -72,6 +72,8 @@ const Navigation = () => {
                         // headerStyle:{
                         //     backgroundColor:"red"
                         // },
+
+                        headerShown: false,
                         headerTransparent: true
 
                     }} />

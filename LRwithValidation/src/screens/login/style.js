@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     icon: {
-        marginTop:-19,
+        marginTop:"-70%",
         width: 20,
         marginRight: 40,
         height: 15,
