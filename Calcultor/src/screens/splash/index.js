@@ -3,6 +3,7 @@ import styles from './style';
 import { Image, SafeAreaView, Text, View } from 'react-native';
 import { arrowleft, insta } from '../../assets/Image/index'
 import Filter from '../filter';
+import ApiKnow from '../Data';
 
 
 
@@ -11,7 +12,7 @@ let Splash = ({navigation}) => {
     // const [splash, setsplash] = useState(true)
     useEffect(() => {
         setTimeout(() => {
-            navigation.navigate(Filter)
+            navigation.navigate(ApiKnow)
         }, 2000);
     });
 

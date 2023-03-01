@@ -5,6 +5,7 @@ import Splash from '../screens/splash';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import Calculator from '../screens/home';
+import ApiKnow from '../screens/Data';
 
 
 
@@ -32,7 +33,15 @@ const Navigation = () => {
                         // headerLeft: () => <></>,
 
                     }} />
-            
+             <Stack.Screen
+                    name="ApiKnow"
+                    component={ApiKnow}
+                    options={{
+                        headerShown: false,
+                        // headerLeft: () => <></>,
+
+                    }}
+                />
                 <Stack.Screen
                     name="Filter"
                     component={Filter}
