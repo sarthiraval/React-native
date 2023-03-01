@@ -5,6 +5,7 @@ import Splash from '../screens/splash';
 import Home from '../screens/home';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Profile from '../screens/Profile';
 
 
 const Navigation = () => {
@@ -73,6 +74,15 @@ const Navigation = () => {
                         //     backgroundColor:"red"
                         // },
 
+                        headerShown: false,
+                        headerTransparent: true
+
+                    }} />
+                           <Stack.Screen
+                    name="Profile"
+                    component={Profile}
+                    options={{
+                       
                         headerShown: false,
                         headerTransparent: true
 

@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import styles from './style';
-import { deleteButton, mini, plus } from '../../assets/image';
+import { deleteButton, information, mini, plus } from '../../assets/image';
 import { FlatList, Image, ImageBackground, SafeAreaView, Text ,View} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { ScrollView, TextInput, TouchableOpacity } from 'react-native-gesture-handler';
 import 'react-native-gesture-handler';
 // import { createDrawerNavigator } from '@react-navigation/drawer';
 
-
-
-
-let Home = () => {
-   // const [username, setname] = useState("")
+let Home = ({navigation}) => {
+   const [username, setname] = useState("")
    const [uservalue, setvalue] = useState("")
    // const [userphone, setphone] = useState("")
    // const [userpass, setpass] = useState("")
@@ -88,8 +85,16 @@ const ListItem = ({ todo }) => {
                <Text style={styles.Texts}>Sarthi</Text>
 
             </TouchableOpacity> */}
+        <View style ={{flexDirection :"row", justifyContent:"space-between"}}>
 
+    
             <Text style={styles.Texts}>Hello,{uservalue}</Text>
+            <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
+                    
+                        <Image source={information} style={styles.iconInfo} />
+                    
+                </TouchableOpacity>
+                </View>
             {/* <Text style={styles.Texts}>Email = {uservalue}</Text>
             <Text style={styles.Texts}>Phone = {userphone}</Text>
             <Text style={styles.Texts}>Password = {userpass}</Text> */}

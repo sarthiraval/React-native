@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     },
     Texts:{
         fontSize:20,
-        color:darkBlue,
+        color:red,
         marginTop: "10%",
         marginLeft:30,
         fontWeight: "600",
@@ -69,6 +69,12 @@ const styles = StyleSheet.create({
         height: 20,
         width: 20,
         alignSelf: "center"
+    },
+    iconInfo:{
+        marginTop: 42,
+        height: 20,
+        marginRight:30,
+        width: 20,
     },
     iconView: {
         height: 40,
