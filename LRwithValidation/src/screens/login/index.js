@@ -6,11 +6,11 @@ import { SafeAreaView, View, Text, TextInput, ImageBackground, TouchableOpacity,
 // import LinearGradient from 'react-native-linear-gradient';
 
 
-let Login = ({ navigation }) => {
-  var gestStorage = async () => {
+const Login = ({ navigation }) => {
+  const gestStorage = async () => {
     try {
-      var value = await AsyncStorage.getItem("email")
-      var passwords = await AsyncStorage.getItem("password")
+      const value = await AsyncStorage.getItem("email")
+      const passwords = await AsyncStorage.getItem("password")
       // console.log(passwords);
       if (password != passwords || email != value) {
         // console.log("sarthi");
