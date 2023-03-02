@@ -16,6 +16,7 @@ drawer navigation = npm install @react-navigation/drawer
    npm start -- --reset-cache
 npm start --clearCache
 
+npm install react-navigation/native-stack react-native-safe-area-context react-native-screens
 
 
 
