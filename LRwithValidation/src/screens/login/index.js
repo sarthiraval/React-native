@@ -185,9 +185,6 @@ return (
             <Text style={styles.TextLogin}>Login</Text>
           </TouchableOpacity> */}
 
-
- 
-
       <View style={styles.iconViewMange}>
       <Image source={facebook} style={styles.iconsvaild} />
       <Image source={google} style={styles.iconsvaild} />

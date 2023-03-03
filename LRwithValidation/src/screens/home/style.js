@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { black, darkBlue, green, lightBlue, red, textInput } from "../../assets/constants";
+import { black, darkBlue, green, lightBlue, red, textInput, white } from "../../assets/constants";
 
 const styles = StyleSheet.create({
     SafeDesign: {
@@ -10,14 +10,14 @@ const styles = StyleSheet.create({
     },
     Texts:{
         fontSize:20,
-        color:red,
+        color:white,
         marginTop: "10%",
         marginLeft:30,
         fontWeight: "600",
     },
     textColor: {
         fontSize: 30,
-        color: red,
+        color: white,
         marginTop: "10%",
         fontWeight: "600",
         alignSelf: "center"
@@ -36,15 +36,15 @@ const styles = StyleSheet.create({
         backgroundColor:"white",
         marginVertical: 30,
         width: "85%",
-        borderColor: red,
-        borderWidth: 1,
+        borderColor: black,
+        borderWidth: 0.5,
     },
     addView: {
         height: 40,
         width: "10%",
         marginRight: "10%",
         alignSelf: "center",
-        backgroundColor: lightBlue,
+        backgroundColor: white,
         borderRadius: 25
     },
     addText: {
@@ -58,7 +58,8 @@ const styles = StyleSheet.create({
         width: 40,
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: darkBlue,
+        backgroundColor: black,
+       
         borderRadius: 40
     },
     icon: {
@@ -86,7 +87,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
     },
     listItem: {
-        backgroundColor: lightBlue,
+        backgroundColor: white,
         padding: 10,
         borderRadius: 50,
         alignSelf: 'center',
@@ -98,15 +99,16 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 15,
         alignSelf: "center",
-        color: darkBlue,
+        color: black,
         width: "65%",
         marginLeft: 15,
     },
     listEmpty: {
-        color: red,
+        color: white,
         alignSelf: "center",
         fontSize: 30,
         marginTop: "50%",
+      
         fontWeight: "600"
     },
 })
