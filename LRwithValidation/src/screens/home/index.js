@@ -80,27 +80,24 @@ const ListItem = ({ todo }) => {
          style={styles.AllContent}>
 
          <SafeAreaView style={styles.SafeDesign} >
-            {/* <TouchableOpacity onPress={gestStorage}>
+            <TouchableOpacity onPress={gestStorage}>
 
                <Text style={styles.Texts}>Sarthi</Text>
 
-            </TouchableOpacity> */}
+            </TouchableOpacity>
         <View style ={{flexDirection :"row", justifyContent:"space-between"}}>
 
     
             <Text style={styles.Texts}>Hello,{uservalue}</Text>
-            {/* <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
+            <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
                     
                         <Image source={information} style={styles.iconInfo} />
                     
-                </TouchableOpacity> */}
+                </TouchableOpacity>
                 </View>
-            {/* <Text style={styles.Texts}>Email = {uservalue}</Text>
-            <Text style={styles.Texts}>Phone = {userphone}</Text>
-            <Text style={styles.Texts}>Password = {userpass}</Text> */}
-         
-            {/* <Text style={styles.textColor}>Task List</Text> */}
-            {/* <View style={styles.listView}>
+
+        
+            <View style={styles.listView}>
                 <TextInput
                     value={textInput}
                     placeholder="Add Todo"
@@ -119,7 +116,7 @@ const ListItem = ({ todo }) => {
                 data={input}
                 renderItem={({ item }) => <ListItem todo={item} />}
                 ListEmptyComponent={<Text style={styles.listEmpty}>No Text Input</Text>}
-                keyExtractor={item => item.id} /> */}
+                keyExtractor={item => item.id} />
 
          
          </SafeAreaView>

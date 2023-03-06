@@ -63,7 +63,7 @@ onChange: {
   emailvalida = (text) => {
     // let re /(?!.*[\.\-\_]{2,})^[a-zA-Z0-9\.\-\_]{3,4}$/
     // let result = /\S+@\S+\.\S+/;
-    let re = /(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])/
+    let re = /(?=.*[a-z])/
     let result = /\S+@([A-Z|a-z])+\S+\.([A-Z|a-z]){2,3}$/;
     // let res = /^([A-Z|a-z|0-9](\.|_){0,1})+[A-Z|a-z|0-9]\@([A-Z|a-z])+((\.){0,1}[A-Z|a-z]){2}\.[a-z]{2,3}$/
     // let result = /(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])(?=.[0-9])/
