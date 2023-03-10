@@ -80,11 +80,13 @@ const ListItem = ({ todo }) => {
          style={styles.AllContent}>
 
          <SafeAreaView style={styles.SafeDesign} >
-            <TouchableOpacity onPress={gestStorage}>
+            {/* <TouchableOpacity 
+            onPress={gestStorage}
+            >
 
                <Text style={styles.Texts}>Sarthi</Text>
 
-            </TouchableOpacity>
+            </TouchableOpacity> */}
         <View style ={{flexDirection :"row", justifyContent:"space-between"}}>
 
     

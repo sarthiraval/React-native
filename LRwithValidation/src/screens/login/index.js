@@ -23,7 +23,7 @@ const Login = ({ navigation }) => {
           {
             text: 'OK', onPress: () => {
 
-              navigation.navigate("Home")
+              navigation.navigate("Profile")
             }
           }
         ],

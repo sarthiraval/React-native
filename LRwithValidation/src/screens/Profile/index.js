@@ -34,23 +34,35 @@ const Profile = ({ navigation }) => {
            </TouchableOpacity> */}
             <Text style={{
                fontSize: 30,
-               color: "red",
+               color: "black",
                marginTop: "10%",
                marginLeft: 30,
                marginBottom:10,
                fontWeight: "600",
             }}>User Info</Text>
 
-            <Text style={styles.Texts}>Name = {uservalue}</Text>
-            <Text style={styles.Texts}>Email = {username}</Text>
-            <Text style={styles.Texts}>Phone = {userphone}</Text>
-            <Text style={styles.Texts}>Password = {userpass}</Text>
-
+<View style={{flexDirection:"row"}}>
+            <Text style={styles.Texts}>Name : </Text>
+            <Text style={styles.TextStatues}>{uservalue}</Text>
+            </View>
+            <View style={{flexDirection:"row"}}>
+            <Text style={styles.Texts}>Email : </Text>
+            <Text style={styles.TextStatues}>{username}</Text>
+            </View>
+            <View style={{flexDirection:"row"}}>
+            <Text style={styles.Texts}>Phone : </Text>
+            <Text style={styles.TextStatues}>{userphone}</Text>
+            </View>
+            {/* <View style={{flexDirection:"row"}}>
+            <Text style={styles.Texts}>Password : </Text>
+            <Text style={styles.TextStatues}>{userpass}</Text>
+            </View> */}
+{/*            
             <TouchableOpacity
                style={styles.ViewMange}
                onPress={() => navigation.navigate("Home")}>
                <Text style={styles.TextLogin}>Back</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
          </SafeAreaView>
       </ImageBackground>
    );
